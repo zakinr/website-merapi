@@ -724,26 +724,43 @@
     /* Minuman */
     .minuman-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 18px;
     }
-
+    
     .minuman-card {
       background: var(--white);
       border-radius: var(--radius);
-      padding: 22px 16px;
+      overflow: hidden;
       text-align: center;
       transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
-
+    
     .minuman-card:hover {
-      background: var(--primary);
-      color: var(--white);
-      transform: translateY(-3px);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
     }
-
-    .minuman-icon { font-size: 1.6rem; margin-bottom: 8px; }
-    .minuman-name { font-size: 0.88rem; font-weight: 500; }
+    
+    /* IMAGE STYLE */
+    .minuman-card img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .minuman-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* TEXT */
+    .minuman-name {
+      padding: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
 
     /* Paket section inside menu */
     .paket-grid {
@@ -1551,7 +1568,7 @@
               <div class="prasmanan-item" data-key="paket1_minum_label"><strong style="color:var(--secondary);font-size:0.78rem;">Minuman</strong></div>
               <div class="prasmanan-item">Teh / Air Putih</div>
               <div class="prasmanan-item" data-key="paket1_snack_label" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Snack</strong></div>
-              <div class="prasmanan-item">Mandarin / Mandarin Kismis / Gulung Pandan / Gulung Cokelat / Cake Buah / Cake Klepon / Cake Red Velvet</div>
+              <div class="prasmanan-item">Roti Mandarin / Roti Mandarin Kismis / Roti Gulung Pandan / Roti Gulung Cokelat / Cake Buah / Cake Klepon / Cake Red Velvet</div>
               <div class="prasmanan-item">Sosis Solo / Sosis Basah / Kroket / Resoles (Mayo / Sayur) / Sasisu</div>
               <div class="prasmanan-item">Kacang Mete / Kacang Bawang / Kacang Telur / Sumpia</div>
               <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Soup</strong></div>
@@ -1576,7 +1593,7 @@
               <div class="prasmanan-item"><strong style="color:var(--secondary);font-size:0.78rem;">Minuman</strong></div>
               <div class="prasmanan-item">Teh / Air Putih</div>
               <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Snack</strong></div>
-              <div class="prasmanan-item">Mandarin / Mandarin Kismis / Gulung Pandan / Gulung Cokelat / Cake Buah / Cake Klepon / Cake Red Velvet</div>
+              <div class="prasmanan-item">Roti Mandarin / Roti Mandarin Kismis / Roti Gulung Pandan / Roti Gulung Cokelat / Cake Buah / Cake Klepon / Cake Red Velvet</div>
               <div class="prasmanan-item">Sosis Solo / Sosis Basah / Kroket / Resoles (Mayo / Sayur) / Sasisu</div>
               <div class="prasmanan-item">Kacang Mete / Kacang Bawang / Kacang Telur / Sumpia</div>
               <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Soup</strong></div>
@@ -1634,38 +1651,47 @@
       <!-- MINUMAN -->
       <div class="menu-panel" id="panel-minuman">
         <div class="minuman-grid">
+      
           <div class="minuman-card">
-            <div class="minuman-icon">💧</div>
+            <img src="assets/images/minuman/water.jpg" alt="Air Putih">
             <div class="minuman-name">Air Putih</div>
           </div>
+      
           <div class="minuman-card">
-            <div class="minuman-icon">🥤</div>
+            <img src="assets/images/minuman/juice.jpg" alt="Jus Buah">
             <div class="minuman-name">Jus Buah</div>
           </div>
+      
           <div class="minuman-card">
-            <div class="minuman-icon">🫧</div>
+            <img src="assets/images/minuman/softdrink.jpg" alt="Softdrink">
             <div class="minuman-name">Softdrink</div>
           </div>
+      
           <div class="minuman-card">
-            <div class="minuman-icon">🍵</div>
+            <img src="assets/images/minuman/tea.jpg" alt="Teh Manis">
             <div class="minuman-name">Teh Manis</div>
           </div>
+      
           <div class="minuman-card">
-            <div class="minuman-icon">🧊</div>
+            <img src="assets/images/minuman/ice.jpg" alt="Es Batu">
             <div class="minuman-name">Es Batu</div>
           </div>
+      
           <div class="minuman-card">
-            <div class="minuman-icon">🥛</div>
+            <img src="assets/images/minuman/dawet.jpg" alt="Es Dawet">
             <div class="minuman-name">Es Dawet</div>
           </div>
+      
           <div class="minuman-card">
-            <div class="minuman-icon">🍹</div>
+            <img src="assets/images/minuman/escampur.jpg" alt="Es Campur">
             <div class="minuman-name">Es Campur</div>
           </div>
+      
           <div class="minuman-card">
-            <div class="minuman-icon">🍦</div>
+            <img src="assets/images/minuman/icecream.jpg" alt="Es Krim">
             <div class="minuman-name">Es Krim</div>
           </div>
+      
         </div>
       </div>
 
@@ -1777,7 +1803,7 @@
             </div>
           </div>
           <div class="about-badge-float">
-            <strong>10+</strong>
+            <strong>26+</strong>
             <span data-key="about_badge">Tahun Melayani</span>
           </div>
         </div>
