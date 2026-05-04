@@ -1137,15 +1137,20 @@
     }
 
     .contact-icon {
-      width: 44px; height: 44px;
+      width: 44px;
+      height: 44px;
       background: rgba(170,142,95,0.15);
       border: 1px solid rgba(170,142,95,0.3);
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
       flex-shrink: 0;
+    }
+    
+    .contact-icon i {
+      font-size: 1.1rem;
+      color: var(--secondary-light);
     }
 
     .contact-label {
@@ -2061,21 +2066,27 @@
 
           <div class="contact-info">
             <div class="contact-item">
-              <div class="contact-icon">📍</div>
+              <div class="contact-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
               <div>
                 <div class="contact-label" data-key="contact_addr_label">Alamat</div>
                 <div class="contact-value">Kios No. 58/59 Pasar Sambi<br/>Jl. Bangak - Simo, Dusun I, Tempursari<br/>Sambi, Boyolali, Jawa Tengah 57376</div>
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">📞</div>
+              <div class="contact-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
               <div>
                 <div class="contact-label" data-key="contact_wa_label">WhatsApp</div>
                 <div class="contact-value">082136344732 / 081329969126</div>
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">📸</div>
+              <div class="contact-icon">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
               <div>
                 <div class="contact-label">Instagram</div>
                 <div class="contact-value">@alhikmah.catering</div>
@@ -2091,7 +2102,8 @@
             </a>
             <a href="https://www.instagram.com/alhikmah.catering"
                target="_blank" class="btn btn-ig">
-              📸 <span data-key="cta_ig">Follow di Instagram</span>
+              <i class="fa-brands fa-instagram"></i>
+              <span data-key="cta_ig">Follow di Instagram</span>
             </a>
           </div>
         </div>
@@ -2126,7 +2138,9 @@
         </div>
         <div class="footer-social">
           <a href="https://wa.me/6282136344732?text=Halo%2C%20saya%20ingin%20tanya%20paket%20catering%20untuk%20acara%20%5Bjenis%20acara%5D%20tanggal%20%5Btanggal%5D" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="https://www.instagram.com/alhikmah.catering" target="_blank" title="Instagram">📸</a>
+          <a href="https://www.instagram.com/alhikmah.catering" target="_blank" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
         </div>
       </div>
     </div>
