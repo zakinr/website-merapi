@@ -556,6 +556,31 @@
       margin-bottom: 48px;
     }
 
+    .prasmanan-section {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 48px;
+      box-shadow: var(--shadow);
+    }
+    
+    .prasmanan-section-head {
+      margin-bottom: 28px;
+    }
+    
+    .prasmanan-section-head h3 {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    
+    .prasmanan-section-head p {
+      font-size: 0.95rem;
+      color: var(--text);
+      opacity: 0.7;
+      max-width: 560px;
+    }
+
     .menu-tabs {
       display: flex;
       gap: 8px;
@@ -1496,73 +1521,14 @@
         <p class="section-desc" data-key="menu_desc">Pilih kategori untuk menjelajahi berbagai pilihan menu lezat kami. Harga menyesuaikan pilihan menu.</p>
       </div>
 
-      <!-- Tab buttons -->
-      <div class="menu-tabs reveal" id="menuTabs">
-        <button class="menu-tab active" onclick="switchTab('snack-manis')" data-key="tab_snack_manis">Snack Manis</button>
-        <button class="menu-tab"        onclick="switchTab('snack-asin')"  data-key="tab_snack_asin">Snack Asin</button>
-        <button class="menu-tab"        onclick="switchTab('kletikan')"    data-key="tab_kletikan">Kletikan</button>
-        <button class="menu-tab"        onclick="switchTab('prasmanan')"   data-key="tab_prasmanan">Menu Prasmanan</button>
-        <button class="menu-tab"        onclick="switchTab('gubugan')"     data-key="tab_gubugan">Menu Gubugan</button>
-        <button class="menu-tab"        onclick="switchTab('minuman')"     data-key="tab_minuman">Minuman</button>
-      </div>
-
-      <!-- SNACK MANIS -->
-      <div class="menu-panel active" id="panel-snack-manis">
-        <div class="menu-items-grid">
-          <div class="menu-item-pill"><span class="pill-dot"></span>Gulung Pandan</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Gulung Coklat</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Gulung Nanas</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Mandarin</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Mandarin Kismis</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Black Forest</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Tiramisu</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Brownies Kukus</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Brownies Panggang</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Bolu Pandan</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Cake Buah</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Cake Klepon</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Cake Red Velvet</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Nogosari Bandung</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Kue Lapis</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Mendut</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Kue Ku</div>
-        </div>
-      </div>
-
-      <!-- SNACK ASIN -->
-      <div class="menu-panel" id="panel-snack-asin">
-        <div class="menu-items-grid">
-          <div class="menu-item-pill"><span class="pill-dot"></span>Sosis Solo</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Sosis Basah</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Resoles Sayur</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Resoles Mayo</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Martabak</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Soes Ragout</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Pastel</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Kroket</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Tahu Bakso</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Timlo Goreng</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Sasisu</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Kacang Mete</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Kacang Bawang</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Kacang Telor</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Kacang Oven</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Emping Manis</div>
-        </div>
-      </div>
-
-      <!-- KLETIKAN -->
-      <div class="menu-panel" id="panel-kletikan">
-        <div class="menu-items-grid">
-          <div class="menu-item-pill"><span class="pill-dot"></span>Emping Gurih</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Soes Kering</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Sumpia</div>
-          <div class="menu-item-pill"><span class="pill-dot"></span>Stik Keju</div>
-        </div>
-      </div>
-
       <!-- PRASMANAN -->
-      <div class="menu-panel" id="panel-prasmanan">
+      <div class="prasmanan-section reveal">
+        <div class="prasmanan-section-head">
+          <span class="section-label">Menu Prasmanan</span>
+          <h3>Paket Prasmanan</h3>
+          <p>Pilihan paket prasmanan untuk acara keluarga, hajatan, hingga pesta besar.</p>
+        </div>
+        
         <div class="prasmanan-grid">
 
           <!-- Paket 1 -->
@@ -1635,6 +1601,70 @@
             <p class="prasmanan-note" data-key="price_note">*Harga sesuai dengan pilihan menu</p>
           </div>
 
+        </div>
+      </div>
+
+      <!-- Tab buttons -->
+      <div class="menu-tabs reveal" id="menuTabs">
+        <button class="menu-tab active" onclick="switchTab('snack-manis')" data-key="tab_snack_manis">Snack Manis</button>
+        <button class="menu-tab"        onclick="switchTab('snack-asin')"  data-key="tab_snack_asin">Snack Asin</button>
+        <button class="menu-tab"        onclick="switchTab('kletikan')"    data-key="tab_kletikan">Kletikan</button>
+        <button class="menu-tab"        onclick="switchTab('gubugan')"     data-key="tab_gubugan">Menu Gubugan</button>
+        <button class="menu-tab"        onclick="switchTab('minuman')"     data-key="tab_minuman">Minuman</button>
+      </div>
+
+      <!-- SNACK MANIS -->
+      <div class="menu-panel active" id="panel-snack-manis">
+        <div class="menu-items-grid">
+          <div class="menu-item-pill"><span class="pill-dot"></span>Gulung Pandan</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Gulung Coklat</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Gulung Nanas</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Mandarin</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Mandarin Kismis</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Black Forest</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Tiramisu</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Brownies Kukus</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Brownies Panggang</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Bolu Pandan</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Cake Buah</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Cake Klepon</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Cake Red Velvet</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Nogosari Bandung</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Kue Lapis</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Mendut</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Kue Ku</div>
+        </div>
+      </div>
+
+      <!-- SNACK ASIN -->
+      <div class="menu-panel" id="panel-snack-asin">
+        <div class="menu-items-grid">
+          <div class="menu-item-pill"><span class="pill-dot"></span>Sosis Solo</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Sosis Basah</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Resoles Sayur</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Resoles Mayo</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Martabak</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Soes Ragout</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Pastel</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Kroket</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Tahu Bakso</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Timlo Goreng</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Sasisu</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Kacang Mete</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Kacang Bawang</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Kacang Telor</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Kacang Oven</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Emping Manis</div>
+        </div>
+      </div>
+
+      <!-- KLETIKAN -->
+      <div class="menu-panel" id="panel-kletikan">
+        <div class="menu-items-grid">
+          <div class="menu-item-pill"><span class="pill-dot"></span>Emping Gurih</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Soes Kering</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Sumpia</div>
+          <div class="menu-item-pill"><span class="pill-dot"></span>Stik Keju</div>
         </div>
       </div>
 
