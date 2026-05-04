@@ -1014,6 +1014,12 @@
 
     .about-img-placeholder span { font-size: 4rem; display: block; margin-bottom: 12px; }
     .about-img-placeholder p { font-size: 0.8rem; letter-spacing: 0.08em; }
+    .about-img-placeholder i {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 12px;
+      color: rgba(255,255,255,0.9);
+    }
 
     .about-badge-float {
       position: absolute;
@@ -1086,8 +1092,20 @@
     }
 
     .about-value-icon {
-      font-size: 1.4rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(170,142,95,0.12);
+      border: 1px solid rgba(170,142,95,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
+    }
+    
+    .about-value-icon i {
+      font-size: 1.1rem;
+      color: var(--secondary);
     }
 
     .about-value-text strong {
@@ -2025,21 +2043,27 @@
 
           <div class="about-values">
             <div class="about-value">
-              <div class="about-value-icon">✅</div>
+              <div class="about-value-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
               <div class="about-value-text">
                 <strong data-key="val1_title">Halal & Higienis</strong>
                 <span data-key="val1_desc">Seluruh proses produksi mengutamakan kebersihan dan standar halal</span>
               </div>
             </div>
             <div class="about-value">
-              <div class="about-value-icon">👨‍🍳</div>
+              <div class="about-value-icon">
+                <i class="fa-solid fa-utensils"></i>
+              </div>
               <div class="about-value-text">
                 <strong data-key="val2_title">Resep Otentik</strong>
                 <span data-key="val2_desc">Cita rasa asli Jawa Tengah yang telah teruji selama bertahun-tahun</span>
               </div>
             </div>
             <div class="about-value">
-              <div class="about-value-icon">🚚</div>
+              <div class="about-value-icon">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
               <div class="about-value-text">
                 <strong data-key="val3_title">Tepat Waktu</strong>
                 <span data-key="val3_desc">Komitmen pengiriman dan penyajian sesuai jadwal acara Anda</span>
