@@ -998,15 +998,48 @@
     }
 
     .about-img-wrap {
+      position: relative;
       border-radius: var(--radius-lg);
       overflow: hidden;
       aspect-ratio: 4/5;
       background: linear-gradient(145deg, var(--primary), var(--secondary));
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
+    .about-main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .about-label {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      background: rgba(35,31,32,0.55);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+    }
+    
+    .about-gallery {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      display: flex;
+      gap: 8px;
+    }
+    
+    .about-gallery img {
+      width: 58px;
+      height: 58px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid rgba(255,255,255,0.9);
+    }
+    
     .about-img-placeholder {
       text-align: center;
       color: rgba(255,255,255,0.8);
@@ -2016,10 +2049,22 @@
         <div class="about-visual reveal">
           <div class="about-deco-circle"></div>
           <div class="about-img-wrap">
-            <div class="about-img-placeholder">
-              <span>👨‍👩‍👧‍👦</span>
-              <p>Keluarga Al Hikmah</p>
+
+            <!-- FOTO UTAMA (FOUNDER) -->
+            <img src="assets/images/about/founder.png" class="about-main-img" alt="Pendiri Al Hikmah">
+          
+            <!-- LABEL -->
+            <div class="about-label">
+              Pendiri Al Hikmah
             </div>
+          
+            <!-- FOTO KECIL -->
+            <div class="about-gallery">
+              <img src="assets/images/about/team1.jpeg" alt="">
+              <img src="assets/images/about/team2.jpeg" alt="">
+              <img src="assets/images/about/family.jpeg" alt="">
+            </div>
+          
           </div>
           <div class="about-badge-float">
             <strong>26+</strong>
