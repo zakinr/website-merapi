@@ -1004,12 +1004,6 @@
       aspect-ratio: 4/5;
       background: linear-gradient(145deg, var(--primary), var(--secondary));
     }
-
-    .about-main-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
     
     .about-label {
       position: absolute;
@@ -1153,6 +1147,29 @@
       font-size: 0.78rem;
       color: var(--text);
       opacity: 0.65;
+    }
+
+    .about-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    
+      opacity: 0;
+      transform: scale(1.05);
+    
+      transition: opacity 1s ease, transform 4s ease;
+    }
+    
+    .about-slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    /* sedikit efek premium saat hover */
+    .about-img-wrap:hover .about-slide.active {
+      transform: scale(1.03);
     }
 
     /* ==============================
@@ -2050,19 +2067,15 @@
           <div class="about-deco-circle"></div>
           <div class="about-img-wrap">
 
-            <!-- FOTO UTAMA (FOUNDER) -->
-            <img src="assets/images/about/founder.png" class="about-main-img" alt="Pendiri Al Hikmah">
+            <!-- SLIDES -->
+            <img src="assets/images/about/founder.jpg" class="about-slide active" alt="">
+            <img src="assets/images/about/team1.jpg" class="about-slide" alt="">
+            <img src="assets/images/about/team2.jpg" class="about-slide" alt="">
+            <img src="assets/images/about/family.jpg" class="about-slide" alt="">
           
             <!-- LABEL -->
-            <div class="about-label">
-              Pendiri Al Hikmah
-            </div>
-          
-            <!-- FOTO KECIL -->
-            <div class="about-gallery">
-              <img src="assets/images/about/team1.jpeg" alt="">
-              <img src="assets/images/about/team2.jpeg" alt="">
-              <img src="assets/images/about/family.jpeg" alt="">
+            <div class="about-label" id="aboutLabel">
+              Almh. Ibu Parnginah
             </div>
           
           </div>
@@ -2470,6 +2483,30 @@
         a.classList.toggle('active', a.getAttribute('href') === '#' + current);
       });
     });
+
+    /* ---- ABOUT SLIDESHOW ---- */
+    const aboutSlides = document.querySelectorAll('.about-slide');
+    const aboutLabel = document.getElementById('aboutLabel');
+    
+    const aboutLabels = [
+      'Almh. Ibu Parnginah',
+      'Tim Al Hikmah',
+      'Momen Bersama Tim',
+      'Keluarga Besar Al Hikmah'
+    ];
+    
+    let aboutIndex = 0;
+    
+    setInterval(() => {
+      if (!aboutSlides.length || !aboutLabel) return;
+    
+      aboutSlides[aboutIndex].classList.remove('active');
+    
+      aboutIndex = (aboutIndex + 1) % aboutSlides.length;
+    
+      aboutSlides[aboutIndex].classList.add('active');
+      aboutLabel.textContent = aboutLabels[aboutIndex];
+    }, 3500);
 
   </script>
 
