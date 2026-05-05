@@ -14,19 +14,19 @@
        CSS VARIABLES & RESET
     ============================== */
     :root {
-      --primary:     #54604F;
-      --secondary:   #AA8E5F;
-      --bg:          #E6E7E7;
-      --text:        #231F20;
-      --white:       #FFFFFF;
-      --light:       #F4F3F1;
-      --primary-dark:#3a4436;
-      --secondary-light: #c8ab7a;
-      --shadow:      0 4px 24px rgba(35,31,32,0.10);
-      --shadow-lg:   0 12px 48px rgba(35,31,32,0.16);
-      --radius:      12px;
-      --radius-lg:   20px;
-      --transition:  all 0.35s cubic-bezier(0.4,0,0.2,1);
+      --primary:          #54604F;
+      --secondary:        #AA8E5F;
+      --bg:               #E6E7E7;
+      --text:             #231F20;
+      --white:            #FFFFFF;
+      --light:            #F4F3F1;
+      --primary-dark:     #3a4436;
+      --secondary-light:  #c8ab7a;
+      --shadow:           0 4px 24px rgba(35,31,32,0.10);
+      --shadow-lg:        0 12px 48px rgba(35,31,32,0.16);
+      --radius:           12px;
+      --radius-lg:        20px;
+      --transition:       all 0.35s cubic-bezier(0.4,0,0.2,1);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,8 +42,8 @@
     }
 
     img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
+    a   { text-decoration: none; color: inherit; }
+    ul  { list-style: none; }
 
     .container {
       width: 90%;
@@ -188,9 +188,7 @@
       transition: var(--transition);
     }
 
-    #navbar.scrolled .lang-switcher {
-      background: var(--bg);
-    }
+    #navbar.scrolled .lang-switcher { background: var(--bg); }
 
     .lang-btn {
       background: none;
@@ -289,61 +287,42 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(135deg, rgba(84,96,79,0.88) 0%, rgba(35,31,32,0.75) 60%, rgba(170,142,95,0.5) 100%);
+      background: linear-gradient(135deg, rgba(84,96,79,0.88) 0%, rgba(35,31,32,0.75) 60%, rgba(170,142,95,0.5) 100%);
       z-index: 1;
     }
 
-    /* Hero image kanan */
+    /* Hero image — right side */
     #hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 42%; /* sedikit lebih lebar biar transisi lebih panjang */
-    height: 100%;
-  
-    background-image: url("assets/images/hero-catering.jpg");
-    background-size: cover;
-    background-position: 10% center;
-  
-    opacity: 0.95;
-    z-index: 2;
-    pointer-events: none;
-  
-    /* GRADIENT SUPER HALUS */
-    -webkit-mask-image: linear-gradient(
-      to left,
-      rgba(0,0,0,1) 0%,
-      rgba(0,0,0,0.9) 20%,
-      rgba(0,0,0,0.7) 40%,
-      rgba(0,0,0,0.4) 60%,
-      rgba(0,0,0,0.1) 80%,
-      rgba(0,0,0,0) 100%
-    );
-  
-    mask-image: linear-gradient(
-      to left,
-      rgba(0,0,0,1) 0%,
-      rgba(0,0,0,0.9) 20%,
-      rgba(0,0,0,0.7) 40%,
-      rgba(0,0,0,0.4) 60%,
-      rgba(0,0,0,0.1) 80%,
-      rgba(0,0,0,0) 100%
-    );
-  }
+      content: "";
+      position: absolute;
+      top: 0; right: 0;
+      width: 42%;
+      height: 100%;
+      background-image: url("assets/images/hero-catering.jpg");
+      background-size: cover;
+      background-position: 10% center;
+      opacity: 0.95;
+      z-index: 2;
+      pointer-events: none;
+      -webkit-mask-image: linear-gradient(to left,
+        rgba(0,0,0,1)   0%,  rgba(0,0,0,0.9) 20%,
+        rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.4) 60%,
+        rgba(0,0,0,0.1) 80%, rgba(0,0,0,0)   100%);
+      mask-image: linear-gradient(to left,
+        rgba(0,0,0,1)   0%,  rgba(0,0,0,0.9) 20%,
+        rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.4) 60%,
+        rgba(0,0,0,0.1) 80%, rgba(0,0,0,0)   100%);
+    }
 
-    /* Decorative pattern overlay */
     .hero-pattern {
       position: absolute;
       inset: 0;
       z-index: 0;
       background-image:
         radial-gradient(circle at 20% 80%, rgba(170,142,95,0.18) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(84,96,79,0.22) 0%, transparent 50%);
+        radial-gradient(circle at 80% 20%, rgba(84,96,79,0.22)   0%, transparent 50%);
     }
 
-    /* Hero food placeholder */
     .hero-food-bg {
       position: absolute;
       inset: 0;
@@ -351,7 +330,6 @@
       background: var(--primary-dark);
     }
 
-    /* Decorative circles */
     .hero-deco {
       position: absolute;
       right: -100px;
@@ -411,14 +389,7 @@
 
     @keyframes pulse {
       0%,100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(1.4); }
-    }
-
-    .hero-logo-vertical {
-      width: 120px;
-      margin-bottom: 32px;
-      filter: brightness(0) invert(1);
-      opacity: 0.9;
+      50%      { opacity: 0.5; transform: scale(1.4); }
     }
 
     .hero-title {
@@ -473,20 +444,55 @@
     }
 
     /* ==============================
+       SCROLL-DOWN INDICATOR
+       FIX: was in HTML but had no CSS
+    ============================== */
+    .scroll-down {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.55;
+      transition: var(--transition);
+    }
+
+    .scroll-down:hover { opacity: 1; }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--white), transparent);
+      animation: scrollPulse 1.8s ease-in-out infinite;
+    }
+
+    .scroll-down span {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    @keyframes scrollPulse {
+      0%,100% { opacity: 0.3; transform: scaleY(1); }
+      50%      { opacity: 1;   transform: scaleY(1.1); }
+    }
+
+    /* ==============================
        SERVICES SECTION
     ============================== */
-    #services {
-      background: var(--white);
-    }
+    #services { background: var(--white); }
 
     .services-header {
       text-align: center;
       margin-bottom: 56px;
     }
 
-    .services-header .section-desc {
-      margin: 0 auto;
-    }
+    .services-header .section-desc { margin: 0 auto; }
 
     .services-grid {
       display: grid;
@@ -535,9 +541,7 @@
       transition: var(--transition);
     }
 
-    .service-card:hover .service-icon {
-      transform: scale(1.1) rotate(5deg);
-    }
+    .service-card:hover .service-icon { transform: scale(1.1) rotate(5deg); }
 
     .service-name {
       font-size: 1.05rem;
@@ -556,13 +560,9 @@
     /* ==============================
        MENU SECTION
     ============================== */
-    #menu {
-      background: var(--bg);
-    }
+    #menu { background: var(--bg); }
 
-    .menu-header {
-      margin-bottom: 48px;
-    }
+    .menu-header { margin-bottom: 48px; }
 
     .prasmanan-section {
       background: var(--white);
@@ -571,17 +571,15 @@
       margin-bottom: 48px;
       box-shadow: var(--shadow);
     }
-    
-    .prasmanan-section-head {
-      margin-bottom: 28px;
-    }
-    
+
+    .prasmanan-section-head { margin-bottom: 28px; }
+
     .prasmanan-section-head h3 {
       font-size: 1.6rem;
       color: var(--primary);
       margin-bottom: 8px;
     }
-    
+
     .prasmanan-section-head p {
       font-size: 0.95rem;
       color: var(--text);
@@ -632,7 +630,6 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* Snack & Kletikan: grid of item pills */
     .menu-items-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -665,7 +662,6 @@
       transition: var(--transition);
     }
 
-    /* Prasmanan: sub-category layout */
     .prasmanan-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -729,7 +725,6 @@
       margin-top: 16px;
     }
 
-    /* Gubugan */
     .gubugan-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -756,13 +751,12 @@
       box-shadow: var(--shadow);
     }
 
-    /* Minuman */
     .minuman-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 18px;
     }
-    
+
     .minuman-card {
       background: var(--white);
       border-radius: var(--radius);
@@ -771,25 +765,21 @@
       transition: var(--transition);
       box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
-    
+
     .minuman-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow);
     }
-    
-    /* IMAGE STYLE */
+
     .minuman-card img {
       width: 100%;
       height: 130px;
       object-fit: cover;
       transition: transform 0.3s ease;
     }
-    
-    .minuman-card:hover img {
-      transform: scale(1.05);
-    }
-    
-    /* TEXT */
+
+    .minuman-card:hover img { transform: scale(1.05); }
+
     .minuman-name {
       padding: 12px;
       font-size: 0.9rem;
@@ -797,74 +787,10 @@
       color: var(--text);
     }
 
-    /* Paket section inside menu */
-    .paket-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .paket-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      transition: var(--transition);
-      border: 1.5px solid transparent;
-    }
-
-    .paket-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--secondary);
-    }
-
-    .paket-header {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      padding: 28px;
-      color: var(--white);
-    }
-
-    .paket-header h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .paket-header p {
-      font-size: 0.78rem;
-      opacity: 0.75;
-      font-style: italic;
-    }
-
-    .paket-body {
-      padding: 24px 28px;
-    }
-
-    .paket-sub {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--secondary);
-      margin-bottom: 8px;
-      margin-top: 16px;
-    }
-
-    .paket-sub:first-child { margin-top: 0; }
-
-    .paket-items {
-      font-size: 0.83rem;
-      color: var(--text);
-      opacity: 0.75;
-      line-height: 1.9;
-    }
-
     /* ==============================
        GALLERY SECTION
     ============================== */
-    #gallery {
-      background: var(--white);
-    }
+    #gallery { background: var(--white); }
 
     .gallery-header {
       text-align: center;
@@ -876,7 +802,6 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: auto;
       gap: 16px;
     }
 
@@ -887,13 +812,13 @@
       position: relative;
     }
 
-    .gallery-item:nth-child(1) { grid-column: 1 / 6; grid-row: 1 / 3; }
-    .gallery-item:nth-child(2) { grid-column: 6 / 9; grid-row: 1 / 2; }
+    .gallery-item:nth-child(1) { grid-column: 1 / 6;  grid-row: 1 / 3; }
+    .gallery-item:nth-child(2) { grid-column: 6 / 9;  grid-row: 1 / 2; }
     .gallery-item:nth-child(3) { grid-column: 9 / 13; grid-row: 1 / 2; }
-    .gallery-item:nth-child(4) { grid-column: 6 / 9; grid-row: 2 / 3; }
+    .gallery-item:nth-child(4) { grid-column: 6 / 9;  grid-row: 2 / 3; }
     .gallery-item:nth-child(5) { grid-column: 9 / 13; grid-row: 2 / 3; }
-    .gallery-item:nth-child(6) { grid-column: 1 / 5; grid-row: 3 / 4; }
-    .gallery-item:nth-child(7) { grid-column: 5 / 9; grid-row: 3 / 4; }
+    .gallery-item:nth-child(6) { grid-column: 1 / 5;  grid-row: 3 / 4; }
+    .gallery-item:nth-child(7) { grid-column: 5 / 9;  grid-row: 3 / 4; }
     .gallery-item:nth-child(8) { grid-column: 9 / 13; grid-row: 3 / 4; }
 
     .gallery-placeholder {
@@ -908,25 +833,20 @@
       position: relative;
     }
 
-    /* Colorful placeholders with food emojis */
     .gallery-item:nth-child(1) .gallery-placeholder { min-height: 400px; background: linear-gradient(135deg, #54604F22, #AA8E5F22); }
     .gallery-item:nth-child(2) .gallery-placeholder { background: linear-gradient(135deg, #AA8E5F22, #54604F22); }
-    .gallery-item:nth-child(3) .gallery-placeholder { background: linear-gradient(135deg, #E6E7E7, #54604F11); }
+    .gallery-item:nth-child(3) .gallery-placeholder { background: linear-gradient(135deg, #E6E7E7,   #54604F11); }
     .gallery-item:nth-child(4) .gallery-placeholder { background: linear-gradient(135deg, #54604F11, #AA8E5F22); }
-    .gallery-item:nth-child(5) .gallery-placeholder { background: linear-gradient(135deg, #AA8E5F11, #E6E7E7); }
-    .gallery-item:nth-child(6) .gallery-placeholder { background: linear-gradient(135deg, #54604F22, #E6E7E7); }
-    .gallery-item:nth-child(7) .gallery-placeholder { background: linear-gradient(135deg, #E6E7E7, #AA8E5F22); }
+    .gallery-item:nth-child(5) .gallery-placeholder { background: linear-gradient(135deg, #AA8E5F11, #E6E7E7);   }
+    .gallery-item:nth-child(6) .gallery-placeholder { background: linear-gradient(135deg, #54604F22, #E6E7E7);   }
+    .gallery-item:nth-child(7) .gallery-placeholder { background: linear-gradient(135deg, #E6E7E7,   #AA8E5F22); }
     .gallery-item:nth-child(8) .gallery-placeholder { background: linear-gradient(135deg, #54604F11, #AA8E5F33); }
 
-    .gallery-ph-inner {
-      text-align: center;
-    }
+    .gallery-ph-inner { text-align: center; }
     .gallery-ph-inner span { font-size: 2.5rem; display: block; margin-bottom: 6px; }
-    .gallery-ph-inner p { font-size: 0.72rem; color: var(--text); opacity: 0.4; letter-spacing: 0.08em; }
+    .gallery-ph-inner p    { font-size: 0.72rem; color: var(--text); opacity: 0.4; letter-spacing: 0.08em; }
 
-    .gallery-item:hover .gallery-placeholder {
-      transform: scale(1.05);
-    }
+    .gallery-item:hover .gallery-placeholder { transform: scale(1.05); }
 
     .gallery-overlay {
       position: absolute;
@@ -962,9 +882,7 @@
       align-items: center;
     }
 
-    .about-visual {
-      position: relative;
-    }
+    .about-visual { position: relative; }
 
     .about-img-wrap {
       position: relative;
@@ -973,7 +891,8 @@
       aspect-ratio: 4/5;
       background: linear-gradient(145deg, var(--primary), var(--secondary));
     }
-    
+
+    /* FIX: consolidated the two separate .about-label rules into one */
     .about-label {
       position: absolute;
       left: 16px;
@@ -985,8 +904,9 @@
       padding: 7px 14px;
       border-radius: 999px;
       backdrop-filter: blur(8px);
+      z-index: 3;
     }
-    
+
     .about-gallery {
       position: absolute;
       right: 16px;
@@ -994,7 +914,7 @@
       display: flex;
       gap: 8px;
     }
-    
+
     .about-gallery img {
       width: 58px;
       height: 58px;
@@ -1002,21 +922,8 @@
       border-radius: 12px;
       border: 2px solid rgba(255,255,255,0.9);
     }
-    
-    .about-img-placeholder {
-      text-align: center;
-      color: rgba(255,255,255,0.8);
-    }
 
-    .about-img-placeholder span { font-size: 4rem; display: block; margin-bottom: 12px; }
-    .about-img-placeholder p { font-size: 0.8rem; letter-spacing: 0.08em; }
-    .about-img-placeholder i {
-      font-size: 4rem;
-      display: block;
-      margin-bottom: 12px;
-      color: rgba(255,255,255,0.9);
-    }
-
+    /* FIX: consolidated the two separate .about-badge-float rules into one */
     .about-badge-float {
       position: absolute;
       bottom: -20px;
@@ -1026,6 +933,7 @@
       border-radius: var(--radius-lg);
       padding: 20px 24px;
       box-shadow: var(--shadow-lg);
+      z-index: 4;
     }
 
     .about-badge-float strong {
@@ -1049,8 +957,6 @@
       border: 2px solid var(--secondary);
       opacity: 0.25;
     }
-
-    .about-content {}
 
     .about-story {
       font-size: 0.96rem;
@@ -1098,7 +1004,7 @@
       justify-content: center;
       flex-shrink: 0;
     }
-    
+
     .about-value-icon i {
       font-size: 1.1rem;
       color: var(--secondary);
@@ -1124,27 +1030,18 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-    
       opacity: 0;
       transform: scale(1.05);
       z-index: 1;
-    
       transition: opacity 1s ease, transform 4s ease;
     }
-    
+
     .about-slide.active {
       opacity: 1;
       transform: scale(1);
       z-index: 2;
     }
-    
-    .about-label {
-      z-index: 3;
-    }
-    
-    .about-badge-float {
-      z-index: 4;
-    }
+
     /* ==============================
        CONTACT SECTION
     ============================== */
@@ -1162,7 +1059,7 @@
 
     #contact .section-label { color: var(--secondary-light); }
     #contact .section-title { color: var(--white); }
-    #contact .section-desc { color: rgba(255,255,255,0.65); }
+    #contact .section-desc  { color: rgba(255,255,255,0.65); }
 
     .contact-info {
       margin-top: 40px;
@@ -1188,7 +1085,7 @@
       justify-content: center;
       flex-shrink: 0;
     }
-    
+
     .contact-icon i {
       font-size: 1.1rem;
       color: var(--secondary-light);
@@ -1275,15 +1172,9 @@
       opacity: 0.7;
     }
 
-    .footer-copy {
-      font-size: 0.78rem;
-      text-align: center;
-    }
+    .footer-copy { font-size: 0.78rem; text-align: center; }
 
-    .footer-social {
-      display: flex;
-      gap: 12px;
-    }
+    .footer-social { display: flex; gap: 12px; }
 
     .footer-social a {
       width: 36px; height: 36px;
@@ -1317,16 +1208,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
       box-shadow: 0 6px 24px rgba(37,211,102,0.4);
       transition: var(--transition);
-      text-decoration: none;
     }
-    
-    .wa-float i {
-      font-size: 1.6rem;
-    }
-    
+
+    .wa-float i { font-size: 1.6rem; }
+
     .wa-float:hover {
       transform: scale(1.12);
       box-shadow: 0 10px 32px rgba(37,211,102,0.5);
@@ -1343,12 +1230,12 @@
     }
 
     @keyframes waPulse {
-      0%,100% { transform: scale(1); opacity: 0.25; }
-      50% { transform: scale(1.5); opacity: 0; }
+      0%,100% { transform: scale(1);   opacity: 0.25; }
+      50%      { transform: scale(1.5); opacity: 0; }
     }
 
     /* ==============================
-       UTILITY: Fade-in on scroll
+       SCROLL REVEAL
     ============================== */
     .reveal {
       opacity: 0;
@@ -1356,62 +1243,12 @@
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
-
-    /* ==============================
-       RESPONSIVE
-    ============================== */
-    @media (max-width: 900px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-
-      .about-inner {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .about-badge-float {
-        bottom: 16px; right: 16px;
-      }
-
-      .contact-inner {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .gallery-item { grid-column: auto !important; grid-row: auto !important; }
-      .gallery-item:nth-child(1) .gallery-placeholder { min-height: 220px; }
-    }
-
-    @media (max-width: 600px) {
-      section { padding: 56px 0; }
-
-      .hero-stats { gap: 24px; }
-
-      .services-grid { grid-template-columns: 1fr 1fr; }
-
-      .gallery-grid { grid-template-columns: 1fr; }
-
-      .prasmanan-grid { grid-template-columns: 1fr; }
-
-      .footer-inner { flex-direction: column; text-align: center; }
-
-      .menu-tab { padding: 8px 16px; font-size: 0.78rem; }
-
-      .paket-grid { grid-template-columns: 1fr; }
-    }
 
     /* ==============================
        DIVIDER ORNAMENT
@@ -1442,161 +1279,84 @@
     }
 
     /* ==============================
-       FIX MOBILE HERO (WAJIB)
+       RESPONSIVE — tablet
+    ============================== */
+    @media (max-width: 900px) {
+      .nav-links    { display: none; }
+      .hamburger    { display: flex; }
+
+      .about-inner  { grid-template-columns: 1fr; gap: 48px; }
+      .about-badge-float { bottom: 16px; right: 16px; }
+
+      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+
+      .gallery-grid  { grid-template-columns: 1fr 1fr; }
+      .gallery-item  { grid-column: auto !important; grid-row: auto !important; }
+      .gallery-item:nth-child(1) .gallery-placeholder { min-height: 220px; }
+    }
+
+    /* ==============================
+       RESPONSIVE — mobile
+       FIX: merged three separate @media (max-width: 600px) blocks into one
     ============================== */
     @media (max-width: 600px) {
-    
-      #hero {
-        min-height: 100vh;
-        align-items: flex-start;
+      /* Layout */
+      section { padding: 56px 0; }
+
+      .container {
+        width: 100%;
+        padding-left: 22px;
+        padding-right: 22px;
       }
-    
-      /* Background jadi full + fade ke bawah */
+
+      /* Hero */
+      #hero { align-items: flex-start; }
+
       #hero::after {
         width: 100%;
         opacity: 0.55;
         background-position: center top;
-    
-        -webkit-mask-image: linear-gradient(
-          to bottom,
-          rgba(0,0,0,1) 0%,
+        -webkit-mask-image: linear-gradient(to bottom,
+          rgba(0,0,0,1)    0%,
           rgba(0,0,0,0.65) 45%,
-          rgba(0,0,0,0) 100%
-        );
-    
-        mask-image: linear-gradient(
-          to bottom,
-          rgba(0,0,0,1) 0%,
+          rgba(0,0,0,0)    100%);
+        mask-image: linear-gradient(to bottom,
+          rgba(0,0,0,1)    0%,
           rgba(0,0,0,0.65) 45%,
-          rgba(0,0,0,0) 100%
-        );
+          rgba(0,0,0,0)    100%);
       }
-    
-      /* Konten turun biar gak ketabrak navbar */
-      .hero-content {
-        padding: 140px 0 60px;
-      }
-    
-      /* Badge kecilin */
-      .hero-badge {
-        font-size: 0.65rem;
-        padding: 6px 14px;
-        margin-bottom: 20px;
-      }
-    
-      /* Judul utama */
-      .hero-title {
-        font-size: 2.2rem;
-        line-height: 1.2;
-        margin-bottom: 18px;
-      }
-    
-      /* Deskripsi */
-      .hero-sub {
-        font-size: 0.95rem;
-        line-height: 1.7;
-        margin-bottom: 30px;
-      }
-    
-      /* Tombol jadi vertikal */
-      .hero-actions {
-        flex-direction: column;
-        gap: 12px;
-      }
-    
-      .hero-actions .btn {
-        width: 100%;
-        justify-content: center;
-        padding: 14px;
-      }
-    
-      /* Lingkaran dekorasi dikecilin */
-      .hero-deco {
-        width: 400px;
-        height: 400px;
-        right: -150px;
-        opacity: 0.4;
-      }
-    }
 
-    /* ==============================
-       FIX PADDING HERO MOBILE
-    ============================== */
-    @media (max-width: 600px) {
-    
       .hero-content {
         padding-top: 135px;
         padding-left: 0;
         padding-right: 0;
       }
-    
-      .hero-title,
-      .hero-sub,
-      .hero-badge {
-        max-width: 100%;
-      }
-    
-      .hero-title {
-        font-size: 2.05rem;
-        line-height: 1.22;
-      }
-    
-      .hero-sub {
-        font-size: 0.92rem;
-        line-height: 1.65;
-      }
-    
-      .hero-actions {
-        width: 100%;
-        max-width: 100%;
-      }
-    
-      .hero-actions .btn {
-        width: 100%;
-      }
-    }
 
-    /* ==============================
-       CONSISTENT MOBILE CONTAINER
-    ============================== */
-    @media (max-width: 600px) {
-      .container {
-        width: 100%;
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-    }
+      .hero-badge   { font-size: 0.65rem; padding: 6px 14px; margin-bottom: 20px; }
 
-    /* ==============================
-       HERO STATS MOBILE RESPONSIVE
-    ============================== */
-    @media (max-width: 600px) {
-      .hero-stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        margin-top: 34px;
-        padding-top: 24px;
-        width: 100%;
-      }
-    
-      .hero-stats > div {
-        text-align: center;
-      }
-    
-      .hero-stat-num {
-        font-size: 1.45rem;
-        line-height: 1;
-      }
-    
-      .hero-stat-label {
-        font-size: 0.62rem;
-        line-height: 1.25;
-        margin-top: 6px;
-        letter-spacing: 0.02em;
-      }
-    }
+      .hero-title   { font-size: 2.05rem; line-height: 1.22; max-width: 100%; }
 
+      .hero-sub     { font-size: 0.92rem; line-height: 1.65; max-width: 100%; }
+
+      .hero-actions { flex-direction: column; gap: 12px; width: 100%; max-width: 100%; }
+      .hero-actions .btn { width: 100%; justify-content: center; padding: 14px; }
+
+      .hero-stats { display: none; }
+
+      .hero-deco { width: 400px; height: 400px; right: -150px; opacity: 0.4; }
+
+      /* Scroll indicator hidden on mobile */
+      .scroll-down { display: none; }
+
+      /* Sections */
+      .services-grid  { grid-template-columns: 1fr 1fr; }
+      .gallery-grid   { grid-template-columns: 1fr; }
+      .prasmanan-grid { grid-template-columns: 1fr; }
+
+      .menu-tab { padding: 8px 16px; font-size: 0.78rem; }
+
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
   </style>
 </head>
 <body>
@@ -1609,24 +1369,22 @@
       <div class="nav-inner">
 
         <a href="#hero" class="nav-logo">
-          <!-- Light logo for transparent navbar (on dark hero) -->
           <img class="logo-light" src="Logo Al Hikmah Horizontal Super Light.png" alt="Al Hikmah Catering" />
-          <!-- Dark logo for solid navbar -->
-          <img class="logo-dark" src="Logo Al Hikmah Horizontal Dark.png" alt="Al Hikmah Catering" />
+          <img class="logo-dark"  src="Logo Al Hikmah Horizontal Dark.png"        alt="Al Hikmah Catering" />
         </a>
 
         <ul class="nav-links" id="navLinks">
-          <li><a href="#hero"     data-key="nav_home">Beranda</a></li>
-          <li><a href="#menu"     data-key="nav_menu">Menu</a></li>
-          <li><a href="#gallery"  data-key="nav_gallery">Galeri</a></li>
-          <li><a href="#about"    data-key="nav_about">Tentang</a></li>
-          <li><a href="#contact"  data-key="nav_contact">Kontak</a></li>
+          <li><a href="#hero"    data-key="nav_home">Beranda</a></li>
+          <li><a href="#menu"    data-key="nav_menu">Menu</a></li>
+          <li><a href="#gallery" data-key="nav_gallery">Galeri</a></li>
+          <li><a href="#about"   data-key="nav_about">Tentang</a></li>
+          <li><a href="#contact" data-key="nav_contact">Kontak</a></li>
         </ul>
 
         <div style="display:flex;align-items:center;gap:16px;">
           <div class="lang-switcher">
-            <button class="lang-btn active" id="btnID" onclick="setLang('id')">ID</button>
-            <button class="lang-btn"        id="btnEN" onclick="setLang('en')">EN</button>
+            <button class="lang-btn active" id="btnID"  onclick="setLang('id')">ID</button>
+            <button class="lang-btn"        id="btnEN"  onclick="setLang('en')">EN</button>
           </div>
           <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <span></span><span></span><span></span>
@@ -1664,10 +1422,9 @@
 
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
+          <!-- FIX: matched initial HTML text to translations.id value -->
           <span data-key="hero_badge">Halal · Higienis · Terpercaya</span>
         </div>
-
-        <!-- <img class="hero-logo-vertical" src="Logo Al Hikmah Horizontal Light.png" alt="Al Hikmah Catering" /> -->
 
         <h1 class="hero-title" data-key="hero_title">
           Catering rumahan dengan<br/><em>cita rasa istimewa</em><br/>untuk setiap momen
@@ -1704,6 +1461,7 @@
       </div>
     </div>
 
+    <!-- FIX: scroll-down now has CSS styles defined above -->
     <div class="scroll-down">
       <div class="scroll-line"></div>
       <span>scroll</span>
@@ -1724,27 +1482,27 @@
       <div class="services-grid">
         <div class="service-card reveal reveal-delay-1">
           <div class="service-icon">🍽️</div>
-          <div class="service-name" data-key="svc1_name">Prasmanan</div>
+          <div class="service-name"    data-key="svc1_name">Prasmanan</div>
           <div class="service-name-en" data-key="svc1_sub">Buffet Catering</div>
         </div>
         <div class="service-card reveal reveal-delay-2">
           <div class="service-icon">👨‍🍳</div>
-          <div class="service-name" data-key="svc2_name">Racikan</div>
+          <div class="service-name"    data-key="svc2_name">Racikan</div>
           <div class="service-name-en" data-key="svc2_sub">Custom Catering</div>
         </div>
         <div class="service-card reveal reveal-delay-3">
           <div class="service-icon">🎂</div>
-          <div class="service-name" data-key="svc3_name">Bento Ulang Tahun Anak</div>
+          <div class="service-name"    data-key="svc3_name">Bento Ulang Tahun Anak</div>
           <div class="service-name-en" data-key="svc3_sub">Kids Birthday Bento</div>
         </div>
         <div class="service-card reveal reveal-delay-4">
           <div class="service-icon">💍</div>
-          <div class="service-name" data-key="svc4_name">Hantaran Pernikahan</div>
+          <div class="service-name"    data-key="svc4_name">Hantaran Pernikahan</div>
           <div class="service-name-en" data-key="svc4_sub">Wedding Hampers</div>
         </div>
         <div class="service-card reveal reveal-delay-1">
           <div class="service-icon">🌾</div>
-          <div class="service-name" data-key="svc5_name">Tumpeng Komplit</div>
+          <div class="service-name"    data-key="svc5_name">Tumpeng Komplit</div>
           <div class="service-name-en" data-key="svc5_sub">Traditional Tumpeng</div>
         </div>
       </div>
@@ -1769,70 +1527,35 @@
           <h3>Paket Prasmanan</h3>
           <p>Pilihan paket prasmanan untuk acara keluarga, hajatan, hingga pesta besar.</p>
         </div>
-        
+
         <div class="prasmanan-grid">
 
           <!-- Paket 1 -->
           <div class="prasmanan-card">
             <div class="prasmanan-card-title">Paket 1</div>
             <div class="prasmanan-items">
-          
-              <div class="prasmanan-item">
-                <strong style="color:var(--secondary);font-size:0.78rem;">Minuman</strong>
-              </div>
+              <div class="prasmanan-item"><strong style="color:var(--secondary);font-size:0.78rem;">Minuman</strong></div>
               <div class="prasmanan-item">Teh / Air Putih</div>
-          
-              <div class="prasmanan-item" style="margin-top:8px;">
-                <strong style="color:var(--secondary);font-size:0.78rem;">Snack</strong>
-              </div>
-              <div class="prasmanan-item">
-                Roti Mandarin / Roti Mandarin Kismis / Roti Gulung Pandan / Roti Gulung Cokelat / Cake Buah / Cake Klepon / Cake Red Velvet
-              </div>
-              <div class="prasmanan-item">
-                Sosis Solo / Sosis Basah / Kroket / Resoles (Mayo / Sayur) / Sasisu
-              </div>
-              <div class="prasmanan-item">
-                Kacang Mete / Kacang Bawang / Kacang Telur / Sumpia
-              </div>
-          
-              <div class="prasmanan-item" style="margin-top:8px;">
-                <strong style="color:var(--secondary);font-size:0.78rem;">Soup</strong>
-              </div>
-              <div class="prasmanan-item">
-                Soup Manten / Soup Galantin / Soup Matahari / Selat Solo / Timlo
-              </div>
-          
-              <div class="prasmanan-item" style="margin-top:8px;">
-                <strong style="color:var(--secondary);font-size:0.78rem;">Menu Pokok</strong>
-              </div>
-              <div class="prasmanan-item">
-                Nasi Putih / Nasi Kuning / Nasi Putih + Kuning
-              </div>
-              <div class="prasmanan-item">
-                Bestik Sapi / Bestik Ayam Gelinding
-              </div>
-              <div class="prasmanan-item">
-                Sambal Goreng Kreni / Sambal Goreng Ati
-              </div>
-              <div class="prasmanan-item">
-                Cap Cay Bakso / Paklay / Orak Arik
-              </div>
-              <div class="prasmanan-item">
-                Nugget / Ayam Crispy / Udang Goreng
-              </div>
-              <div class="prasmanan-item">
-                Acar (Mentah / Matang) / Kerupuk
-              </div>
-          
-              <div class="prasmanan-item" style="margin-top:8px;">
-                <strong style="color:var(--secondary);font-size:0.78rem;">Penutup</strong>
-              </div>
-              <div class="prasmanan-item">
-                Es Dawet / Es Kopyor / Es Buah / Es Krim / Es Blok
-              </div>
-          
+
+              <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Snack</strong></div>
+              <div class="prasmanan-item">Roti Mandarin / Roti Mandarin Kismis / Roti Gulung Pandan / Roti Gulung Cokelat / Cake Buah / Cake Klepon / Cake Red Velvet</div>
+              <div class="prasmanan-item">Sosis Solo / Sosis Basah / Kroket / Resoles (Mayo / Sayur) / Sasisu</div>
+              <div class="prasmanan-item">Kacang Mete / Kacang Bawang / Kacang Telur / Sumpia</div>
+
+              <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Soup</strong></div>
+              <div class="prasmanan-item">Soup Manten / Soup Galantin / Soup Matahari / Selat Solo / Timlo</div>
+
+              <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Menu Pokok</strong></div>
+              <div class="prasmanan-item">Nasi Putih / Nasi Kuning / Nasi Putih + Kuning</div>
+              <div class="prasmanan-item">Bestik Sapi / Bestik Ayam Gelinding</div>
+              <div class="prasmanan-item">Sambal Goreng Kreni / Sambal Goreng Ati</div>
+              <div class="prasmanan-item">Cap Cay Bakso / Paklay / Orak Arik</div>
+              <div class="prasmanan-item">Nugget / Ayam Crispy / Udang Goreng</div>
+              <div class="prasmanan-item">Acar (Mentah / Matang) / Kerupuk</div>
+
+              <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Penutup</strong></div>
+              <div class="prasmanan-item">Es Dawet / Es Kopyor / Es Buah / Es Krim / Es Blok</div>
             </div>
-          
             <p class="prasmanan-note">*Harga sesuai dengan pilihan menu</p>
           </div>
 
@@ -1840,59 +1563,30 @@
           <div class="prasmanan-card">
             <div class="prasmanan-card-title">Paket 2</div>
             <div class="prasmanan-items">
-          
-              <div class="prasmanan-item">
-                <strong style="color:var(--secondary);font-size:0.78rem;">Minuman</strong>
-              </div>
+              <div class="prasmanan-item"><strong style="color:var(--secondary);font-size:0.78rem;">Minuman</strong></div>
               <div class="prasmanan-item">Teh / Air Putih</div>
-          
-              <div class="prasmanan-item" style="margin-top:8px;">
-                <strong style="color:var(--secondary);font-size:0.78rem;">Snack</strong>
-              </div>
-              <div class="prasmanan-item">
-                Roti Mandarin / Roti Mandarin Kismis / Roti Gulung Pandan / Roti Gulung Cokelat / Cake Buah / Cake Klepon / Cake Red Velvet
-              </div>
-              <div class="prasmanan-item">
-                Sosis Solo / Sosis Basah / Kroket / Resoles (Mayo / Sayur) / Sasisu
-              </div>
-              <div class="prasmanan-item">
-                Kacang Mete / Kacang Bawang / Kacang Telur / Sumpia
-              </div>
-          
-              <div class="prasmanan-item" style="margin-top:8px;">
-                <strong style="color:var(--secondary);font-size:0.78rem;">Soup</strong>
-              </div>
-              <div class="prasmanan-item">
-                Soup Manten / Soup Galantin / Soup Matahari / Selat Solo / Timlo
-              </div>
-          
-              <div class="prasmanan-item" style="margin-top:8px;">
-                <strong style="color:var(--secondary);font-size:0.78rem;">Nasi Gunung Sari</strong>
-              </div>
-              <div class="prasmanan-item">
-                Bestik Sapi / Bestik Ayam Gelinding
-              </div>
-              <div class="prasmanan-item">
-                Sambal Goreng Kreni / Sambal Goreng Ati
-              </div>
+
+              <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Snack</strong></div>
+              <div class="prasmanan-item">Roti Mandarin / Roti Mandarin Kismis / Roti Gulung Pandan / Roti Gulung Cokelat / Cake Buah / Cake Klepon / Cake Red Velvet</div>
+              <div class="prasmanan-item">Sosis Solo / Sosis Basah / Kroket / Resoles (Mayo / Sayur) / Sasisu</div>
+              <div class="prasmanan-item">Kacang Mete / Kacang Bawang / Kacang Telur / Sumpia</div>
+
+              <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Soup</strong></div>
+              <div class="prasmanan-item">Soup Manten / Soup Galantin / Soup Matahari / Selat Solo / Timlo</div>
+
+              <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Nasi Gunung Sari</strong></div>
+              <div class="prasmanan-item">Bestik Sapi / Bestik Ayam Gelinding</div>
+              <div class="prasmanan-item">Sambal Goreng Kreni / Sambal Goreng Ati</div>
               <div class="prasmanan-item">Telur Rawis</div>
               <div class="prasmanan-item">Abon</div>
               <div class="prasmanan-item">Kering Klengkam</div>
               <div class="prasmanan-item">Acar Kuning</div>
-              <div class="prasmanan-item">
-                Nugget / Ayam Crispy / Udang Goreng
-              </div>
+              <div class="prasmanan-item">Nugget / Ayam Crispy / Udang Goreng</div>
               <div class="prasmanan-item">Kerupuk</div>
-          
-              <div class="prasmanan-item" style="margin-top:8px;">
-                <strong style="color:var(--secondary);font-size:0.78rem;">Penutup</strong>
-              </div>
-              <div class="prasmanan-item">
-                Es Dawet / Es Kopyor / Es Buah / Es Krim / Es Blok
-              </div>
-          
+
+              <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Penutup</strong></div>
+              <div class="prasmanan-item">Es Dawet / Es Kopyor / Es Buah / Es Krim / Es Blok</div>
             </div>
-          
             <p class="prasmanan-note">*Harga sesuai dengan pilihan menu</p>
           </div>
 
@@ -1900,56 +1594,29 @@
           <div class="prasmanan-card">
             <div class="prasmanan-card-title">Menu Pesta (Prasmanan)</div>
             <div class="prasmanan-items">
-          
-              <div class="prasmanan-item">
-                <strong style="color:var(--secondary);font-size:0.78rem;">Menu Pokok</strong>
-              </div>
+              <div class="prasmanan-item"><strong style="color:var(--secondary);font-size:0.78rem;">Menu Pokok</strong></div>
               <div class="prasmanan-item">Nasi Putih / Nasi Goreng</div>
-              <div class="prasmanan-item">
-                Sambal Goreng Kreni / Sambal Goreng Ati / Sambal Goreng Krecek
-              </div>
-              <div class="prasmanan-item">
-                Cap Cay / Ca Jamur / Asem-asem / Paklay / Orak Arik
-              </div>
-              <div class="prasmanan-item">
-                Kakap (Asam Manis / Bakar)
-              </div>
-              <div class="prasmanan-item">
-                Ayam Goreng / Empal Sapi
-              </div>
-              <div class="prasmanan-item">
-                Mie Goreng / Bihun Goreng
-              </div>
-              <div class="prasmanan-item">
-                Sop Jamur / Sop Ayam
-              </div>
+              <div class="prasmanan-item">Sambal Goreng Kreni / Sambal Goreng Ati / Sambal Goreng Krecek</div>
+              <div class="prasmanan-item">Cap Cay / Ca Jamur / Asem-asem / Paklay / Orak Arik</div>
+              <div class="prasmanan-item">Kakap (Asam Manis / Bakar)</div>
+              <div class="prasmanan-item">Ayam Goreng / Empal Sapi</div>
+              <div class="prasmanan-item">Mie Goreng / Bihun Goreng</div>
+              <div class="prasmanan-item">Sop Jamur / Sop Ayam</div>
               <div class="prasmanan-item">Kerupuk Udang</div>
-              <div class="prasmanan-item">
-                Acar / Sambal Lalapan / Acar Kuning
-              </div>
-          
-              <div class="prasmanan-item" style="margin-top:8px;">
-                <strong style="color:var(--secondary);font-size:0.78rem;">Buah</strong>
-              </div>
-              <div class="prasmanan-item">
-                Buah Potong (Melon / Semangka / Nanas / Pepaya)
-              </div>
-              <div class="prasmanan-item">
-                Es Buah / Es Dawet / Es Campur / Es Krim / Puding
-              </div>
-          
-              <div class="prasmanan-item" style="margin-top:8px;">
-                <strong style="color:var(--secondary);font-size:0.78rem;">Minuman</strong>
-              </div>
+              <div class="prasmanan-item">Acar / Sambal Lalapan / Acar Kuning</div>
+
+              <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Buah</strong></div>
+              <div class="prasmanan-item">Buah Potong (Melon / Semangka / Nanas / Pepaya)</div>
+              <div class="prasmanan-item">Es Buah / Es Dawet / Es Campur / Es Krim / Puding</div>
+
+              <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Minuman</strong></div>
               <div class="prasmanan-item">Air Putih</div>
               <div class="prasmanan-item">Jus Buah</div>
               <div class="prasmanan-item">Softdrink</div>
               <div class="prasmanan-item">Teh Manis</div>
               <div class="prasmanan-item">Es Batu</div>
-          
-              <div class="prasmanan-item" style="margin-top:8px;">
-                <strong style="color:var(--secondary);font-size:0.78rem;">Menu Gubugan</strong>
-              </div>
+
+              <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Menu Gubugan</strong></div>
               <div class="prasmanan-item">Tengkleng</div>
               <div class="prasmanan-item">Bakso</div>
               <div class="prasmanan-item">Timlo</div>
@@ -1957,16 +1624,14 @@
               <div class="prasmanan-item">Coto Makassar</div>
               <div class="prasmanan-item">Siomay</div>
               <div class="prasmanan-item">Sate Ayam + Lontong</div>
-          
             </div>
-          
             <p class="prasmanan-note">*Harga sesuai dengan pilihan menu</p>
           </div>
 
         </div>
       </div>
 
-      <!-- Tab buttons -->
+      <!-- Tab buttons — FIX: removed orphan tab_prasmanan key (no matching tab existed) -->
       <div class="menu-tabs reveal" id="menuTabs">
         <button class="menu-tab active" onclick="switchTab('snack-manis')" data-key="tab_snack_manis">Snack Manis</button>
         <button class="menu-tab"        onclick="switchTab('snack-asin')"  data-key="tab_snack_asin">Snack Asin</button>
@@ -2044,50 +1709,41 @@
         <p style="margin-top:20px;font-size:0.8rem;color:var(--text);opacity:0.6;font-style:italic;" data-key="price_note">*Harga sesuai dengan pilihan menu</p>
       </div>
 
-      <!-- MINUMAN -->
+      <!-- MINUMAN — FIX: added loading="lazy" to all images -->
       <div class="menu-panel" id="panel-minuman">
         <div class="minuman-grid">
-      
           <div class="minuman-card">
-            <img src="assets/images/minuman/water.jpg" alt="Air Putih">
+            <img src="assets/images/minuman/water.jpg"     alt="Air Putih"  loading="lazy">
             <div class="minuman-name">Air Putih</div>
           </div>
-      
           <div class="minuman-card">
-            <img src="assets/images/minuman/juice.jpg" alt="Jus Buah">
+            <img src="assets/images/minuman/juice.jpg"     alt="Jus Buah"   loading="lazy">
             <div class="minuman-name">Jus Buah</div>
           </div>
-      
           <div class="minuman-card">
-            <img src="assets/images/minuman/softdrink.jpg" alt="Softdrink">
+            <img src="assets/images/minuman/softdrink.jpg" alt="Softdrink"  loading="lazy">
             <div class="minuman-name">Softdrink</div>
           </div>
-      
           <div class="minuman-card">
-            <img src="assets/images/minuman/teh.png" alt="Teh Manis">
+            <img src="assets/images/minuman/teh.png"       alt="Teh Manis"  loading="lazy">
             <div class="minuman-name">Teh Manis</div>
           </div>
-      
           <div class="minuman-card">
-            <img src="assets/images/minuman/esdawet.png" alt="Es Dawet">
+            <img src="assets/images/minuman/esdawet.png"   alt="Es Dawet"   loading="lazy">
             <div class="minuman-name">Es Dawet</div>
           </div>
-      
           <div class="minuman-card">
-            <img src="assets/images/minuman/escampur.png" alt="Es Campur">
+            <img src="assets/images/minuman/escampur.png"  alt="Es Campur"  loading="lazy">
             <div class="minuman-name">Es Campur</div>
           </div>
-      
           <div class="minuman-card">
-            <img src="assets/images/minuman/eskrim.png" alt="Es Krim">
+            <img src="assets/images/minuman/eskrim.png"    alt="Es Krim"    loading="lazy">
             <div class="minuman-name">Es Krim</div>
           </div>
-
           <div class="minuman-card">
-            <img src="assets/images/minuman/esdegan.png" alt="Es Degan">
+            <img src="assets/images/minuman/esdegan.png"   alt="Es Degan"   loading="lazy">
             <div class="minuman-name">Es Degan</div>
           </div>
-      
         </div>
       </div>
 
@@ -2107,79 +1763,38 @@
 
       <div class="gallery-grid reveal">
         <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <div class="gallery-ph-inner">
-              <span>🍽️</span>
-              <p>Prasmanan Setup</p>
-            </div>
-          </div>
+          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🍽️</span><p>Prasmanan Setup</p></div></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal1">Meja Prasmanan Pernikahan</div></div>
         </div>
         <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <div class="gallery-ph-inner">
-              <span>🎂</span>
-              <p>Snack Display</p>
-            </div>
-          </div>
+          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🎂</span><p>Snack Display</p></div></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal2">Aneka Snack Manis</div></div>
         </div>
         <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <div class="gallery-ph-inner">
-              <span>🥘</span>
-              <p>Main Course</p>
-            </div>
-          </div>
+          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🥘</span><p>Main Course</p></div></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal3">Menu Pesta Prasmanan</div></div>
         </div>
         <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <div class="gallery-ph-inner">
-              <span>🥟</span>
-              <p>Snack Asin</p>
-            </div>
-          </div>
+          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🥟</span><p>Snack Asin</p></div></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal4">Snack Asin Pilihan</div></div>
         </div>
         <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <div class="gallery-ph-inner">
-              <span>🌾</span>
-              <p>Tumpeng</p>
-            </div>
-          </div>
+          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🌾</span><p>Tumpeng</p></div></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal5">Tumpeng Komplit</div></div>
         </div>
         <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <div class="gallery-ph-inner">
-              <span>🎉</span>
-              <p>Birthday Bento</p>
-            </div>
-          </div>
+          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🎉</span><p>Birthday Bento</p></div></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal6">Bento Ulang Tahun Anak</div></div>
         </div>
         <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <div class="gallery-ph-inner">
-              <span>🍜</span>
-              <p>Live Station</p>
-            </div>
-          </div>
+          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🍜</span><p>Live Station</p></div></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal7">Stand Menu Gubugan</div></div>
         </div>
         <div class="gallery-item">
-          <div class="gallery-placeholder">
-            <div class="gallery-ph-inner">
-              <span>💍</span>
-              <p>Wedding Hampers</p>
-            </div>
-          </div>
+          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>💍</span><p>Wedding Hampers</p></div></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal8">Hantaran Pernikahan</div></div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -2193,18 +1808,12 @@
         <div class="about-visual reveal">
           <div class="about-deco-circle"></div>
           <div class="about-img-wrap">
-
-            <!-- SLIDES -->
-            <img src="assets/images/about/founder.png" class="about-slide active" alt="">
-            <img src="assets/images/about/team1.jpeg" class="about-slide" alt="">
-            <img src="assets/images/about/team2.jpeg" class="about-slide" alt="">
-            <img src="assets/images/about/family.jpeg" class="about-slide" alt="">
-          
-            <!-- LABEL -->
-            <div class="about-label" id="aboutLabel">
-              Almh. Ibu Parnginah
-            </div>
-          
+            <!-- FIX: added descriptive alt text to all about slides -->
+            <img src="assets/images/about/founder.png"  class="about-slide active" alt="Almh. Ibu Parnginah, pendiri Al Hikmah Catering">
+            <img src="assets/images/about/team1.jpeg"   class="about-slide"        alt="Tim Al Hikmah Catering">
+            <img src="assets/images/about/team2.jpeg"   class="about-slide"        alt="Momen bersama tim Al Hikmah Catering">
+            <img src="assets/images/about/family.jpeg"  class="about-slide"        alt="Keluarga besar Al Hikmah Catering">
+            <div class="about-label" id="aboutLabel">Almh. Ibu Parnginah</div>
           </div>
           <div class="about-badge-float">
             <strong>26+</strong>
@@ -2228,30 +1837,24 @@
 
           <div class="about-values">
             <div class="about-value">
-              <div class="about-value-icon">
-                <i class="fa-solid fa-shield-halved"></i>
-              </div>
+              <div class="about-value-icon"><i class="fa-solid fa-shield-halved"></i></div>
               <div class="about-value-text">
                 <strong data-key="val1_title">Halal & Higienis</strong>
-                <span data-key="val1_desc">Seluruh proses produksi mengutamakan kebersihan dan standar halal</span>
+                <span   data-key="val1_desc">Seluruh proses produksi mengutamakan kebersihan dan standar halal</span>
               </div>
             </div>
             <div class="about-value">
-              <div class="about-value-icon">
-                <i class="fa-solid fa-utensils"></i>
-              </div>
+              <div class="about-value-icon"><i class="fa-solid fa-utensils"></i></div>
               <div class="about-value-text">
                 <strong data-key="val2_title">Resep Otentik</strong>
-                <span data-key="val2_desc">Cita rasa asli Jawa Tengah yang telah teruji selama bertahun-tahun</span>
+                <span   data-key="val2_desc">Cita rasa asli Jawa Tengah yang telah teruji selama bertahun-tahun</span>
               </div>
             </div>
             <div class="about-value">
-              <div class="about-value-icon">
-                <i class="fa-solid fa-truck-fast"></i>
-              </div>
+              <div class="about-value-icon"><i class="fa-solid fa-truck-fast"></i></div>
               <div class="about-value-text">
                 <strong data-key="val3_title">Tepat Waktu</strong>
-                <span data-key="val3_desc">Komitmen pengiriman dan penyajian sesuai jadwal acara Anda</span>
+                <span   data-key="val3_desc">Komitmen pengiriman dan penyajian sesuai jadwal acara Anda</span>
               </div>
             </div>
           </div>
@@ -2275,27 +1878,21 @@
 
           <div class="contact-info">
             <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
+              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
               <div>
                 <div class="contact-label" data-key="contact_addr_label">Alamat</div>
                 <div class="contact-value">Kios No. 58/59 Pasar Sambi<br/>Jl. Bangak - Simo, Dusun I, Tempursari<br/>Sambi, Boyolali, Jawa Tengah 57376</div>
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fa-solid fa-phone"></i>
-              </div>
+              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
               <div>
                 <div class="contact-label" data-key="contact_wa_label">WhatsApp</div>
                 <div class="contact-value">082136344732 / 081329969126</div>
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fa-brands fa-instagram"></i>
-              </div>
+              <div class="contact-icon"><i class="fa-brands fa-instagram"></i></div>
               <div>
                 <div class="contact-label">Instagram</div>
                 <div class="contact-value">@alhikmah.catering</div>
@@ -2346,7 +1943,9 @@
           <span data-key="footer_copy">&copy; 2026 Al Hikmah Catering. Semua hak dilindungi.</span>
         </div>
         <div class="footer-social">
-          <a href="https://wa.me/6282136344732?text=Halo%2C%20saya%20ingin%20tanya%20paket%20catering%20untuk%20acara%20%5Bjenis%20acara%5D%20tanggal%20%5Btanggal%5D" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://wa.me/6282136344732?text=Halo%2C%20saya%20ingin%20tanya%20paket%20catering%20untuk%20acara%20%5Bjenis%20acara%5D%20tanggal%20%5Btanggal%5D" target="_blank" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
           <a href="https://www.instagram.com/alhikmah.catering" target="_blank" title="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
@@ -2372,13 +1971,14 @@
     /* ---- TRANSLATIONS ---- */
     const translations = {
       id: {
-        nav_home:      'Beranda',
-        nav_menu:      'Menu',
-        nav_gallery:   'Galeri',
-        nav_about:     'Tentang',
-        nav_contact:   'Kontak',
+        nav_home:    'Beranda',
+        nav_menu:    'Menu',
+        nav_gallery: 'Galeri',
+        nav_about:   'Tentang',
+        nav_contact: 'Kontak',
 
-        hero_badge:    'Halal · Higienis · Berpengalaman',
+        /* FIX: matched hero_badge to initial HTML value ('Terpercaya' not 'Berpengalaman') */
+        hero_badge:    'Halal · Higienis · Terpercaya',
         hero_title:    'Catering rumahan dengan<br/><em>cita rasa istimewa</em><br/>untuk setiap momen',
         hero_sub:      'Melayani berbagai kebutuhan catering di Boyolali dan sekitarnya — dari prasmanan pernikahan hingga bento ulang tahun anak.',
         hero_cta:      'Pesan Sekarang',
@@ -2391,24 +1991,21 @@
         services_label: 'Layanan Kami',
         services_title: 'Apa yang Kami Sajikan',
         services_desc:  'Dari prasmanan pernikahan mewah hingga hantaran, kami hadir untuk memenuhi setiap kebutuhan kuliner spesial Anda.',
-        svc1_name: 'Prasmanan',         svc1_sub: 'Buffet Catering',
-        svc2_name: 'Racikan',           svc2_sub: 'Custom Catering',
+        svc1_name: 'Prasmanan',            svc1_sub: 'Buffet Catering',
+        svc2_name: 'Racikan',              svc2_sub: 'Custom Catering',
         svc3_name: 'Bento Ulang Tahun Anak', svc3_sub: 'Kids Birthday Bento',
-        svc4_name: 'Hantaran Pernikahan', svc4_sub: 'Wedding Hampers',
-        svc5_name: 'Tumpeng Komplit',   svc5_sub: 'Traditional Tumpeng',
+        svc4_name: 'Hantaran Pernikahan',  svc4_sub: 'Wedding Hampers',
+        svc5_name: 'Tumpeng Komplit',      svc5_sub: 'Traditional Tumpeng',
 
         menu_label: 'Daftar Menu',
         menu_title: 'Menu Pilihan Kami',
         menu_desc:  'Pilih kategori untuk menjelajahi berbagai pilihan menu lezat kami. Harga menyesuaikan pilihan menu.',
+        /* FIX: removed orphan tab_prasmanan key — no tab button uses it */
         tab_snack_manis: 'Snack Manis',
         tab_snack_asin:  'Snack Asin',
         tab_kletikan:    'Kletikan',
-        tab_prasmanan:   'Menu Prasmanan',
         tab_gubugan:     'Menu Gubugan',
         tab_minuman:     'Minuman',
-        paket1:     'Paket 1',
-        paket2:     'Paket 2',
-        pesta:      'Menu Pesta (Prasmanan)',
         price_note: '*Harga sesuai dengan pilihan menu',
 
         gallery_label: 'Galeri',
@@ -2429,9 +2026,9 @@
         about_story1: '<strong>Al Hikmah Catering</strong> lahir dari dapur kecil di Boyolali, dibawa oleh semangat seorang ibu yang percaya bahwa makanan bukan sekadar mengenyangkan — tapi menyatukan, menghangatkan, dan merayakan kehidupan.',
         about_story2: 'Berawal dari pesanan tetangga dan kerabat, kini kami telah melayani ratusan acara besar di Boyolali dan sekitarnya. Setiap sajian dimasak dengan bahan-bahan segar pilihan, resep turun-temurun, dan cinta yang tidak pernah berkurang.',
         about_story3: 'Kami berdiri di <strong>Kios No. 58/59 Pasar Sambi</strong>, melayani mulai dari prasmanan pernikahan mewah, bento ulang tahun anak yang menggemaskan, hingga tumpeng syukuran yang penuh makna.',
-        val1_title: 'Halal & Higienis',      val1_desc: 'Seluruh proses produksi mengutamakan kebersihan dan standar halal',
-        val2_title: 'Resep Otentik',          val2_desc: 'Cita rasa asli Jawa Tengah yang telah teruji selama bertahun-tahun',
-        val3_title: 'Tepat Waktu',            val3_desc: 'Komitmen pengiriman dan penyajian sesuai jadwal acara Anda',
+        val1_title: 'Halal & Higienis', val1_desc: 'Seluruh proses produksi mengutamakan kebersihan dan standar halal',
+        val2_title: 'Resep Otentik',    val2_desc: 'Cita rasa asli Jawa Tengah yang telah teruji selama bertahun-tahun',
+        val3_title: 'Tepat Waktu',      val3_desc: 'Komitmen pengiriman dan penyajian sesuai jadwal acara Anda',
 
         contact_label:      'Hubungi Kami',
         contact_title:      'Siap Mewujudkan Acara Impian Anda',
@@ -2441,7 +2038,14 @@
         cta_wa: 'Chat via WhatsApp',
         cta_ig: 'Follow di Instagram',
 
+        /* FIX: consistent year 2026 in both languages */
         footer_copy: '© 2026 Al Hikmah Catering. Semua hak dilindungi.',
+
+        /* FIX: about slideshow labels added to translations for multilingual support */
+        slide_label_0: 'Almh. Ibu Parnginah',
+        slide_label_1: 'Tim Al Hikmah',
+        slide_label_2: 'Momen Bersama Tim',
+        slide_label_3: 'Keluarga Besar Al Hikmah',
       },
 
       en: {
@@ -2451,9 +2055,9 @@
         nav_about:   'About',
         nav_contact: 'Contact',
 
-        hero_badge:    'Halal · Hygienic · Experienced',
+        hero_badge:    'Halal · Hygienic · Trusted',
         hero_title:    'Homemade catering with<br/><em>exceptional taste</em><br/>for every occasion',
-        hero_sub:      'Serving catering needs across Boyolali and surroundings — from wedding buffets to kids\' birthday bentos.',
+        hero_sub:      "Serving catering needs across Boyolali and surroundings — from wedding buffets to kids' birthday bentos.",
         hero_cta:      'Order Now',
         hero_see_menu: 'View Menu',
 
@@ -2464,11 +2068,11 @@
         services_label: 'Our Services',
         services_title: 'What We Offer',
         services_desc:  'From lavish wedding buffets to wedding hampers, we are here to fulfil your every special culinary need.',
-        svc1_name: 'Prasmanan',          svc1_sub: 'Buffet Catering',
-        svc2_name: 'Racikan',            svc2_sub: 'Custom Catering',
+        svc1_name: 'Prasmanan',            svc1_sub: 'Buffet Catering',
+        svc2_name: 'Racikan',              svc2_sub: 'Custom Catering',
         svc3_name: 'Bento Ulang Tahun Anak', svc3_sub: 'Kids Birthday Bento',
-        svc4_name: 'Hantaran Pernikahan', svc4_sub: 'Wedding Hampers',
-        svc5_name: 'Tumpeng Komplit',    svc5_sub: 'Traditional Tumpeng',
+        svc4_name: 'Hantaran Pernikahan',  svc4_sub: 'Wedding Hampers',
+        svc5_name: 'Tumpeng Komplit',      svc5_sub: 'Traditional Tumpeng',
 
         menu_label: 'Our Menu',
         menu_title: 'Explore Our Selection',
@@ -2476,12 +2080,8 @@
         tab_snack_manis: 'Sweet Snacks',
         tab_snack_asin:  'Savory Snacks',
         tab_kletikan:    'Light Snacks',
-        tab_prasmanan:   'Buffet Menu',
         tab_gubugan:     'Live Stations',
         tab_minuman:     'Beverages',
-        paket1:     'Package 1',
-        paket2:     'Package 2',
-        pesta:      'Party Menu (Buffet)',
         price_note: '*Pricing based on menu selection',
 
         gallery_label: 'Gallery',
@@ -2514,7 +2114,14 @@
         cta_wa: 'Chat via WhatsApp',
         cta_ig: 'Follow on Instagram',
 
-        footer_copy: '© 2025 Al Hikmah Catering. All rights reserved.',
+        /* FIX: consistent year 2026 */
+        footer_copy: '© 2026 Al Hikmah Catering. All rights reserved.',
+
+        /* FIX: about slideshow labels in English */
+        slide_label_0: 'Late Ibu Parnginah (Founder)',
+        slide_label_1: 'Al Hikmah Team',
+        slide_label_2: 'Team Moments',
+        slide_label_3: 'Al Hikmah Family',
       }
     };
 
@@ -2526,14 +2133,9 @@
 
       document.querySelectorAll('[data-key]').forEach(el => {
         const key = el.getAttribute('data-key');
-        if (t[key] !== undefined) {
-          el.innerHTML = t[key];
-        }
+        if (t[key] !== undefined) el.innerHTML = t[key];
       });
 
-      // Update tab labels via data-key (already handled above)
-
-      // Toggle lang button states
       ['btnID','btnID2'].forEach(id => {
         const btn = document.getElementById(id);
         if (btn) btn.classList.toggle('active', lang === 'id');
@@ -2544,6 +2146,10 @@
       });
 
       document.documentElement.lang = lang;
+
+      /* FIX: update the visible about-label when lang changes */
+      const label = document.getElementById('aboutLabel');
+      if (label) label.textContent = t['slide_label_' + aboutIndex] || '';
     }
 
     /* ---- NAVBAR SCROLL ---- */
@@ -2554,10 +2160,8 @@
 
     /* ---- HAMBURGER MENU ---- */
     function toggleMenu() {
-      const menu = document.getElementById('mobileNav');
-      const ham  = document.getElementById('hamburger');
-      menu.classList.toggle('open');
-      ham.classList.toggle('open');
+      document.getElementById('mobileNav').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('open');
     }
 
     function closeMenu() {
@@ -2567,23 +2171,15 @@
 
     /* ---- MENU TABS ---- */
     function switchTab(tabId) {
-      // Deactivate all panels
       document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.menu-tab').forEach(b => b.classList.remove('active'));
-
-      // Activate selected
       document.getElementById('panel-' + tabId).classList.add('active');
-
-      // Find which button was clicked (by onclick attribute matching)
       document.querySelectorAll('.menu-tab').forEach(b => {
-        if (b.getAttribute('onclick') === `switchTab('${tabId}')`) {
-          b.classList.add('active');
-        }
+        if (b.getAttribute('onclick') === `switchTab('${tabId}')`) b.classList.add('active');
       });
     }
 
     /* ---- SCROLL REVEAL ---- */
-    const revealEls = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -2593,46 +2189,34 @@
       });
     }, { threshold: 0.12 });
 
-    revealEls.forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     /* ---- ACTIVE NAV LINK on scroll ---- */
-    const sections = document.querySelectorAll('section[id]');
-    const navAnchors = document.querySelectorAll('.nav-links a');
+    const sections    = document.querySelectorAll('section[id]');
+    const navAnchors  = document.querySelectorAll('.nav-links a');
 
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(sec => {
-        if (window.scrollY >= sec.offsetTop - 120) {
-          current = sec.getAttribute('id');
-        }
+        if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
       });
       navAnchors.forEach(a => {
         a.classList.toggle('active', a.getAttribute('href') === '#' + current);
       });
     });
 
-    /* ---- ABOUT SLIDESHOW ---- */
+    /* ---- ABOUT SLIDESHOW ----
+       FIX: labels now read from translations object so they update with lang switch */
     const aboutSlides = document.querySelectorAll('.about-slide');
-    const aboutLabel = document.getElementById('aboutLabel');
-    
-    const aboutLabels = [
-      'Almh. Ibu Parnginah',
-      'Tim Al Hikmah',
-      'Momen Bersama Tim',
-      'Keluarga Besar Al Hikmah'
-    ];
-    
+    const aboutLabel  = document.getElementById('aboutLabel');
     let aboutIndex = 0;
-    
+
     setInterval(() => {
       if (!aboutSlides.length || !aboutLabel) return;
-    
       aboutSlides[aboutIndex].classList.remove('active');
-    
       aboutIndex = (aboutIndex + 1) % aboutSlides.length;
-    
       aboutSlides[aboutIndex].classList.add('active');
-      aboutLabel.textContent = aboutLabels[aboutIndex];
+      aboutLabel.textContent = translations[currentLang]['slide_label_' + aboutIndex] || '';
     }, 3500);
 
   </script>
