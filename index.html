@@ -503,12 +503,13 @@
     .service-card {
       background: var(--light);
       border-radius: var(--radius-lg);
-      padding: 18px 18px 30px;
+      padding: 20px;
       text-align: center;
       transition: var(--transition);
       cursor: default;
       position: relative;
       overflow: hidden;
+      min-height: 360px;
     }
 
     .service-card::before {
@@ -531,7 +532,7 @@
 
     .service-icon {
       width: 100%;
-      height: 150px;
+      height: 170px;
       border-radius: 16px;
       overflow: hidden;
       margin: 0 0 22px;
@@ -542,6 +543,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       border-radius: 16px;
       transition: transform 0.45s ease;
     }
