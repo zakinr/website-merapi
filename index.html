@@ -1043,6 +1043,90 @@
     }
 
     /* ==============================
+       ABOUT SLIDER CONTROLS
+    ============================== */
+    .about-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(35,31,32,0.55);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: var(--transition);
+    }
+    
+    .about-nav:hover {
+      background: var(--secondary);
+      transform: translateY(-50%) scale(1.08);
+    }
+    
+    .about-prev {
+      left: 14px;
+    }
+    
+    .about-next {
+      right: 14px;
+    }
+    
+    .about-dots {
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      z-index: 5;
+      display: flex;
+      gap: 8px;
+    }
+    
+    .about-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.45);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .about-dot.active {
+      width: 22px;
+      border-radius: 999px;
+      background: var(--secondary-light);
+    }
+    
+    @media (max-width: 600px) {
+      .about-nav {
+        width: 36px;
+        height: 36px;
+      }
+    
+      .about-prev {
+        left: 10px;
+      }
+    
+      .about-next {
+        right: 10px;
+      }
+    
+      .about-label {
+        bottom: 44px;
+      }
+    
+      .about-dots {
+        bottom: 16px;
+      }
+    }
+
+    /* ==============================
        CONTACT SECTION
     ============================== */
     #contact {
@@ -1822,6 +1906,16 @@
             <img src="assets/images/about/team2.jpeg"   class="about-slide"        alt="Momen bersama tim Al Hikmah Catering">
             <img src="assets/images/about/family.jpeg"  class="about-slide"        alt="Keluarga besar Al Hikmah Catering">
             <div class="about-label" id="aboutLabel">Almh. Ibu Parnginah</div>
+
+            <button class="about-nav about-prev" type="button" onclick="changeAboutSlide(-1)" aria-label="Foto sebelumnya">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            
+            <button class="about-nav about-next" type="button" onclick="changeAboutSlide(1)" aria-label="Foto selanjutnya">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            
+            <div class="about-dots" id="aboutDots"></div>
           </div>
           <div class="about-badge-float">
             <strong>26+</strong>
@@ -2213,19 +2307,72 @@
       });
     });
 
-    /* ---- ABOUT SLIDESHOW ----
-       FIX: labels now read from translations object so they update with lang switch */
+    /* ---- ABOUT SLIDESHOW WITH CONTROLS ---- */
     const aboutSlides = document.querySelectorAll('.about-slide');
     const aboutLabel  = document.getElementById('aboutLabel');
+    const aboutDots   = document.getElementById('aboutDots');
     let aboutIndex = 0;
-
-    setInterval(() => {
+    let aboutTimer;
+    
+    function renderAboutDots() {
+      if (!aboutDots) return;
+    
+      aboutDots.innerHTML = '';
+    
+      aboutSlides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'about-dot';
+        dot.type = 'button';
+        dot.setAttribute('aria-label', 'Lihat foto ' + (index + 1));
+        dot.onclick = () => goToAboutSlide(index);
+        aboutDots.appendChild(dot);
+      });
+    }
+    
+    function updateAboutSlide() {
       if (!aboutSlides.length || !aboutLabel) return;
-      aboutSlides[aboutIndex].classList.remove('active');
-      aboutIndex = (aboutIndex + 1) % aboutSlides.length;
-      aboutSlides[aboutIndex].classList.add('active');
+    
+      aboutSlides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === aboutIndex);
+      });
+    
       aboutLabel.textContent = translations[currentLang]['slide_label_' + aboutIndex] || '';
-    }, 3500);
+    
+      document.querySelectorAll('.about-dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === aboutIndex);
+      });
+    }
+    
+    function goToAboutSlide(index) {
+      aboutIndex = index;
+    
+      if (aboutIndex < 0) {
+        aboutIndex = aboutSlides.length - 1;
+      }
+    
+      if (aboutIndex >= aboutSlides.length) {
+        aboutIndex = 0;
+      }
+    
+      updateAboutSlide();
+      restartAboutTimer();
+    }
+    
+    function changeAboutSlide(direction) {
+      goToAboutSlide(aboutIndex + direction);
+    }
+    
+    function restartAboutTimer() {
+      clearInterval(aboutTimer);
+    
+      aboutTimer = setInterval(() => {
+        goToAboutSlide(aboutIndex + 1);
+      }, 3500);
+    }
+    
+    renderAboutDots();
+    updateAboutSlide();
+    restartAboutTimer();
 
   </script>
 
