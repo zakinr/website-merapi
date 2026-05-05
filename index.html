@@ -1510,11 +1510,6 @@
         padding: 14px;
       }
     
-      /* Stats disembunyikan (biar gak penuh) */
-      .hero-stats {
-        display: none;
-      }
-    
       /* Lingkaran dekorasi dikecilin */
       .hero-deco {
         width: 400px;
@@ -1569,6 +1564,36 @@
         width: 100%;
         padding-left: 22px;
         padding-right: 22px;
+      }
+    }
+
+    /* ==============================
+       HERO STATS MOBILE RESPONSIVE
+    ============================== */
+    @media (max-width: 600px) {
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-top: 34px;
+        padding-top: 24px;
+        width: 100%;
+      }
+    
+      .hero-stats > div {
+        text-align: center;
+      }
+    
+      .hero-stat-num {
+        font-size: 1.45rem;
+        line-height: 1;
+      }
+    
+      .hero-stat-label {
+        font-size: 0.62rem;
+        line-height: 1.25;
+        margin-top: 6px;
+        letter-spacing: 0.02em;
       }
     }
 
