@@ -1499,21 +1499,41 @@
       .hero-stats {
         display: flex;
         flex-direction: row;
-        gap: 20px;
+        gap: 8px;
         margin-top: 36px;
       
+        padding: 24px 0 0;
+        border-top: 1px solid rgba(255,255,255,0.12);
+      
         background: transparent;
-        border: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
         box-shadow: none;
         backdrop-filter: none;
-      
-        border-top: 1px solid rgba(255,255,255,0.12);
-        padding-top: 24px;
+        -webkit-backdrop-filter: none;
+        border-radius: 0;
+        overflow: visible;
       
         justify-content: space-between;
       }
+
+      .hero-stats::before {
+        display: none;
+      }
+      
+      .hero-stats > div {
+        min-width: 0;
+        flex: 1;
+        text-align: center;
+      }
+      
       .hero-stat-num   { font-size: 1.5rem; }
-      .hero-stat-label { font-size: 0.68rem; }
+      .hero-stat-label {
+        font-size: 0.62rem;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
+      }
 
       .hero-deco { width: 400px; height: 400px; right: -150px; opacity: 0.4; }
 
