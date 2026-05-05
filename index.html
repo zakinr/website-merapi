@@ -541,6 +541,13 @@
       transition: var(--transition);
     }
 
+    .service-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
     .service-card:hover .service-icon { transform: scale(1.1) rotate(5deg); }
 
     .service-name {
@@ -1568,27 +1575,37 @@
 
       <div class="services-grid">
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon">🍽️</div>
+          <div class="service-icon">
+            <img src="assets/images/services/prasmanan.png" alt="Prasmanan">
+          </div>
           <div class="service-name"    data-key="svc1_name">Prasmanan</div>
           <div class="service-name-en" data-key="svc1_sub">Buffet Catering</div>
         </div>
         <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon">👨‍🍳</div>
+          <div class="service-icon">
+            <img src="assets/images/services/racikan.png" alt="Racikan">
+          </div>
           <div class="service-name"    data-key="svc2_name">Racikan</div>
           <div class="service-name-en" data-key="svc2_sub">Custom Catering</div>
         </div>
         <div class="service-card reveal reveal-delay-3">
-          <div class="service-icon">🎂</div>
+          <div class="service-icon">
+            <img src="assets/images/services/nasikotak.png" alt="Nasi Kotak">
+          </div>
           <div class="service-name"    data-key="svc3_name">Nasi Kotak</div>
           <div class="service-name-en" data-key="svc3_sub">Rice Box</div>
         </div>
         <div class="service-card reveal reveal-delay-4">
-          <div class="service-icon">💍</div>
+          <div class="service-icon">
+            <img src="assets/images/services/hantaran.jpg" alt="Hantaran Pernikahan">
+          </div>
           <div class="service-name"    data-key="svc4_name">Hantaran Pernikahan</div>
           <div class="service-name-en" data-key="svc4_sub">Wedding Hampers</div>
         </div>
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon">🌾</div>
+          <div class="service-icon">
+            <img src="assets/images/services/tumpeng.png" alt="Tumpeng Komplit">
+          </div>
           <div class="service-name"    data-key="svc5_name">Tumpeng Komplit</div>
           <div class="service-name-en" data-key="svc5_sub">Traditional Tumpeng</div>
         </div>
