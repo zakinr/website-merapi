@@ -10,9 +10,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
   <style>
-    /* ==============================
-       CSS VARIABLES & RESET
-    ============================== */
     :root {
       --primary:          #54604F;
       --secondary:        #AA8E5F;
@@ -30,9 +27,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; font-size: 16px; }
-
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background: var(--bg);
@@ -40,19 +35,11 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
-
     img { max-width: 100%; display: block; }
     a   { text-decoration: none; color: inherit; }
     ul  { list-style: none; }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
     section { padding: 80px 0; }
-
     .section-label {
       display: inline-block;
       font-size: 0.72rem;
@@ -62,7 +49,6 @@
       color: var(--secondary);
       margin-bottom: 12px;
     }
-
     .section-title {
       font-size: clamp(1.8rem, 4vw, 2.8rem);
       font-weight: 700;
@@ -70,14 +56,12 @@
       line-height: 1.2;
       margin-bottom: 16px;
     }
-
     .section-desc {
       font-size: 1rem;
       color: var(--text);
       opacity: 0.75;
       max-width: 560px;
     }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -92,30 +76,12 @@
       border: none;
       transition: var(--transition);
     }
+    .btn-primary { background: var(--secondary); color: var(--white); }
+    .btn-primary:hover { background: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.6); }
+    .btn-outline:hover { background: rgba(255,255,255,0.15); border-color: var(--white); }
 
-    .btn-primary {
-      background: var(--secondary);
-      color: var(--white);
-    }
-    .btn-primary:hover {
-      background: var(--primary);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      border: 2px solid rgba(255,255,255,0.6);
-    }
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.15);
-      border-color: var(--white);
-    }
-
-    /* ==============================
-       NAVBAR
-    ============================== */
+    /* NAVBAR */
     #navbar {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -123,38 +89,19 @@
       padding: 20px 0;
       transition: var(--transition);
     }
-
     #navbar.scrolled {
       background: rgba(255,255,255,0.97);
       backdrop-filter: blur(12px);
       padding: 12px 0;
       box-shadow: 0 2px 20px rgba(35,31,32,0.10);
     }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo img {
-      height: 40px;
-      width: auto;
-      transition: var(--transition);
-    }
-
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo img { height: 40px; width: auto; transition: var(--transition); }
     .nav-logo .logo-light { display: block; }
     .nav-logo .logo-dark  { display: none; }
-
     #navbar.scrolled .nav-logo .logo-light { display: none; }
     #navbar.scrolled .nav-logo .logo-dark  { display: block; }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-    }
-
+    .nav-links { display: flex; align-items: center; gap: 36px; }
     .nav-links a {
       font-size: 0.85rem;
       font-weight: 500;
@@ -163,9 +110,7 @@
       position: relative;
       transition: var(--transition);
     }
-
     #navbar.scrolled .nav-links a { color: var(--text); }
-
     .nav-links a::after {
       content: '';
       position: absolute;
@@ -174,10 +119,7 @@
       background: var(--secondary);
       transition: var(--transition);
     }
-
-    .nav-links a:hover::after,
-    .nav-links a.active::after { width: 100%; }
-
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
     .lang-switcher {
       display: flex;
       align-items: center;
@@ -187,9 +129,7 @@
       padding: 4px 6px;
       transition: var(--transition);
     }
-
     #navbar.scrolled .lang-switcher { background: var(--bg); }
-
     .lang-btn {
       background: none;
       border: none;
@@ -203,78 +143,22 @@
       transition: var(--transition);
       letter-spacing: 0.06em;
     }
-
     #navbar.scrolled .lang-btn { color: var(--text); opacity: 0.6; }
-
-    .lang-btn.active {
-      background: var(--secondary);
-      color: var(--white) !important;
-      opacity: 1 !important;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--white);
-      border-radius: 2px;
-      transition: var(--transition);
-    }
-
+    .lang-btn.active { background: var(--secondary); color: var(--white) !important; opacity: 1 !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--transition); }
     #navbar.scrolled .hamburger span { background: var(--text); }
-
     .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
-
-    /* Mobile nav */
-    .mobile-nav {
-      display: none;
-      flex-direction: column;
-      gap: 0;
-      background: var(--white);
-      position: absolute;
-      top: 100%; left: 0; right: 0;
-      box-shadow: var(--shadow-lg);
-      padding: 16px 0;
-    }
-
+    .mobile-nav { display: none; flex-direction: column; gap: 0; background: var(--white); position: absolute; top: 100%; left: 0; right: 0; box-shadow: var(--shadow-lg); padding: 16px 0; }
     .mobile-nav.open { display: flex; }
-
-    .mobile-nav a {
-      padding: 14px 32px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      transition: var(--transition);
-    }
-
+    .mobile-nav a { padding: 14px 32px; font-size: 0.9rem; font-weight: 500; color: var(--text); border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition); }
     .mobile-nav a:hover { background: var(--bg); color: var(--primary); }
+    .mobile-lang { display: flex; gap: 8px; padding: 16px 32px; }
+    .mobile-lang .lang-btn { color: var(--text) !important; background: var(--bg); padding: 6px 16px; }
 
-    .mobile-lang {
-      display: flex;
-      gap: 8px;
-      padding: 16px 32px;
-    }
-
-    .mobile-lang .lang-btn {
-      color: var(--text) !important;
-      background: var(--bg);
-      padding: 6px 16px;
-    }
-
-    /* ==============================
-       HERO SECTION
-    ============================== */
+    /* HERO */
     #hero {
       min-height: 100vh;
       position: relative;
@@ -283,15 +167,12 @@
       overflow: hidden;
       padding: 120px 0 70px;
     }
-
     .hero-bg {
       position: absolute;
       inset: 0;
       background: linear-gradient(135deg, rgba(84,96,79,0.88) 0%, rgba(35,31,32,0.75) 60%, rgba(170,142,95,0.5) 100%);
       z-index: 1;
     }
-
-    /* Hero image — right side */
     #hero::after {
       content: "";
       position: absolute;
@@ -304,60 +185,30 @@
       opacity: 0.95;
       z-index: 2;
       pointer-events: none;
-      -webkit-mask-image: linear-gradient(to left,
-        rgba(0,0,0,1)   0%,  rgba(0,0,0,0.9) 20%,
-        rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.4) 60%,
-        rgba(0,0,0,0.1) 80%, rgba(0,0,0,0)   100%);
-      mask-image: linear-gradient(to left,
-        rgba(0,0,0,1)   0%,  rgba(0,0,0,0.9) 20%,
-        rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.4) 60%,
-        rgba(0,0,0,0.1) 80%, rgba(0,0,0,0)   100%);
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 100%);
+      mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 100%);
     }
-
     .hero-pattern {
       position: absolute;
       inset: 0;
       z-index: 0;
       background-image:
         radial-gradient(circle at 20% 80%, rgba(170,142,95,0.18) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(84,96,79,0.22)   0%, transparent 50%);
+        radial-gradient(circle at 80% 20%, rgba(84,96,79,0.22) 0%, transparent 50%);
     }
-
-    .hero-food-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      background: var(--primary-dark);
-    }
-
+    .hero-food-bg { position: absolute; inset: 0; z-index: 0; background: var(--primary-dark); }
     .hero-deco {
       position: absolute;
       right: -100px;
       top: 50%;
       transform: translateY(-50%);
-      width: 600px;
-      height: 600px;
+      width: 600px; height: 600px;
       border-radius: 50%;
       border: 1px solid rgba(170,142,95,0.15);
       z-index: 2;
     }
-
-    .hero-deco::before {
-      content: '';
-      position: absolute;
-      inset: 40px;
-      border-radius: 50%;
-      border: 1px solid rgba(170,142,95,0.1);
-    }
-
-    .hero-deco::after {
-      content: '';
-      position: absolute;
-      inset: 100px;
-      border-radius: 50%;
-      border: 1px solid rgba(170,142,95,0.08);
-    }
-
+    .hero-deco::before { content: ''; position: absolute; inset: 40px; border-radius: 50%; border: 1px solid rgba(170,142,95,0.1); }
+    .hero-deco::after  { content: ''; position: absolute; inset: 100px; border-radius: 50%; border: 1px solid rgba(170,142,95,0.08); }
     .hero-content {
       position: relative;
       z-index: 3;
@@ -367,18 +218,8 @@
       gap: 48px;
       align-items: end;
     }
-    
-    .hero-left {
-      max-width: 680px;
-    }
-    
-    .hero-right {
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
-      padding-bottom: 0;
-    }
-
+    .hero-left { max-width: 680px; }
+    .hero-right { display: flex; justify-content: flex-end; align-items: flex-end; padding-bottom: 0; }
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -393,49 +234,13 @@
       text-transform: uppercase;
       color: var(--secondary-light);
       margin-bottom: 28px;
-      backdrop-filter: blur(6px);
     }
-
-    .hero-badge-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--secondary);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%,100% { opacity: 1; transform: scale(1); }
-      50%      { opacity: 0.5; transform: scale(1.4); }
-    }
-
-    .hero-title {
-      font-size: clamp(1.8rem, 4.5vw, 3.2rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.15;
-      margin-bottom: 20px;
-      max-width: 680px;
-    }
-
-    .hero-title em {
-      font-style: italic;
-      color: var(--secondary-light);
-    }
-
-    .hero-sub {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.75);
-      max-width: 480px;
-      margin-bottom: 40px;
-      font-weight: 300;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
+    .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--secondary); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.4); } }
+    .hero-title { font-size: clamp(1.8rem, 4.5vw, 3.2rem); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 20px; max-width: 680px; }
+    .hero-title em { font-style: italic; color: var(--secondary-light); }
+    .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,0.75); max-width: 480px; margin-bottom: 40px; font-weight: 300; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
     .hero-stats {
       display: flex;
       flex-direction: row;
@@ -443,67 +248,27 @@
       margin-top: 0;
       padding: 20px 24px;
       border-radius: 20px;
-
       position: relative;
-      overflow: hidden;     
-    
-      /* 🔥 macOS glass */
-      background: linear-gradient(
-        135deg,
-        rgba(20,18,17,0.55),
-        rgba(20,18,17,0.35)
-      );
-    
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(20,18,17,0.55), rgba(20,18,17,0.35));
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-    
       border: 1px solid rgba(255,255,255,0.18);
-    
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.2),
-        inset 0 1px 0 rgba(255,255,255,0.25);
-    
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.25);
       transform: translateY(0);
     }
-
     .hero-stats::before {
       content: "";
       position: absolute;
       inset: 0;
       border-radius: inherit;
-    
-      background: linear-gradient(
-        120deg,
-        rgba(255,255,255,0.25),
-        transparent 40%
-      );
-    
+      background: linear-gradient(120deg, rgba(255,255,255,0.25), transparent 40%);
       opacity: 0.4;
       pointer-events: none;
     }
-
-    .hero-stats > div {
-      min-width: 110px;
-    }
-
-    .hero-stat-num {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--secondary-light);
-      line-height: 1;
-    }
-
-    .hero-stat-label {
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.6);
-      letter-spacing: 0.06em;
-      margin-top: 4px;
-    }
-
-    /* ==============================
-       SCROLL-DOWN INDICATOR
-       FIX: was in HTML but had no CSS
-    ============================== */
+    .hero-stats > div { min-width: 110px; }
+    .hero-stat-num { font-size: 2rem; font-weight: 700; color: var(--secondary-light); line-height: 1; }
+    .hero-stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.6); letter-spacing: 0.06em; margin-top: 4px; }
     .scroll-down {
       position: absolute;
       bottom: 32px;
@@ -517,367 +282,69 @@
       opacity: 0.55;
       transition: var(--transition);
     }
-
     .scroll-down:hover { opacity: 1; }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--white), transparent); animation: scrollPulse 1.8s ease-in-out infinite; }
+    .scroll-down span { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); }
+    @keyframes scrollPulse { 0%,100% { opacity: 0.3; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.1); } }
 
-    .scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, var(--white), transparent);
-      animation: scrollPulse 1.8s ease-in-out infinite;
-    }
-
-    .scroll-down span {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--white);
-    }
-
-    @keyframes scrollPulse {
-      0%,100% { opacity: 0.3; transform: scaleY(1); }
-      50%      { opacity: 1;   transform: scaleY(1.1); }
-    }
-
-    /* ==============================
-       SERVICES SECTION
-    ============================== */
+    /* SERVICES */
     #services { background: var(--white); }
-
-    .services-header {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
+    .services-header { text-align: center; margin-bottom: 56px; }
     .services-header .section-desc { margin: 0 auto; }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 24px;
-    }
-
-    .service-card {
-      background: var(--light);
-      border-radius: var(--radius-lg);
-      padding: 20px;
-      text-align: center;
-      transition: var(--transition);
-      cursor: default;
-      position: relative;
-      overflow: hidden;
-      min-height: 360px;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      transform: scaleX(0);
-      transition: var(--transition);
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      background: var(--white);
-    }
-
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
+    .service-card { background: var(--light); border-radius: var(--radius-lg); padding: 20px; text-align: center; transition: var(--transition); cursor: default; position: relative; overflow: hidden; min-height: 360px; }
+    .service-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--secondary)); transform: scaleX(0); transition: var(--transition); }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); background: var(--white); }
     .service-card:hover::before { transform: scaleX(1); }
+    .service-img { width: calc(100% + 40px); height: 170px; margin: -20px -20px 20px; border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow: hidden; background: var(--bg); }
+    .service-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform 0.45s ease; }
+    .service-card:hover .service-img img { transform: scale(1.08); }
+    .service-name { font-size: 1.05rem; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
+    .service-name-en { font-size: 0.78rem; color: var(--secondary); font-weight: 400; letter-spacing: 0.04em; }
 
-    .service-img {
-      width: calc(100% + 40px);
-      height: 170px;
-      margin: -20px -20px 20px;
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      overflow: hidden;
-      background: var(--bg);
-    }
-    
-    .service-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      transition: transform 0.45s ease;
-    }
-    
-    .service-card:hover .service-img img {
-      transform: scale(1.08);
-    }
-
-    .service-name {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 6px;
-    }
-
-    .service-name-en {
-      font-size: 0.78rem;
-      color: var(--secondary);
-      font-weight: 400;
-      letter-spacing: 0.04em;
-    }
-
-    /* ==============================
-       MENU SECTION
-    ============================== */
+    /* MENU */
     #menu { background: var(--bg); }
-
     .menu-header { margin-bottom: 48px; }
-
-    .prasmanan-section {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      margin-bottom: 48px;
-      box-shadow: var(--shadow);
-    }
-
+    .prasmanan-section { background: var(--white); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 48px; box-shadow: var(--shadow); }
     .prasmanan-section-head { margin-bottom: 28px; }
-
-    .prasmanan-section-head h3 {
-      font-size: 1.6rem;
-      color: var(--primary);
-      margin-bottom: 8px;
-    }
-
-    .prasmanan-section-head p {
-      font-size: 0.95rem;
-      color: var(--text);
-      opacity: 0.7;
-      max-width: 560px;
-    }
-
-    .menu-tabs {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-
-    .menu-tab {
-      padding: 10px 22px;
-      border-radius: 50px;
-      background: var(--white);
-      border: 1.5px solid transparent;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--text);
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .menu-tab:hover {
-      border-color: var(--secondary);
-      color: var(--secondary);
-    }
-
-    .menu-tab.active {
-      background: var(--primary);
-      color: var(--white);
-      border-color: var(--primary);
-    }
-
-    .menu-panel {
-      display: none;
-      animation: fadeIn 0.4s ease;
-    }
-
+    .prasmanan-section-head h3 { font-size: 1.6rem; color: var(--primary); margin-bottom: 8px; }
+    .prasmanan-section-head p { font-size: 0.95rem; color: var(--text); opacity: 0.7; max-width: 560px; }
+    .menu-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
+    .menu-tab { padding: 10px 22px; border-radius: 50px; background: var(--white); border: 1.5px solid transparent; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 500; color: var(--text); cursor: pointer; transition: var(--transition); }
+    .menu-tab:hover { border-color: var(--secondary); color: var(--secondary); }
+    .menu-tab.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
+    .menu-panel { display: none; animation: fadeIn 0.4s ease; }
     .menu-panel.active { display: block; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .menu-items-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px;
-    }
-
-    .menu-item-pill {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transition: var(--transition);
-    }
-
-    .menu-item-pill:hover {
-      background: var(--primary);
-      color: var(--white);
-      transform: translateX(4px);
-    }
-
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .menu-items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+    .menu-item-pill { background: var(--white); border-radius: var(--radius); padding: 14px 18px; display: flex; align-items: center; gap: 10px; transition: var(--transition); }
+    .menu-item-pill:hover { background: var(--primary); color: var(--white); transform: translateX(4px); }
     .menu-item-pill:hover .pill-dot { background: var(--secondary); }
-
-    .pill-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--secondary);
-      flex-shrink: 0;
-      transition: var(--transition);
-    }
-
-    .prasmanan-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .prasmanan-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 28px;
-      transition: var(--transition);
-      border: 1.5px solid rgba(170,142,95,0.25);
-    }
-
-    .prasmanan-card:hover {
-      box-shadow: var(--shadow);
-      transform: translateY(-3px);
-      border-color: var(--secondary);
-    }
-
-    .prasmanan-card-title {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--secondary);
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--bg);
-    }
-
-    .prasmanan-items {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .prasmanan-item {
-      font-size: 0.88rem;
-      color: var(--text);
-      opacity: 0.8;
-      padding-left: 14px;
-      position: relative;
-    }
-
-    .prasmanan-item::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 50%;
-      transform: translateY(-50%);
-      width: 4px; height: 4px;
-      border-radius: 50%;
-      background: var(--secondary);
-    }
-
-    .prasmanan-note {
-      font-size: 0.75rem;
-      font-style: italic;
-      color: var(--secondary);
-      opacity: 0.8;
-      margin-top: 16px;
-    }
-
-    .gubugan-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 14px;
-    }
-
-    .gubugan-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 20px 16px;
-      text-align: center;
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--primary);
-      border: 1.5px solid transparent;
-      transition: var(--transition);
-      cursor: default;
-    }
-
-    .gubugan-card:hover {
-      border-color: var(--secondary);
-      color: var(--secondary);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-    }
-
-    .minuman-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 18px;
-    }
-
-    .minuman-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      overflow: hidden;
-      text-align: center;
-      transition: var(--transition);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    }
-
-    .minuman-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow);
-    }
-
-    .minuman-card img {
-      width: 100%;
-      height: 130px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
+    .pill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--secondary); flex-shrink: 0; transition: var(--transition); }
+    .prasmanan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .prasmanan-card { background: var(--white); border-radius: var(--radius-lg); padding: 28px; transition: var(--transition); border: 1.5px solid rgba(170,142,95,0.25); }
+    .prasmanan-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); border-color: var(--secondary); }
+    .prasmanan-card-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--secondary); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--bg); }
+    .prasmanan-items { display: flex; flex-direction: column; gap: 8px; }
+    .prasmanan-item { font-size: 0.88rem; color: var(--text); opacity: 0.8; padding-left: 14px; position: relative; }
+    .prasmanan-item::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 4px; height: 4px; border-radius: 50%; background: var(--secondary); }
+    .prasmanan-note { font-size: 0.75rem; font-style: italic; color: var(--secondary); opacity: 0.8; margin-top: 16px; }
+    .gubugan-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+    .gubugan-card { background: var(--white); border-radius: var(--radius); padding: 20px 16px; text-align: center; font-size: 0.88rem; font-weight: 500; color: var(--primary); border: 1.5px solid transparent; transition: var(--transition); cursor: default; }
+    .gubugan-card:hover { border-color: var(--secondary); color: var(--secondary); transform: translateY(-3px); box-shadow: var(--shadow); }
+    .minuman-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 18px; }
+    .minuman-card { background: var(--white); border-radius: var(--radius); overflow: hidden; text-align: center; transition: var(--transition); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .minuman-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .minuman-card img { width: 100%; height: 130px; object-fit: cover; transition: transform 0.3s ease; }
     .minuman-card:hover img { transform: scale(1.05); }
+    .minuman-name { padding: 12px; font-size: 0.9rem; font-weight: 600; color: var(--text); }
 
-    .minuman-name {
-      padding: 12px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    /* ==============================
-       GALLERY SECTION
-    ============================== */
+    /* GALLERY */
     #gallery { background: var(--white); }
-
-    .gallery-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
+    .gallery-header { text-align: center; margin-bottom: 48px; }
     .gallery-header .section-desc { margin: 0 auto; }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-    }
-
-    .gallery-item {
-      border-radius: var(--radius);
-      overflow: hidden;
-      cursor: pointer;
-      position: relative;
-    }
-
+    .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .gallery-item { border-radius: var(--radius); overflow: hidden; cursor: pointer; position: relative; }
     .gallery-item:nth-child(1) { grid-column: 1 / 6;  grid-row: 1 / 3; }
     .gallery-item:nth-child(2) { grid-column: 6 / 9;  grid-row: 1 / 2; }
     .gallery-item:nth-child(3) { grid-column: 9 / 13; grid-row: 1 / 2; }
@@ -886,560 +353,112 @@
     .gallery-item:nth-child(6) { grid-column: 1 / 5;  grid-row: 3 / 4; }
     .gallery-item:nth-child(7) { grid-column: 5 / 9;  grid-row: 3 / 4; }
     .gallery-item:nth-child(8) { grid-column: 9 / 13; grid-row: 3 / 4; }
-
-    .gallery-placeholder {
-      width: 100%;
-      height: 100%;
-      min-height: 180px;
-      background: var(--bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
-      position: relative;
-    }
-
+    .gallery-placeholder { width: 100%; height: 100%; min-height: 180px; background: var(--bg); display: flex; align-items: center; justify-content: center; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); position: relative; }
     .gallery-item:nth-child(1) .gallery-placeholder { min-height: 400px; background: linear-gradient(135deg, #54604F22, #AA8E5F22); }
     .gallery-item:nth-child(2) .gallery-placeholder { background: linear-gradient(135deg, #AA8E5F22, #54604F22); }
-    .gallery-item:nth-child(3) .gallery-placeholder { background: linear-gradient(135deg, #E6E7E7,   #54604F11); }
+    .gallery-item:nth-child(3) .gallery-placeholder { background: linear-gradient(135deg, #E6E7E7, #54604F11); }
     .gallery-item:nth-child(4) .gallery-placeholder { background: linear-gradient(135deg, #54604F11, #AA8E5F22); }
-    .gallery-item:nth-child(5) .gallery-placeholder { background: linear-gradient(135deg, #AA8E5F11, #E6E7E7);   }
-    .gallery-item:nth-child(6) .gallery-placeholder { background: linear-gradient(135deg, #54604F22, #E6E7E7);   }
-    .gallery-item:nth-child(7) .gallery-placeholder { background: linear-gradient(135deg, #E6E7E7,   #AA8E5F22); }
+    .gallery-item:nth-child(5) .gallery-placeholder { background: linear-gradient(135deg, #AA8E5F11, #E6E7E7); }
+    .gallery-item:nth-child(6) .gallery-placeholder { background: linear-gradient(135deg, #54604F22, #E6E7E7); }
+    .gallery-item:nth-child(7) .gallery-placeholder { background: linear-gradient(135deg, #E6E7E7, #AA8E5F22); }
     .gallery-item:nth-child(8) .gallery-placeholder { background: linear-gradient(135deg, #54604F11, #AA8E5F33); }
-
     .gallery-ph-inner { text-align: center; }
     .gallery-ph-inner span { font-size: 2.5rem; display: block; margin-bottom: 6px; }
     .gallery-ph-inner p    { font-size: 0.72rem; color: var(--text); opacity: 0.4; letter-spacing: 0.08em; }
-
     .gallery-item:hover .gallery-placeholder { transform: scale(1.05); }
-
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(35,31,32,0.6) 0%, transparent 60%);
-      opacity: 0;
-      transition: var(--transition);
-      display: flex;
-      align-items: flex-end;
-      padding: 20px;
-    }
-
+    .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(35,31,32,0.6) 0%, transparent 60%); opacity: 0; transition: var(--transition); display: flex; align-items: flex-end; padding: 20px; }
     .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay-text { color: var(--white); font-size: 0.8rem; font-weight: 500; }
 
-    .gallery-overlay-text {
-      color: var(--white);
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
-
-    /* ==============================
-       ABOUT SECTION
-    ============================== */
-    #about {
-      background: var(--bg);
-      overflow: hidden;
-    }
-
-    .about-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
+    /* ABOUT */
+    #about { background: var(--bg); overflow: hidden; }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     .about-visual { position: relative; }
+    .about-img-wrap { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/5; background: linear-gradient(145deg, var(--primary), var(--secondary)); }
+    .about-label { position: absolute; left: 16px; bottom: 16px; background: rgba(35,31,32,0.55); color: var(--white); font-size: 0.78rem; font-weight: 600; padding: 7px 14px; border-radius: 999px; backdrop-filter: blur(8px); z-index: 3; }
+    .about-gallery { position: absolute; right: 16px; bottom: 16px; display: flex; gap: 8px; }
+    .about-gallery img { width: 58px; height: 58px; object-fit: cover; border-radius: 12px; border: 2px solid rgba(255,255,255,0.9); }
+    .about-badge-float { position: absolute; bottom: -20px; right: -20px; background: var(--secondary); color: var(--white); border-radius: var(--radius-lg); padding: 20px 24px; box-shadow: var(--shadow-lg); z-index: 4; }
+    .about-badge-float strong { display: block; font-size: 1.6rem; font-weight: 700; }
+    .about-badge-float span { font-size: 0.75rem; opacity: 0.85; }
+    .about-deco-circle { position: absolute; top: -30px; left: -30px; width: 120px; height: 120px; border-radius: 50%; border: 2px solid var(--secondary); opacity: 0.25; }
+    .about-story { font-size: 0.96rem; color: var(--text); line-height: 1.9; margin-bottom: 20px; opacity: 0.85; }
+    .about-story strong { color: var(--primary); font-weight: 600; }
+    .about-values { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+    .about-value { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; background: var(--white); border-radius: var(--radius); transition: var(--transition); }
+    .about-value:hover { transform: translateX(6px); box-shadow: var(--shadow); }
+    .about-value-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(170,142,95,0.12); border: 1px solid rgba(170,142,95,0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .about-value-icon i { font-size: 1.1rem; color: var(--secondary); }
+    .about-value-text strong { display: block; font-size: 0.88rem; font-weight: 600; color: var(--primary); margin-bottom: 2px; }
+    .about-value-text span { font-size: 0.78rem; color: var(--text); opacity: 0.65; }
+    .about-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.05); z-index: 1; transition: opacity 1s ease, transform 4s ease; }
+    .about-slide.active { opacity: 1; transform: scale(1); z-index: 2; }
+    .about-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; width: 42px; height: 42px; border-radius: 50%; border: none; background: rgba(35,31,32,0.55); color: var(--white); display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(8px); transition: var(--transition); }
+    .about-nav:hover { background: var(--secondary); transform: translateY(-50%) scale(1.08); }
+    .about-prev { left: 14px; }
+    .about-next { right: 14px; }
+    .about-dots { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 5; display: flex; gap: 8px; }
+    .about-dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,0.45); cursor: pointer; transition: var(--transition); }
+    .about-dot.active { width: 22px; border-radius: 999px; background: var(--secondary-light); }
 
-    .about-img-wrap {
-      position: relative;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      aspect-ratio: 4/5;
-      background: linear-gradient(145deg, var(--primary), var(--secondary));
-    }
-
-    /* FIX: consolidated the two separate .about-label rules into one */
-    .about-label {
-      position: absolute;
-      left: 16px;
-      bottom: 16px;
-      background: rgba(35,31,32,0.55);
-      color: var(--white);
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 7px 14px;
-      border-radius: 999px;
-      backdrop-filter: blur(8px);
-      z-index: 3;
-    }
-
-    .about-gallery {
-      position: absolute;
-      right: 16px;
-      bottom: 16px;
-      display: flex;
-      gap: 8px;
-    }
-
-    .about-gallery img {
-      width: 58px;
-      height: 58px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 2px solid rgba(255,255,255,0.9);
-    }
-
-    /* FIX: consolidated the two separate .about-badge-float rules into one */
-    .about-badge-float {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      background: var(--secondary);
-      color: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 20px 24px;
-      box-shadow: var(--shadow-lg);
-      z-index: 4;
-    }
-
-    .about-badge-float strong {
-      display: block;
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    .about-badge-float span {
-      font-size: 0.75rem;
-      opacity: 0.85;
-    }
-
-    .about-deco-circle {
-      position: absolute;
-      top: -30px;
-      left: -30px;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 2px solid var(--secondary);
-      opacity: 0.25;
-    }
-
-    .about-story {
-      font-size: 0.96rem;
-      color: var(--text);
-      line-height: 1.9;
-      margin-bottom: 20px;
-      opacity: 0.85;
-    }
-
-    .about-story strong {
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .about-values {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 32px;
-    }
-
-    .about-value {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 16px 20px;
-      background: var(--white);
-      border-radius: var(--radius);
-      transition: var(--transition);
-    }
-
-    .about-value:hover {
-      transform: translateX(6px);
-      box-shadow: var(--shadow);
-    }
-
-    .about-value-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: rgba(170,142,95,0.12);
-      border: 1px solid rgba(170,142,95,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .about-value-icon i {
-      font-size: 1.1rem;
-      color: var(--secondary);
-    }
-
-    .about-value-text strong {
-      display: block;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 2px;
-    }
-
-    .about-value-text span {
-      font-size: 0.78rem;
-      color: var(--text);
-      opacity: 0.65;
-    }
-
-    .about-slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transform: scale(1.05);
-      z-index: 1;
-      transition: opacity 1s ease, transform 4s ease;
-    }
-
-    .about-slide.active {
-      opacity: 1;
-      transform: scale(1);
-      z-index: 2;
-    }
-
-    /* ==============================
-       ABOUT SLIDER CONTROLS
-    ============================== */
-    .about-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 5;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(35,31,32,0.55);
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      backdrop-filter: blur(8px);
-      transition: var(--transition);
-    }
-    
-    .about-nav:hover {
-      background: var(--secondary);
-      transform: translateY(-50%) scale(1.08);
-    }
-    
-    .about-prev {
-      left: 14px;
-    }
-    
-    .about-next {
-      right: 14px;
-    }
-    
-    .about-dots {
-      position: absolute;
-      left: 50%;
-      bottom: 18px;
-      transform: translateX(-50%);
-      z-index: 5;
-      display: flex;
-      gap: 8px;
-    }
-    
-    .about-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(255,255,255,0.45);
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    
-    .about-dot.active {
-      width: 22px;
-      border-radius: 999px;
-      background: var(--secondary-light);
-    }
-    
-    @media (max-width: 600px) {
-      .about-nav {
-        width: 36px;
-        height: 36px;
-      }
-    
-      .about-prev {
-        left: 10px;
-      }
-    
-      .about-next {
-        right: 10px;
-      }
-    
-      .about-label {
-        bottom: 44px;
-      }
-    
-      .about-dots {
-        bottom: 16px;
-      }
-    }
-
-    /* ==============================
-       CONTACT SECTION
-    ============================== */
-    #contact {
-      background: var(--primary-dark);
-      color: var(--white);
-    }
-
-    .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-
+    /* CONTACT */
+    #contact { background: var(--primary-dark); color: var(--white); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
     #contact .section-label { color: var(--secondary-light); }
     #contact .section-title { color: var(--white); }
     #contact .section-desc  { color: rgba(255,255,255,0.65); }
+    .contact-info { margin-top: 40px; display: flex; flex-direction: column; gap: 20px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 16px; }
+    .contact-icon { width: 44px; height: 44px; background: rgba(170,142,95,0.15); border: 1px solid rgba(170,142,95,0.3); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-icon i { font-size: 1.1rem; color: var(--secondary-light); }
+    .contact-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--secondary-light); margin-bottom: 3px; }
+    .contact-value { font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.5; }
+    .contact-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+    .btn-wa { background: #25D366; color: var(--white); justify-content: center; }
+    .btn-wa:hover { background: #1ebe5a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+    .btn-ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: var(--white); justify-content: center; }
+    .btn-ig:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(253,29,29,0.3); }
+    .contact-map { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); height: 400px; }
+    .contact-map iframe { width: 100%; height: 100%; border: none; filter: grayscale(20%) contrast(1.05); }
 
-    .contact-info {
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-
-    .contact-icon {
-      width: 44px;
-      height: 44px;
-      background: rgba(170,142,95,0.15);
-      border: 1px solid rgba(170,142,95,0.3);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .contact-icon i {
-      font-size: 1.1rem;
-      color: var(--secondary-light);
-    }
-
-    .contact-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--secondary-light);
-      margin-bottom: 3px;
-    }
-
-    .contact-value {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.5;
-    }
-
-    .contact-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 32px;
-    }
-
-    .btn-wa {
-      background: #25D366;
-      color: var(--white);
-      justify-content: center;
-    }
-
-    .btn-wa:hover {
-      background: #1ebe5a;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(37,211,102,0.3);
-    }
-
-    .btn-ig {
-      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-      color: var(--white);
-      justify-content: center;
-    }
-
-    .btn-ig:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(253,29,29,0.3);
-    }
-
-    .contact-map {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      height: 400px;
-    }
-
-    .contact-map iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      filter: grayscale(20%) contrast(1.05);
-    }
-
-    /* ==============================
-       FOOTER
-    ============================== */
-    footer {
-      background: #1a1818;
-      color: rgba(255,255,255,0.55);
-      padding: 40px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .footer-logo img {
-      height: 36px;
-      filter: brightness(0) invert(1);
-      opacity: 0.7;
-    }
-
+    /* FOOTER */
+    footer { background: #1a1818; color: rgba(255,255,255,0.55); padding: 40px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer-logo img { height: 36px; filter: brightness(0) invert(1); opacity: 0.7; }
     .footer-copy { font-size: 0.78rem; text-align: center; }
-
     .footer-social { display: flex; gap: 12px; }
+    .footer-social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: rgba(255,255,255,0.6); transition: var(--transition); }
+    .footer-social a:hover { background: var(--secondary); color: var(--white); }
 
-    .footer-social a {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.6);
-      transition: var(--transition);
-    }
-
-    .footer-social a:hover {
-      background: var(--secondary);
-      color: var(--white);
-    }
-
-    /* ==============================
-       FLOATING WA BUTTON
-    ============================== */
-    .wa-float {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      z-index: 999;
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: #25D366;
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 24px rgba(37,211,102,0.4);
-      transition: var(--transition);
-    }
-
+    /* FLOATING WA */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: var(--white); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,0.4); transition: var(--transition); }
     .wa-float i { font-size: 1.6rem; }
+    .wa-float:hover { transform: scale(1.12); box-shadow: 0 10px 32px rgba(37,211,102,0.5); }
+    .wa-float::before { content: ''; position: absolute; inset: -4px; border-radius: 50%; background: #25D366; opacity: 0.25; animation: waPulse 2.5s infinite; }
+    @keyframes waPulse { 0%,100% { transform: scale(1); opacity: 0.25; } 50% { transform: scale(1.5); opacity: 0; } }
 
-    .wa-float:hover {
-      transform: scale(1.12);
-      box-shadow: 0 10px 32px rgba(37,211,102,0.5);
-    }
-
-    .wa-float::before {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      background: #25D366;
-      opacity: 0.25;
-      animation: waPulse 2.5s infinite;
-    }
-
-    @keyframes waPulse {
-      0%,100% { transform: scale(1);   opacity: 0.25; }
-      50%      { transform: scale(1.5); opacity: 0; }
-    }
-
-    /* ==============================
-       SCROLL REVEAL
-    ============================== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
 
-    /* ==============================
-       DIVIDER ORNAMENT
-    ============================== */
-    .ornament-divider {
-      text-align: center;
-      margin: 0;
-      overflow: hidden;
-    }
-
-    .ornament-divider::before,
-    .ornament-divider::after {
-      content: '';
-      display: inline-block;
-      height: 1px;
-      background: var(--secondary);
-      opacity: 0.25;
-      vertical-align: middle;
-      width: 80px;
-    }
-
-    .ornament-divider span {
-      display: inline-block;
-      margin: 0 12px;
-      color: var(--secondary);
-      font-size: 1rem;
-      vertical-align: middle;
-    }
+    /* ORNAMENT */
+    .ornament-divider { text-align: center; margin: 0; overflow: hidden; }
+    .ornament-divider::before, .ornament-divider::after { content: ''; display: inline-block; height: 1px; background: var(--secondary); opacity: 0.25; vertical-align: middle; width: 80px; }
+    .ornament-divider span { display: inline-block; margin: 0 12px; color: var(--secondary); font-size: 1rem; vertical-align: middle; }
 
     /* ==============================
        RESPONSIVE — tablet
     ============================== */
     @media (max-width: 900px) {
-      .nav-links    { display: none; }
-      .hamburger    { display: flex; }
-
-      .about-inner  { grid-template-columns: 1fr; gap: 48px; }
+      .nav-links   { display: none; }
+      .hamburger   { display: flex; }
+      .about-inner { grid-template-columns: 1fr; gap: 48px; }
       .about-badge-float { bottom: 16px; right: 16px; }
-
       .contact-inner { grid-template-columns: 1fr; gap: 48px; }
-
       .gallery-grid  { grid-template-columns: 1fr 1fr; }
       .gallery-item  { grid-column: auto !important; grid-row: auto !important; }
       .gallery-item:nth-child(1) .gallery-placeholder { min-height: 220px; }
@@ -1447,65 +466,99 @@
 
     /* ==============================
        RESPONSIVE — mobile
-       FIX: merged three separate @media (max-width: 600px) blocks into one
+       PERBAIKAN UTAMA DI SINI
     ============================== */
     @media (max-width: 600px) {
-      /* Layout */
       section { padding: 56px 0; }
+      .container { width: 100%; padding-left: 22px; padding-right: 22px; }
 
-      .container {
-        width: 100%;
-        padding-left: 22px;
-        padding-right: 22px;
+      /* ── HERO FIXES ────────────────────────────── */
+
+      /* 1. Kurangi padding section hero — ini penyebab utama teks terlalu bawah */
+      #hero {
+        padding: 0 0 52px;        /* hapus 120px top, cukup padding bawah */
+        min-height: 100svh;       /* svh = safe viewport height (cocok untuk mobile) */
+        align-items: flex-start;
       }
 
-      /* Hero */
-      #hero { align-items: flex-start; }
-
+      /* 2. Gambar hero: jadikan full-screen background, bukan dominan di atas */
       #hero::after {
         width: 100%;
-        opacity: 0.55;
-        background-position: center top;
-        -webkit-mask-image: linear-gradient(to bottom,
-          rgba(0,0,0,1)    0%,
-          rgba(0,0,0,0.65) 45%,
-          rgba(0,0,0,0)    100%);
-        mask-image: linear-gradient(to bottom,
-          rgba(0,0,0,1)    0%,
-          rgba(0,0,0,0.65) 45%,
-          rgba(0,0,0,0)    100%);
+        height: 100%;             /* cover full hero */
+        top: 0;
+        right: 0;
+        opacity: 0.38;            /* lebih transparan agar teks lebih terbaca */
+        background-position: center 25%;
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.6)  0%,
+          rgba(0,0,0,0.85) 50%,
+          rgba(0,0,0,0.5)  100%
+        );
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.6)  0%,
+          rgba(0,0,0,0.85) 50%,
+          rgba(0,0,0,0.5)  100%
+        );
       }
 
+      /* 3. Konten: padding-top = tinggi navbar saja (~72px), bukan 135px */
       .hero-content {
         display: block;
-        padding-top: 135px;
+        padding-top: 72px;        /* dikurangi dari 135px */
         padding-left: 0;
         padding-right: 0;
       }
-      
+
       .hero-right {
         display: block;
         padding-bottom: 0;
       }
 
-      .hero-badge   { font-size: 0.65rem; padding: 6px 14px; margin-bottom: 20px; }
+      /* 4. Badge & title sedikit lebih compact */
+      .hero-badge {
+        font-size: 0.65rem;
+        padding: 6px 14px;
+        margin-bottom: 16px;      /* dikurangi dari 28px */
+      }
 
-      .hero-title   { font-size: 1.85rem; line-height: 1.22; max-width: 100%; }
+      .hero-title {
+        font-size: 1.85rem;
+        line-height: 1.22;
+        max-width: 100%;
+        margin-bottom: 14px;      /* dikurangi dari 20px */
+      }
 
-      .hero-sub     { font-size: 0.92rem; line-height: 1.65; max-width: 100%; }
+      .hero-sub {
+        font-size: 0.92rem;
+        line-height: 1.65;
+        max-width: 100%;
+        margin-bottom: 28px;      /* dikurangi dari 40px */
+      }
 
-      .hero-actions { flex-direction: column; gap: 12px; width: 100%; max-width: 100%; }
-      .hero-actions .btn { width: 100%; justify-content: center; padding: 14px; }
+      .hero-actions {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+      }
+      .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px;
+      }
 
+      /* 5. Stats row — compact di bawah tombol */
       .hero-stats {
         display: flex;
         flex-direction: row;
-        gap: 8px;
-        margin-top: 36px;
-      
-        padding: 24px 0 0;
-        border-top: 1px solid rgba(255,255,255,0.12);
-      
+        gap: 0;
+        margin-top: 28px;
+
+        padding: 20px 0 0;
+        border-top: 1px solid rgba(255,255,255,0.15);
+
         background: transparent;
         border-left: none;
         border-right: none;
@@ -1515,57 +568,57 @@
         -webkit-backdrop-filter: none;
         border-radius: 0;
         overflow: visible;
-      
+
         justify-content: space-between;
       }
 
-      .hero-stats::before {
-        display: none;
-      }
-      
+      .hero-stats::before { display: none; }
+
       .hero-stats > div {
         min-width: 0;
         flex: 1;
         text-align: center;
+        padding: 0 4px;
+        /* Separator vertikal antar kolom */
+        border-right: 1px solid rgba(255,255,255,0.12);
       }
-      
+      .hero-stats > div:last-child { border-right: none; }
+
       .hero-stat-num   { font-size: 1.5rem; }
       .hero-stat-label {
         font-size: 0.62rem;
-        line-height: 1.25;
+        line-height: 1.3;
         letter-spacing: 0.02em;
       }
 
       .hero-deco { width: 400px; height: 400px; right: -150px; opacity: 0.4; }
-
-      /* Scroll indicator hidden on mobile */
       .scroll-down { display: none; }
 
-      /* Sections */
+      /* ── SECTION LAIN ──────────────────────────── */
       .services-grid  { grid-template-columns: 1fr 1fr; }
       .gallery-grid   { grid-template-columns: 1fr; }
       .prasmanan-grid { grid-template-columns: 1fr; }
-
       .menu-tab { padding: 8px 16px; font-size: 0.78rem; }
-
       .footer-inner { flex-direction: column; text-align: center; }
+
+      /* About slider nav */
+      .about-nav { width: 36px; height: 36px; }
+      .about-prev { left: 10px; }
+      .about-next { right: 10px; }
+      .about-label { bottom: 44px; }
+      .about-dots  { bottom: 16px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ==============================
-       NAVBAR
-  ============================== -->
   <nav id="navbar">
     <div class="container">
       <div class="nav-inner">
-
         <a href="#hero" class="nav-logo">
           <img class="logo-light" src="Logo Al Hikmah Horizontal Super Light.png" alt="Al Hikmah Catering" />
           <img class="logo-dark"  src="Logo Al Hikmah Horizontal Dark.png"        alt="Al Hikmah Catering" />
         </a>
-
         <ul class="nav-links" id="navLinks">
           <li><a href="#hero"    data-key="nav_home">Beranda</a></li>
           <li><a href="#menu"    data-key="nav_menu">Menu</a></li>
@@ -1573,7 +626,6 @@
           <li><a href="#about"   data-key="nav_about">Tentang</a></li>
           <li><a href="#contact" data-key="nav_contact">Kontak</a></li>
         </ul>
-
         <div style="display:flex;align-items:center;gap:16px;">
           <div class="lang-switcher">
             <button class="lang-btn active" id="btnID"  onclick="setLang('id')">ID</button>
@@ -1583,9 +635,7 @@
             <span></span><span></span><span></span>
           </div>
         </div>
-
       </div>
-
       <div class="mobile-nav" id="mobileNav">
         <a href="#hero"    onclick="closeMenu()" data-key="nav_home">Beranda</a>
         <a href="#menu"    onclick="closeMenu()" data-key="nav_menu">Menu</a>
@@ -1597,36 +647,27 @@
           <button class="lang-btn"        id="btnEN2" onclick="setLang('en')">EN</button>
         </div>
       </div>
-
     </div>
   </nav>
 
-  <!-- ==============================
-       HERO SECTION
-  ============================== -->
   <section id="hero">
     <div class="hero-food-bg"></div>
     <div class="hero-pattern"></div>
     <div class="hero-bg"></div>
     <div class="hero-deco"></div>
-
     <div class="container">
       <div class="hero-content">
-
         <div class="hero-left">
           <div class="hero-badge">
             <span class="hero-badge-dot"></span>
             <span data-key="hero_badge">Halal · Higienis · Terpercaya</span>
           </div>
-      
           <h1 class="hero-title" data-key="hero_title">
             Catering rumahan<br/><em>dengan cita rasa istimewa</em><br/>untuk setiap momen kebersamaan
           </h1>
-      
           <p class="hero-sub" data-key="hero_sub">
             Melayani berbagai kebutuhan catering di Boyolali dan sekitarnya — dari prasmanan pernikahan hingga nasi kotak.
           </p>
-      
           <div class="hero-actions">
             <a href="https://wa.me/6282136344732?text=Halo%2C%20saya%20ingin%20tanya%20paket%20catering%20untuk%20acara%20%5Bjenis%20acara%5D%20tanggal%20%5Btanggal%5D"
                target="_blank" class="btn btn-primary">
@@ -1636,7 +677,6 @@
             <a href="#menu" class="btn btn-outline" data-key="hero_see_menu">Lihat Menu</a>
           </div>
         </div>
-      
         <div class="hero-right">
           <div class="hero-stats">
             <div>
@@ -1653,15 +693,10 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
-    
   </section>
 
-  <!-- ==============================
-       SERVICES SECTION
-  ============================== -->
   <section id="services">
     <div class="container">
       <div class="services-header reveal">
@@ -1669,50 +704,36 @@
         <h2 class="section-title" data-key="services_title">Apa yang Kami Sajikan</h2>
         <p class="section-desc" data-key="services_desc">Dari prasmanan pernikahan mewah hingga hantaran, kami hadir untuk memenuhi setiap kebutuhan kuliner spesial Anda.</p>
       </div>
-
       <div class="services-grid">
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-img">
-            <img src="assets/images/services/prasmanan.png" alt="Prasmanan">
-          </div>
-          <div class="service-name"    data-key="svc1_name">Prasmanan</div>
+          <div class="service-img"><img src="assets/images/services/prasmanan.png" alt="Prasmanan"></div>
+          <div class="service-name" data-key="svc1_name">Prasmanan</div>
           <div class="service-name-en" data-key="svc1_sub">Buffet Catering</div>
         </div>
         <div class="service-card reveal reveal-delay-2">
-          <div class="service-img">
-            <img src="assets/images/services/racikan.png" alt="Racikan">
-          </div>
-          <div class="service-name"    data-key="svc2_name">Racikan</div>
+          <div class="service-img"><img src="assets/images/services/racikan.png" alt="Racikan"></div>
+          <div class="service-name" data-key="svc2_name">Racikan</div>
           <div class="service-name-en" data-key="svc2_sub">Custom Catering</div>
         </div>
         <div class="service-card reveal reveal-delay-3">
-          <div class="service-img">
-            <img src="assets/images/services/nasikotak.png" alt="Nasi Kotak">
-          </div>
-          <div class="service-name"    data-key="svc3_name">Nasi Kotak</div>
+          <div class="service-img"><img src="assets/images/services/nasikotak.png" alt="Nasi Kotak"></div>
+          <div class="service-name" data-key="svc3_name">Nasi Kotak</div>
           <div class="service-name-en" data-key="svc3_sub">Rice Box</div>
         </div>
         <div class="service-card reveal reveal-delay-4">
-          <div class="service-img">
-            <img src="assets/images/services/hantaran.jpg" alt="Hantaran Pernikahan">
-          </div>
-          <div class="service-name"    data-key="svc4_name">Hantaran Pernikahan</div>
+          <div class="service-img"><img src="assets/images/services/hantaran.jpg" alt="Hantaran Pernikahan"></div>
+          <div class="service-name" data-key="svc4_name">Hantaran Pernikahan</div>
           <div class="service-name-en" data-key="svc4_sub">Wedding Hampers</div>
         </div>
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-img">
-            <img src="assets/images/services/tumpeng.png" alt="Tumpeng Komplit">
-          </div>
-          <div class="service-name"    data-key="svc5_name">Tumpeng Komplit</div>
+          <div class="service-img"><img src="assets/images/services/tumpeng.png" alt="Tumpeng Komplit"></div>
+          <div class="service-name" data-key="svc5_name">Tumpeng Komplit</div>
           <div class="service-name-en" data-key="svc5_sub">Traditional Tumpeng</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==============================
-       MENU SECTION
-  ============================== -->
   <section id="menu">
     <div class="container">
       <div class="menu-header reveal">
@@ -1720,32 +741,24 @@
         <h2 class="section-title" data-key="menu_title">Menu Pilihan Kami</h2>
         <p class="section-desc" data-key="menu_desc">Pilih kategori untuk menjelajahi berbagai pilihan menu lezat kami. Harga menyesuaikan pilihan menu.</p>
       </div>
-
-      <!-- PRASMANAN -->
       <div class="prasmanan-section reveal">
         <div class="prasmanan-section-head">
           <span class="section-label">Menu Prasmanan</span>
           <h3>Paket Prasmanan</h3>
           <p>Pilihan paket prasmanan untuk acara keluarga, hajatan, hingga pesta besar.</p>
         </div>
-
         <div class="prasmanan-grid">
-
-          <!-- Paket 1 -->
           <div class="prasmanan-card">
             <div class="prasmanan-card-title">Paket 1</div>
             <div class="prasmanan-items">
               <div class="prasmanan-item"><strong style="color:var(--secondary);font-size:0.78rem;">Minuman</strong></div>
               <div class="prasmanan-item">Teh / Air Putih</div>
-
               <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Snack</strong></div>
               <div class="prasmanan-item">Roti Mandarin / Roti Mandarin Kismis / Roti Gulung Pandan / Roti Gulung Cokelat / Cake Buah / Cake Klepon / Cake Red Velvet</div>
               <div class="prasmanan-item">Sosis Solo / Sosis Basah / Kroket / Resoles (Mayo / Sayur) / Sasisu</div>
               <div class="prasmanan-item">Kacang Mete / Kacang Bawang / Kacang Telur / Sumpia</div>
-
               <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Soup</strong></div>
               <div class="prasmanan-item">Soup Manten / Soup Galantin / Soup Matahari / Selat Solo / Timlo</div>
-
               <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Menu Pokok</strong></div>
               <div class="prasmanan-item">Nasi Putih / Nasi Kuning / Nasi Putih + Kuning</div>
               <div class="prasmanan-item">Bestik Sapi / Bestik Ayam Gelinding</div>
@@ -1753,28 +766,22 @@
               <div class="prasmanan-item">Cap Cay Bakso / Paklay / Orak Arik</div>
               <div class="prasmanan-item">Nugget / Ayam Crispy / Udang Goreng</div>
               <div class="prasmanan-item">Acar (Mentah / Matang) / Kerupuk</div>
-
               <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Penutup</strong></div>
               <div class="prasmanan-item">Es Dawet / Es Kopyor / Es Buah / Es Krim / Es Blok</div>
             </div>
             <p class="prasmanan-note">*Harga sesuai dengan pilihan menu</p>
           </div>
-
-          <!-- Paket 2 -->
           <div class="prasmanan-card">
             <div class="prasmanan-card-title">Paket 2</div>
             <div class="prasmanan-items">
               <div class="prasmanan-item"><strong style="color:var(--secondary);font-size:0.78rem;">Minuman</strong></div>
               <div class="prasmanan-item">Teh / Air Putih</div>
-
               <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Snack</strong></div>
               <div class="prasmanan-item">Roti Mandarin / Roti Mandarin Kismis / Roti Gulung Pandan / Roti Gulung Cokelat / Cake Buah / Cake Klepon / Cake Red Velvet</div>
               <div class="prasmanan-item">Sosis Solo / Sosis Basah / Kroket / Resoles (Mayo / Sayur) / Sasisu</div>
               <div class="prasmanan-item">Kacang Mete / Kacang Bawang / Kacang Telur / Sumpia</div>
-
               <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Soup</strong></div>
               <div class="prasmanan-item">Soup Manten / Soup Galantin / Soup Matahari / Selat Solo / Timlo</div>
-
               <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Nasi Gunung Sari</strong></div>
               <div class="prasmanan-item">Bestik Sapi / Bestik Ayam Gelinding</div>
               <div class="prasmanan-item">Sambal Goreng Kreni / Sambal Goreng Ati</div>
@@ -1784,14 +791,11 @@
               <div class="prasmanan-item">Acar Kuning</div>
               <div class="prasmanan-item">Nugget / Ayam Crispy / Udang Goreng</div>
               <div class="prasmanan-item">Kerupuk</div>
-
               <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Penutup</strong></div>
               <div class="prasmanan-item">Es Dawet / Es Kopyor / Es Buah / Es Krim / Es Blok</div>
             </div>
             <p class="prasmanan-note">*Harga sesuai dengan pilihan menu</p>
           </div>
-
-          <!-- Menu Pesta Prasmanan -->
           <div class="prasmanan-card">
             <div class="prasmanan-card-title">Menu Pesta (Prasmanan)</div>
             <div class="prasmanan-items">
@@ -1805,34 +809,19 @@
               <div class="prasmanan-item">Sop Jamur / Sop Ayam</div>
               <div class="prasmanan-item">Kerupuk Udang</div>
               <div class="prasmanan-item">Acar / Sambal Lalapan / Acar Kuning</div>
-
-              <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Buah</strong></div>
+              <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Buah & Penutup</strong></div>
               <div class="prasmanan-item">Buah Potong (Melon / Semangka / Nanas / Pepaya)</div>
               <div class="prasmanan-item">Es Buah / Es Dawet / Es Campur / Es Krim / Puding</div>
-
               <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Minuman</strong></div>
-              <div class="prasmanan-item">Air Putih</div>
-              <div class="prasmanan-item">Jus Buah</div>
-              <div class="prasmanan-item">Softdrink</div>
-              <div class="prasmanan-item">Teh Manis</div>
-              <div class="prasmanan-item">Es Batu</div>
-
+              <div class="prasmanan-item">Air Putih / Jus Buah / Softdrink / Teh Manis / Es Batu</div>
               <div class="prasmanan-item" style="margin-top:8px;"><strong style="color:var(--secondary);font-size:0.78rem;">Menu Gubugan</strong></div>
-              <div class="prasmanan-item">Tengkleng</div>
-              <div class="prasmanan-item">Bakso</div>
-              <div class="prasmanan-item">Timlo</div>
-              <div class="prasmanan-item">Selat Solo</div>
-              <div class="prasmanan-item">Coto Makassar</div>
-              <div class="prasmanan-item">Siomay</div>
-              <div class="prasmanan-item">Sate Ayam + Lontong</div>
+              <div class="prasmanan-item">Tengkleng / Bakso / Timlo / Selat Solo / Coto Makassar / Siomay / Sate Ayam + Lontong</div>
             </div>
             <p class="prasmanan-note">*Harga sesuai dengan pilihan menu</p>
           </div>
-
         </div>
       </div>
 
-      <!-- Tab buttons — FIX: removed orphan tab_prasmanan key (no matching tab existed) -->
       <div class="menu-tabs reveal" id="menuTabs">
         <button class="menu-tab active" onclick="switchTab('snack-manis')" data-key="tab_snack_manis">Snack Manis</button>
         <button class="menu-tab"        onclick="switchTab('snack-asin')"  data-key="tab_snack_asin">Snack Asin</button>
@@ -1841,7 +830,6 @@
         <button class="menu-tab"        onclick="switchTab('minuman')"     data-key="tab_minuman">Minuman</button>
       </div>
 
-      <!-- SNACK MANIS -->
       <div class="menu-panel active" id="panel-snack-manis">
         <div class="menu-items-grid">
           <div class="menu-item-pill"><span class="pill-dot"></span>Roti Gulung Pandan</div>
@@ -1863,8 +851,6 @@
           <div class="menu-item-pill"><span class="pill-dot"></span>Kue Ku</div>
         </div>
       </div>
-
-      <!-- SNACK ASIN -->
       <div class="menu-panel" id="panel-snack-asin">
         <div class="menu-items-grid">
           <div class="menu-item-pill"><span class="pill-dot"></span>Sosis Solo</div>
@@ -1880,8 +866,6 @@
           <div class="menu-item-pill"><span class="pill-dot"></span>Sasisu</div>
         </div>
       </div>
-
-      <!-- KLETIKAN -->
       <div class="menu-panel" id="panel-kletikan">
         <div class="menu-items-grid">
           <div class="menu-item-pill"><span class="pill-dot"></span>Kacang Mete</div>
@@ -1895,8 +879,6 @@
           <div class="menu-item-pill"><span class="pill-dot"></span>Stik Keju</div>
         </div>
       </div>
-
-      <!-- GUBUGAN -->
       <div class="menu-panel" id="panel-gubugan">
         <div class="gubugan-grid">
           <div class="gubugan-card">Tengkleng</div>
@@ -1909,51 +891,21 @@
         </div>
         <p style="margin-top:20px;font-size:0.8rem;color:var(--text);opacity:0.6;font-style:italic;" data-key="price_note">*Harga sesuai dengan pilihan menu</p>
       </div>
-
-      <!-- MINUMAN — FIX: added loading="lazy" to all images -->
       <div class="menu-panel" id="panel-minuman">
         <div class="minuman-grid">
-          <div class="minuman-card">
-            <img src="assets/images/minuman/water.jpg"     alt="Air Putih"  loading="lazy">
-            <div class="minuman-name">Air Putih</div>
-          </div>
-          <div class="minuman-card">
-            <img src="assets/images/minuman/juice.jpg"     alt="Jus Buah"   loading="lazy">
-            <div class="minuman-name">Jus Buah</div>
-          </div>
-          <div class="minuman-card">
-            <img src="assets/images/minuman/softdrink.jpg" alt="Softdrink"  loading="lazy">
-            <div class="minuman-name">Softdrink</div>
-          </div>
-          <div class="minuman-card">
-            <img src="assets/images/minuman/teh.png"       alt="Teh Manis"  loading="lazy">
-            <div class="minuman-name">Teh Manis</div>
-          </div>
-          <div class="minuman-card">
-            <img src="assets/images/minuman/esdawet.png"   alt="Es Dawet"   loading="lazy">
-            <div class="minuman-name">Es Dawet</div>
-          </div>
-          <div class="minuman-card">
-            <img src="assets/images/minuman/escampur.png"  alt="Es Campur"  loading="lazy">
-            <div class="minuman-name">Es Campur</div>
-          </div>
-          <div class="minuman-card">
-            <img src="assets/images/minuman/eskrim.png"    alt="Es Krim"    loading="lazy">
-            <div class="minuman-name">Es Krim</div>
-          </div>
-          <div class="minuman-card">
-            <img src="assets/images/minuman/esdegan.png"   alt="Es Degan"   loading="lazy">
-            <div class="minuman-name">Es Degan</div>
-          </div>
+          <div class="minuman-card"><img src="assets/images/minuman/water.jpg"     alt="Air Putih"  loading="lazy"><div class="minuman-name">Air Putih</div></div>
+          <div class="minuman-card"><img src="assets/images/minuman/juice.jpg"     alt="Jus Buah"   loading="lazy"><div class="minuman-name">Jus Buah</div></div>
+          <div class="minuman-card"><img src="assets/images/minuman/softdrink.jpg" alt="Softdrink"  loading="lazy"><div class="minuman-name">Softdrink</div></div>
+          <div class="minuman-card"><img src="assets/images/minuman/teh.png"       alt="Teh Manis"  loading="lazy"><div class="minuman-name">Teh Manis</div></div>
+          <div class="minuman-card"><img src="assets/images/minuman/esdawet.png"   alt="Es Dawet"   loading="lazy"><div class="minuman-name">Es Dawet</div></div>
+          <div class="minuman-card"><img src="assets/images/minuman/escampur.png"  alt="Es Campur"  loading="lazy"><div class="minuman-name">Es Campur</div></div>
+          <div class="minuman-card"><img src="assets/images/minuman/eskrim.png"    alt="Es Krim"    loading="lazy"><div class="minuman-name">Es Krim</div></div>
+          <div class="minuman-card"><img src="assets/images/minuman/esdegan.png"   alt="Es Degan"   loading="lazy"><div class="minuman-name">Es Degan</div></div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ==============================
-       GALLERY SECTION
-  ============================== -->
   <section id="gallery">
     <div class="container">
       <div class="gallery-header reveal">
@@ -1961,69 +913,32 @@
         <h2 class="section-title" data-key="gallery_title">Momen yang Kami Ciptakan</h2>
         <p class="section-desc" data-key="gallery_desc">Setiap hidangan adalah karya, setiap acara adalah kenangan. Berikut sebagian momen yang telah kami percantik bersama.</p>
       </div>
-
       <div class="gallery-grid reveal">
-        <div class="gallery-item">
-          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🍽️</span><p>Prasmanan Setup</p></div></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal1">Meja Prasmanan Pernikahan</div></div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🎂</span><p>Snack Display</p></div></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal2">Aneka Snack Manis</div></div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🥘</span><p>Main Course</p></div></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal3">Menu Pesta Prasmanan</div></div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🥟</span><p>Snack Asin</p></div></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal4">Snack Asin Pilihan</div></div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🌾</span><p>Tumpeng</p></div></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal5">Tumpeng Komplit</div></div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🎉</span><p>Rice Box</p></div></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal6">Nasi Kotak</div></div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🍜</span><p>Live Station</p></div></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal7">Stand Menu Gubugan</div></div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-placeholder"><div class="gallery-ph-inner"><span>💍</span><p>Wedding Hampers</p></div></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal8">Hantaran Pernikahan</div></div>
-        </div>
+        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🍽️</span><p>Prasmanan Setup</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal1">Meja Prasmanan Pernikahan</div></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🎂</span><p>Snack Display</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal2">Aneka Snack Manis</div></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🥘</span><p>Main Course</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal3">Menu Pesta Prasmanan</div></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🥟</span><p>Snack Asin</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal4">Snack Asin Pilihan</div></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🌾</span><p>Tumpeng</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal5">Tumpeng Komplit</div></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🎉</span><p>Rice Box</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal6">Nasi Kotak</div></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🍜</span><p>Live Station</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal7">Stand Menu Gubugan</div></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>💍</span><p>Wedding Hampers</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal8">Hantaran Pernikahan</div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ==============================
-       ABOUT SECTION
-  ============================== -->
   <section id="about">
     <div class="container">
       <div class="about-inner">
-
         <div class="about-visual reveal">
           <div class="about-deco-circle"></div>
           <div class="about-img-wrap">
-            <!-- FIX: added descriptive alt text to all about slides -->
             <img src="assets/images/about/founder.png"  class="about-slide active" alt="Almh. Ibu Parnginah, pendiri Al Hikmah Catering">
             <img src="assets/images/about/team1.jpeg"   class="about-slide"        alt="Tim Al Hikmah Catering">
             <img src="assets/images/about/team2.jpeg"   class="about-slide"        alt="Momen bersama tim Al Hikmah Catering">
             <img src="assets/images/about/family.jpeg"  class="about-slide"        alt="Keluarga besar Al Hikmah Catering">
             <div class="about-label" id="aboutLabel">Almh. Ibu Parnginah</div>
-
-            <button class="about-nav about-prev" type="button" onclick="changeAboutSlide(-1)" aria-label="Foto sebelumnya">
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            
-            <button class="about-nav about-next" type="button" onclick="changeAboutSlide(1)" aria-label="Foto selanjutnya">
-              <i class="fa-solid fa-chevron-right"></i>
-            </button>
-            
+            <button class="about-nav about-prev" type="button" onclick="changeAboutSlide(-1)" aria-label="Foto sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="about-nav about-next" type="button" onclick="changeAboutSlide(1)"  aria-label="Foto selanjutnya"><i class="fa-solid fa-chevron-right"></i></button>
             <div class="about-dots" id="aboutDots"></div>
           </div>
           <div class="about-badge-float">
@@ -2031,308 +946,142 @@
             <span data-key="about_badge">Tahun Melayani</span>
           </div>
         </div>
-
         <div class="about-content reveal reveal-delay-2">
           <span class="section-label" data-key="about_label">Tentang Kami</span>
           <h2 class="section-title" data-key="about_title">Dari Dapur Keluarga, untuk Momen Istimewa Anda</h2>
-
-          <p class="about-story" data-key="about_story1">
-            <strong>Al Hikmah Catering</strong> lahir dari dapur kecil di Boyolali, dibawa oleh semangat seorang ibu yang percaya bahwa makanan bukan sekadar mengenyangkan — tapi menyatukan, menghangatkan, dan merayakan kehidupan.
-          </p>
-          <p class="about-story" data-key="about_story2">
-            Berawal dari pesanan tetangga dan kerabat, kini kami telah melayani ratusan acara besar di Boyolali dan sekitarnya. Setiap sajian dimasak dengan bahan-bahan segar pilihan, resep turun-temurun, dan cinta yang tidak pernah berkurang.
-          </p>
-          <p class="about-story" data-key="about_story3">
-            Kami berdiri di <strong>Kios No. 58/59 Pasar Sambi</strong>, melayani mulai dari prasmanan acara pernikahan, nasi kotak, hingga tumpeng syukuran yang penuh makna.
-          </p>
-
+          <p class="about-story" data-key="about_story1"><strong>Al Hikmah Catering</strong> lahir dari dapur kecil di Boyolali, dibawa oleh semangat seorang ibu yang percaya bahwa makanan bukan sekadar mengenyangkan — tapi menyatukan, menghangatkan, dan merayakan kehidupan.</p>
+          <p class="about-story" data-key="about_story2">Berawal dari pesanan tetangga dan kerabat, kini kami telah melayani ratusan acara besar di Boyolali dan sekitarnya. Setiap sajian dimasak dengan bahan-bahan segar pilihan, resep turun-temurun, dan cinta yang tidak pernah berkurang.</p>
+          <p class="about-story" data-key="about_story3">Kami berdiri di <strong>Kios No. 58/59 Pasar Sambi</strong>, melayani mulai dari prasmanan acara pernikahan, nasi kotak, hingga tumpeng syukuran yang penuh makna.</p>
           <div class="about-values">
-            <div class="about-value">
-              <div class="about-value-icon"><i class="fa-solid fa-shield-halved"></i></div>
-              <div class="about-value-text">
-                <strong data-key="val1_title">Halal & Higienis</strong>
-                <span   data-key="val1_desc">Seluruh proses produksi mengutamakan kebersihan dan standar halal</span>
-              </div>
-            </div>
-            <div class="about-value">
-              <div class="about-value-icon"><i class="fa-solid fa-utensils"></i></div>
-              <div class="about-value-text">
-                <strong data-key="val2_title">Resep Otentik</strong>
-                <span   data-key="val2_desc">Cita rasa asli Jawa Tengah yang telah teruji selama bertahun-tahun</span>
-              </div>
-            </div>
-            <div class="about-value">
-              <div class="about-value-icon"><i class="fa-solid fa-truck-fast"></i></div>
-              <div class="about-value-text">
-                <strong data-key="val3_title">Tepat Waktu</strong>
-                <span   data-key="val3_desc">Komitmen pengiriman dan penyajian sesuai jadwal acara Anda</span>
-              </div>
-            </div>
+            <div class="about-value"><div class="about-value-icon"><i class="fa-solid fa-shield-halved"></i></div><div class="about-value-text"><strong data-key="val1_title">Halal & Higienis</strong><span data-key="val1_desc">Seluruh proses produksi mengutamakan kebersihan dan standar halal</span></div></div>
+            <div class="about-value"><div class="about-value-icon"><i class="fa-solid fa-utensils"></i></div><div class="about-value-text"><strong data-key="val2_title">Resep Otentik</strong><span data-key="val2_desc">Cita rasa asli Jawa Tengah yang telah teruji selama bertahun-tahun</span></div></div>
+            <div class="about-value"><div class="about-value-icon"><i class="fa-solid fa-truck-fast"></i></div><div class="about-value-text"><strong data-key="val3_title">Tepat Waktu</strong><span data-key="val3_desc">Komitmen pengiriman dan penyajian sesuai jadwal acara Anda</span></div></div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ==============================
-       CONTACT SECTION
-  ============================== -->
   <section id="contact">
     <div class="container">
       <div class="contact-inner">
-
         <div class="reveal">
           <span class="section-label" data-key="contact_label">Hubungi Kami</span>
           <h2 class="section-title" data-key="contact_title">Siap Mewujudkan Acara Impian Anda</h2>
           <p class="section-desc" data-key="contact_desc">Konsultasikan kebutuhan catering Anda bersama kami. Kami siap membantu merencanakan menu terbaik untuk setiap momen spesial.</p>
-
           <div class="contact-info">
-            <div class="contact-item">
-              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-              <div>
-                <div class="contact-label" data-key="contact_addr_label">Alamat</div>
-                <div class="contact-value">Kios No. 58/59 Pasar Sambi<br/>Jl. Bangak - Simo, Dusun I, Tempursari<br/>Sambi, Boyolali, Jawa Tengah 57376</div>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-              <div>
-                <div class="contact-label" data-key="contact_wa_label">WhatsApp</div>
-                <div class="contact-value">082136344732 / 081329969126</div>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon"><i class="fa-brands fa-instagram"></i></div>
-              <div>
-                <div class="contact-label">Instagram</div>
-                <div class="contact-value">@alhikmah.catering</div>
-              </div>
-            </div>
+            <div class="contact-item"><div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div><div><div class="contact-label" data-key="contact_addr_label">Alamat</div><div class="contact-value">Kios No. 58/59 Pasar Sambi<br/>Jl. Bangak - Simo, Dusun I, Tempursari<br/>Sambi, Boyolali, Jawa Tengah 57376</div></div></div>
+            <div class="contact-item"><div class="contact-icon"><i class="fa-solid fa-phone"></i></div><div><div class="contact-label" data-key="contact_wa_label">WhatsApp</div><div class="contact-value">082136344732 / 081329969126</div></div></div>
+            <div class="contact-item"><div class="contact-icon"><i class="fa-brands fa-instagram"></i></div><div><div class="contact-label">Instagram</div><div class="contact-value">@alhikmah.catering</div></div></div>
           </div>
-
           <div class="contact-actions">
-            <a href="https://wa.me/6282136344732?text=Halo%2C%20saya%20ingin%20tanya%20paket%20catering%20untuk%20acara%20%5Bjenis%20acara%5D%20tanggal%20%5Btanggal%5D"
-               target="_blank" class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i>
-              <span data-key="cta_wa">Chat via WhatsApp</span>
-            </a>
-            <a href="https://www.instagram.com/alhikmah.catering"
-               target="_blank" class="btn btn-ig">
-              <i class="fa-brands fa-instagram"></i>
-              <span data-key="cta_ig">Follow di Instagram</span>
-            </a>
+            <a href="https://wa.me/6282136344732?text=Halo%2C%20saya%20ingin%20tanya%20paket%20catering%20untuk%20acara%20%5Bjenis%20acara%5D%20tanggal%20%5Btanggal%5D" target="_blank" class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i><span data-key="cta_wa">Chat via WhatsApp</span></a>
+            <a href="https://www.instagram.com/alhikmah.catering" target="_blank" class="btn btn-ig"><i class="fa-brands fa-instagram"></i><span data-key="cta_ig">Follow di Instagram</span></a>
           </div>
         </div>
-
         <div class="reveal reveal-delay-2">
           <div class="contact-map">
-            <iframe
-              src="https://maps.google.com/maps?q=Pasar+Sambi+Boyolali&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              allowfullscreen
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Lokasi Al Hikmah Catering">
-            </iframe>
+            <iframe src="https://maps.google.com/maps?q=Pasar+Sambi+Boyolali&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Al Hikmah Catering"></iframe>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ==============================
-       FOOTER
-  ============================== -->
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-logo">
-          <img src="Logo Al Hikmah Horizontal Super Light.png" alt="Al Hikmah Catering" />
-        </div>
-        <div class="footer-copy">
-          <span data-key="footer_copy">&copy; 2026 Al Hikmah Catering. Semua hak dilindungi.</span>
-        </div>
+        <div class="footer-logo"><img src="Logo Al Hikmah Horizontal Super Light.png" alt="Al Hikmah Catering" /></div>
+        <div class="footer-copy"><span data-key="footer_copy">&copy; 2026 Al Hikmah Catering. Semua hak dilindungi.</span></div>
         <div class="footer-social">
-          <a href="https://wa.me/6282136344732?text=Halo%2C%20saya%20ingin%20tanya%20paket%20catering%20untuk%20acara%20%5Bjenis%20acara%5D%20tanggal%20%5Btanggal%5D" target="_blank" title="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-          <a href="https://www.instagram.com/alhikmah.catering" target="_blank" title="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
+          <a href="https://wa.me/6282136344732?text=Halo%2C%20saya%20ingin%20tanya%20paket%20catering%20untuk%20acara%20%5Bjenis%20acara%5D%20tanggal%20%5Btanggal%5D" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/alhikmah.catering" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- ==============================
-       FLOATING WA BUTTON
-  ============================== -->
-  <a class="wa-float"
-     href="https://wa.me/6282136344732?text=Halo%2C%20saya%20ingin%20tanya%20paket%20catering%20untuk%20acara%20%5Bjenis%20acara%5D%20tanggal%20%5Btanggal%5D"
-     target="_blank"
-     title="Chat WhatsApp">
+  <a class="wa-float" href="https://wa.me/6282136344732?text=Halo%2C%20saya%20ingin%20tanya%20paket%20catering%20untuk%20acara%20%5Bjenis%20acara%5D%20tanggal%20%5Btanggal%5D" target="_blank" title="Chat WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- ==============================
-       JAVASCRIPT
-  ============================== -->
   <script>
-    /* ---- TRANSLATIONS ---- */
     const translations = {
       id: {
-        nav_home:    'Beranda',
-        nav_menu:    'Menu',
-        nav_gallery: 'Galeri',
-        nav_about:   'Tentang',
-        nav_contact: 'Kontak',
-
-        /* FIX: matched hero_badge to initial HTML value ('Terpercaya' not 'Berpengalaman') */
-        hero_badge:    'Halal · Higienis · Terpercaya',
-        hero_title:    'Catering rumahan dengan<br/><em>cita rasa istimewa</em><br/>untuk setiap momen',
-        hero_sub:      'Melayani berbagai kebutuhan catering di Boyolali dan sekitarnya — dari prasmanan acara pernikahan hingga pesanan nasi kotak.',
-        hero_cta:      'Pesan Sekarang',
-        hero_see_menu: 'Lihat Menu',
-
-        stat_years:  'Tahun Pengalaman',
-        stat_events: 'Acara Sukses',
-        stat_menus:  'Pilihan Menu',
-
-        services_label: 'Layanan Kami',
-        services_title: 'Apa yang Kami Sajikan',
-        services_desc:  'Dari prasmanan pernikahan mewah hingga hantaran, kami hadir untuk memenuhi setiap kebutuhan kuliner spesial Anda.',
-        svc1_name: 'Prasmanan',            svc1_sub: 'Buffet Catering',
-        svc2_name: 'Racikan',              svc2_sub: 'Custom Catering',
-        svc3_name: 'Nasi Kotak', svc3_sub: 'Rice Box',
-        svc4_name: 'Hantaran Pernikahan',  svc4_sub: 'Wedding Hampers',
-        svc5_name: 'Tumpeng Komplit',      svc5_sub: 'Traditional Tumpeng',
-
-        menu_label: 'Daftar Menu',
-        menu_title: 'Menu Pilihan Kami',
-        menu_desc:  'Pilih kategori untuk menjelajahi berbagai pilihan menu lezat kami. Harga menyesuaikan pilihan menu.',
-        /* FIX: removed orphan tab_prasmanan key — no tab button uses it */
-        tab_snack_manis: 'Snack Manis',
-        tab_snack_asin:  'Snack Asin',
-        tab_kletikan:    'Kletikan',
-        tab_gubugan:     'Menu Gubugan',
-        tab_minuman:     'Minuman',
-        price_note: '*Harga sesuai dengan pilihan menu',
-
-        gallery_label: 'Galeri',
-        gallery_title: 'Momen yang Kami Ciptakan',
-        gallery_desc:  'Setiap hidangan adalah karya, setiap acara adalah kenangan. Berikut sebagian momen yang telah kami percantik bersama.',
-        gal1: 'Meja Prasmanan Pernikahan',
-        gal2: 'Aneka Snack Manis',
-        gal3: 'Menu Pesta Prasmanan',
-        gal4: 'Snack Asin Pilihan',
-        gal5: 'Tumpeng Komplit',
-        gal6: 'Nasi Kotak',
-        gal7: 'Stand Menu Gubugan',
-        gal8: 'Hantaran Pernikahan',
-
-        about_label:  'Tentang Kami',
-        about_title:  'Dari Dapur Keluarga, untuk Momen Istimewa Anda',
-        about_badge:  'Tahun Melayani',
-        about_story1: '<strong>Al Hikmah Catering</strong> lahir dari dapur kecil di Boyolali, dibawa oleh semangat seorang ibu yang percaya bahwa makanan bukan sekadar mengenyangkan — tapi menyatukan, menghangatkan, dan merayakan kehidupan.',
-        about_story2: 'Berawal dari pesanan tetangga dan kerabat, kini kami telah melayani ratusan acara besar di Boyolali dan sekitarnya. Setiap sajian dimasak dengan bahan-bahan segar pilihan, resep turun-temurun, dan cinta yang tidak pernah berkurang.',
-        about_story3: 'Kami berdiri di <strong>Kios No. 58/59 Pasar Sambi</strong>, melayani mulai dari prasmanan acara pernikahan, nasi kotak, hingga tumpeng syukuran yang penuh makna.',
-        val1_title: 'Halal & Higienis', val1_desc: 'Seluruh proses produksi mengutamakan kebersihan dan standar halal',
-        val2_title: 'Resep Otentik',    val2_desc: 'Cita rasa asli Jawa Tengah yang telah teruji selama bertahun-tahun',
-        val3_title: 'Tepat Waktu',      val3_desc: 'Komitmen pengiriman dan penyajian sesuai jadwal acara Anda',
-
-        contact_label:      'Hubungi Kami',
-        contact_title:      'Siap Mewujudkan Acara Impian Anda',
-        contact_desc:       'Konsultasikan kebutuhan catering Anda bersama kami. Kami siap membantu merencanakan menu terbaik untuk setiap momen spesial.',
-        contact_addr_label: 'Alamat',
-        contact_wa_label:   'WhatsApp',
-        cta_wa: 'Chat via WhatsApp',
-        cta_ig: 'Follow di Instagram',
-
-        /* FIX: consistent year 2026 in both languages */
-        footer_copy: '© 2026 Al Hikmah Catering. Semua hak dilindungi.',
-
-        /* FIX: about slideshow labels added to translations for multilingual support */
-        slide_label_0: 'Almh. Ibu Parnginah',
-        slide_label_1: 'Tim Al Hikmah',
-        slide_label_2: 'Momen Bersama Tim',
-        slide_label_3: 'Keluarga Besar Al Hikmah',
+        nav_home:'Beranda', nav_menu:'Menu', nav_gallery:'Galeri', nav_about:'Tentang', nav_contact:'Kontak',
+        hero_badge:'Halal · Higienis · Terpercaya',
+        hero_title:'Catering rumahan<br/><em>dengan cita rasa istimewa</em><br/>untuk setiap momen kebersamaan',
+        hero_sub:'Melayani berbagai kebutuhan catering di Boyolali dan sekitarnya — dari prasmanan acara pernikahan hingga pesanan nasi kotak.',
+        hero_cta:'Pesan Sekarang', hero_see_menu:'Lihat Menu',
+        stat_years:'Tahun Pengalaman', stat_events:'Acara Sukses', stat_menus:'Pilihan Menu',
+        services_label:'Layanan Kami', services_title:'Apa yang Kami Sajikan',
+        services_desc:'Dari prasmanan pernikahan mewah hingga hantaran, kami hadir untuk memenuhi setiap kebutuhan kuliner spesial Anda.',
+        svc1_name:'Prasmanan', svc1_sub:'Buffet Catering', svc2_name:'Racikan', svc2_sub:'Custom Catering',
+        svc3_name:'Nasi Kotak', svc3_sub:'Rice Box', svc4_name:'Hantaran Pernikahan', svc4_sub:'Wedding Hampers',
+        svc5_name:'Tumpeng Komplit', svc5_sub:'Traditional Tumpeng',
+        menu_label:'Daftar Menu', menu_title:'Menu Pilihan Kami',
+        menu_desc:'Pilih kategori untuk menjelajahi berbagai pilihan menu lezat kami. Harga menyesuaikan pilihan menu.',
+        tab_snack_manis:'Snack Manis', tab_snack_asin:'Snack Asin', tab_kletikan:'Kletikan',
+        tab_gubugan:'Menu Gubugan', tab_minuman:'Minuman',
+        price_note:'*Harga sesuai dengan pilihan menu',
+        gallery_label:'Galeri', gallery_title:'Momen yang Kami Ciptakan',
+        gallery_desc:'Setiap hidangan adalah karya, setiap acara adalah kenangan. Berikut sebagian momen yang telah kami percantik bersama.',
+        gal1:'Meja Prasmanan Pernikahan', gal2:'Aneka Snack Manis', gal3:'Menu Pesta Prasmanan',
+        gal4:'Snack Asin Pilihan', gal5:'Tumpeng Komplit', gal6:'Nasi Kotak',
+        gal7:'Stand Menu Gubugan', gal8:'Hantaran Pernikahan',
+        about_label:'Tentang Kami', about_title:'Dari Dapur Keluarga, untuk Momen Istimewa Anda',
+        about_badge:'Tahun Melayani',
+        about_story1:'<strong>Al Hikmah Catering</strong> lahir dari dapur kecil di Boyolali, dibawa oleh semangat seorang ibu yang percaya bahwa makanan bukan sekadar mengenyangkan — tapi menyatukan, menghangatkan, dan merayakan kehidupan.',
+        about_story2:'Berawal dari pesanan tetangga dan kerabat, kini kami telah melayani ratusan acara besar di Boyolali dan sekitarnya. Setiap sajian dimasak dengan bahan-bahan segar pilihan, resep turun-temurun, dan cinta yang tidak pernah berkurang.',
+        about_story3:'Kami berdiri di <strong>Kios No. 58/59 Pasar Sambi</strong>, melayani mulai dari prasmanan acara pernikahan, nasi kotak, hingga tumpeng syukuran yang penuh makna.',
+        val1_title:'Halal & Higienis', val1_desc:'Seluruh proses produksi mengutamakan kebersihan dan standar halal',
+        val2_title:'Resep Otentik', val2_desc:'Cita rasa asli Jawa Tengah yang telah teruji selama bertahun-tahun',
+        val3_title:'Tepat Waktu', val3_desc:'Komitmen pengiriman dan penyajian sesuai jadwal acara Anda',
+        contact_label:'Hubungi Kami', contact_title:'Siap Mewujudkan Acara Impian Anda',
+        contact_desc:'Konsultasikan kebutuhan catering Anda bersama kami. Kami siap membantu merencanakan menu terbaik untuk setiap momen spesial.',
+        contact_addr_label:'Alamat', contact_wa_label:'WhatsApp',
+        cta_wa:'Chat via WhatsApp', cta_ig:'Follow di Instagram',
+        footer_copy:'© 2026 Al Hikmah Catering. Semua hak dilindungi.',
+        slide_label_0:'Almh. Ibu Parnginah', slide_label_1:'Tim Al Hikmah',
+        slide_label_2:'Momen Bersama Tim', slide_label_3:'Keluarga Besar Al Hikmah',
       },
-
       en: {
-        nav_home:    'Home',
-        nav_menu:    'Menu',
-        nav_gallery: 'Gallery',
-        nav_about:   'About',
-        nav_contact: 'Contact',
-
-        hero_badge:    'Halal · Hygienic · Trusted',
-        hero_title:    'Homemade catering with<br/><em>exceptional taste</em><br/>for every occasion',
-        hero_sub:      "Serving catering needs across Boyolali and surroundings — from wedding buffets to rice box.",
-        hero_cta:      'Order Now',
-        hero_see_menu: 'View Menu',
-
-        stat_years:  'Years Experience',
-        stat_events: 'Successful Events',
-        stat_menus:  'Menu Choices',
-
-        services_label: 'Our Services',
-        services_title: 'What We Offer',
-        services_desc:  'From lavish wedding buffets to wedding hampers, we are here to fulfil your every special culinary need.',
-        svc1_name: 'Prasmanan',            svc1_sub: 'Buffet Catering',
-        svc2_name: 'Racikan',              svc2_sub: 'Custom Catering',
-        svc3_name: 'Nasi Kotak', svc3_sub: 'Rice Box',
-        svc4_name: 'Hantaran Pernikahan',  svc4_sub: 'Wedding Hampers',
-        svc5_name: 'Tumpeng Komplit',      svc5_sub: 'Traditional Tumpeng',
-
-        menu_label: 'Our Menu',
-        menu_title: 'Explore Our Selection',
-        menu_desc:  'Select a category to browse our delicious menu options. Pricing depends on selected items.',
-        tab_snack_manis: 'Sweet Snacks',
-        tab_snack_asin:  'Savory Snacks',
-        tab_kletikan:    'Light Snacks',
-        tab_gubugan:     'Live Stations',
-        tab_minuman:     'Beverages',
-        price_note: '*Pricing based on menu selection',
-
-        gallery_label: 'Gallery',
-        gallery_title: 'Moments We Create',
-        gallery_desc:  'Every dish is a work of art, every event a memory. Here are some of the moments we have been proud to be part of.',
-        gal1: 'Wedding Buffet Table',
-        gal2: 'Assorted Sweet Snacks',
-        gal3: 'Party Buffet Spread',
-        gal4: 'Savory Snacks Selection',
-        gal5: 'Traditional Tumpeng',
-        gal6: "Rice Box",
-        gal7: 'Live Station Setup',
-        gal8: 'Wedding Hampers',
-
-        about_label:  'About Us',
-        about_title:  'From Our Family Kitchen, for Your Special Moments',
-        about_badge:  'Years of Service',
-        about_story1: '<strong>Al Hikmah Catering</strong> was born in a small kitchen in Boyolali, driven by the spirit of a mother who believed that food is not just about filling stomachs — it unites, warms, and celebrates life.',
-        about_story2: 'Starting from orders by neighbours and family, we have now served hundreds of major events across Boyolali and the surrounding region. Every dish is prepared with fresh, carefully selected ingredients, time-honoured recipes, and unwavering love.',
-        about_story3: 'We are based at <strong>Kios No. 58/59 Pasar Sambi</strong>, offering services ranging from elegant wedding buffets and rice box to heartfelt tumpeng celebrations.',
-        val1_title: 'Halal & Hygienic',    val1_desc: 'All production processes prioritise cleanliness and halal standards',
-        val2_title: 'Authentic Recipes',   val2_desc: 'Genuine Central Javanese flavours that have stood the test of time',
-        val3_title: 'On Time, Every Time', val3_desc: 'Committed to delivering and serving according to your event schedule',
-
-        contact_label:      'Contact Us',
-        contact_title:      'Ready to Make Your Event Unforgettable',
-        contact_desc:       'Consult your catering needs with us. We are ready to help plan the best menu for your every special occasion.',
-        contact_addr_label: 'Address',
-        contact_wa_label:   'WhatsApp',
-        cta_wa: 'Chat via WhatsApp',
-        cta_ig: 'Follow on Instagram',
-
-        /* FIX: consistent year 2026 */
-        footer_copy: '© 2026 Al Hikmah Catering. All rights reserved.',
-
-        /* FIX: about slideshow labels in English */
-        slide_label_0: 'Late Ibu Parnginah (Founder)',
-        slide_label_1: 'Al Hikmah Team',
-        slide_label_2: 'Team Moments',
-        slide_label_3: 'Al Hikmah Family',
+        nav_home:'Home', nav_menu:'Menu', nav_gallery:'Gallery', nav_about:'About', nav_contact:'Contact',
+        hero_badge:'Halal · Hygienic · Trusted',
+        hero_title:'Homemade catering with<br/><em>exceptional taste</em><br/>for every occasion',
+        hero_sub:"Serving catering needs across Boyolali and surroundings — from wedding buffets to rice box.",
+        hero_cta:'Order Now', hero_see_menu:'View Menu',
+        stat_years:'Years Experience', stat_events:'Successful Events', stat_menus:'Menu Choices',
+        services_label:'Our Services', services_title:'What We Offer',
+        services_desc:'From lavish wedding buffets to wedding hampers, we are here to fulfil your every special culinary need.',
+        svc1_name:'Prasmanan', svc1_sub:'Buffet Catering', svc2_name:'Racikan', svc2_sub:'Custom Catering',
+        svc3_name:'Nasi Kotak', svc3_sub:'Rice Box', svc4_name:'Hantaran Pernikahan', svc4_sub:'Wedding Hampers',
+        svc5_name:'Tumpeng Komplit', svc5_sub:'Traditional Tumpeng',
+        menu_label:'Our Menu', menu_title:'Explore Our Selection',
+        menu_desc:'Select a category to browse our delicious menu options. Pricing depends on selected items.',
+        tab_snack_manis:'Sweet Snacks', tab_snack_asin:'Savory Snacks', tab_kletikan:'Light Snacks',
+        tab_gubugan:'Live Stations', tab_minuman:'Beverages',
+        price_note:'*Pricing based on menu selection',
+        gallery_label:'Gallery', gallery_title:'Moments We Create',
+        gallery_desc:'Every dish is a work of art, every event a memory. Here are some of the moments we have been proud to be part of.',
+        gal1:'Wedding Buffet Table', gal2:'Assorted Sweet Snacks', gal3:'Party Buffet Spread',
+        gal4:'Savory Snacks Selection', gal5:'Traditional Tumpeng', gal6:'Rice Box',
+        gal7:'Live Station Setup', gal8:'Wedding Hampers',
+        about_label:'About Us', about_title:'From Our Family Kitchen, for Your Special Moments',
+        about_badge:'Years of Service',
+        about_story1:'<strong>Al Hikmah Catering</strong> was born in a small kitchen in Boyolali, driven by the spirit of a mother who believed that food is not just about filling stomachs — it unites, warms, and celebrates life.',
+        about_story2:'Starting from orders by neighbours and family, we have now served hundreds of major events across Boyolali and the surrounding region. Every dish is prepared with fresh, carefully selected ingredients, time-honoured recipes, and unwavering love.',
+        about_story3:'We are based at <strong>Kios No. 58/59 Pasar Sambi</strong>, offering services ranging from elegant wedding buffets and rice box to heartfelt tumpeng celebrations.',
+        val1_title:'Halal & Hygienic', val1_desc:'All production processes prioritise cleanliness and halal standards',
+        val2_title:'Authentic Recipes', val2_desc:'Genuine Central Javanese flavours that have stood the test of time',
+        val3_title:'On Time, Every Time', val3_desc:'Committed to delivering and serving according to your event schedule',
+        contact_label:'Contact Us', contact_title:'Ready to Make Your Event Unforgettable',
+        contact_desc:'Consult your catering needs with us. We are ready to help plan the best menu for your every special occasion.',
+        contact_addr_label:'Address', contact_wa_label:'WhatsApp',
+        cta_wa:'Chat via WhatsApp', cta_ig:'Follow on Instagram',
+        footer_copy:'© 2026 Al Hikmah Catering. All rights reserved.',
+        slide_label_0:'Late Ibu Parnginah (Founder)', slide_label_1:'Al Hikmah Team',
+        slide_label_2:'Team Moments', slide_label_3:'Al Hikmah Family',
       }
     };
 
@@ -2341,46 +1090,29 @@
     function setLang(lang) {
       currentLang = lang;
       const t = translations[lang];
-
       document.querySelectorAll('[data-key]').forEach(el => {
         const key = el.getAttribute('data-key');
         if (t[key] !== undefined) el.innerHTML = t[key];
       });
-
-      ['btnID','btnID2'].forEach(id => {
-        const btn = document.getElementById(id);
-        if (btn) btn.classList.toggle('active', lang === 'id');
-      });
-      ['btnEN','btnEN2'].forEach(id => {
-        const btn = document.getElementById(id);
-        if (btn) btn.classList.toggle('active', lang === 'en');
-      });
-
+      ['btnID','btnID2'].forEach(id => { const b = document.getElementById(id); if(b) b.classList.toggle('active', lang==='id'); });
+      ['btnEN','btnEN2'].forEach(id => { const b = document.getElementById(id); if(b) b.classList.toggle('active', lang==='en'); });
       document.documentElement.lang = lang;
-
-      /* FIX: update the visible about-label when lang changes */
       const label = document.getElementById('aboutLabel');
       if (label) label.textContent = t['slide_label_' + aboutIndex] || '';
     }
 
-    /* ---- NAVBAR SCROLL ---- */
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
-    });
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
 
-    /* ---- HAMBURGER MENU ---- */
     function toggleMenu() {
       document.getElementById('mobileNav').classList.toggle('open');
       document.getElementById('hamburger').classList.toggle('open');
     }
-
     function closeMenu() {
       document.getElementById('mobileNav').classList.remove('open');
       document.getElementById('hamburger').classList.remove('open');
     }
 
-    /* ---- MENU TABS ---- */
     function switchTab(tabId) {
       document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.menu-tab').forEach(b => b.classList.remove('active'));
@@ -2390,44 +1122,28 @@
       });
     }
 
-    /* ---- SCROLL REVEAL ---- */
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.12 });
-
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    /* ---- ACTIVE NAV LINK on scroll ---- */
-    const sections    = document.querySelectorAll('section[id]');
-    const navAnchors  = document.querySelectorAll('.nav-links a');
-
+    const sections   = document.querySelectorAll('section[id]');
+    const navAnchors = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
       let current = '';
-      sections.forEach(sec => {
-        if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
-      });
-      navAnchors.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-      });
+      sections.forEach(sec => { if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id'); });
+      navAnchors.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
     });
 
-    /* ---- ABOUT SLIDESHOW WITH CONTROLS ---- */
     const aboutSlides = document.querySelectorAll('.about-slide');
     const aboutLabel  = document.getElementById('aboutLabel');
     const aboutDots   = document.getElementById('aboutDots');
     let aboutIndex = 0;
     let aboutTimer;
-    
+
     function renderAboutDots() {
       if (!aboutDots) return;
-    
       aboutDots.innerHTML = '';
-    
       aboutSlides.forEach((_, index) => {
         const dot = document.createElement('button');
         dot.className = 'about-dot';
@@ -2437,53 +1153,32 @@
         aboutDots.appendChild(dot);
       });
     }
-    
+
     function updateAboutSlide() {
       if (!aboutSlides.length || !aboutLabel) return;
-    
-      aboutSlides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === aboutIndex);
-      });
-    
+      aboutSlides.forEach((slide, index) => { slide.classList.toggle('active', index === aboutIndex); });
       aboutLabel.textContent = translations[currentLang]['slide_label_' + aboutIndex] || '';
-    
-      document.querySelectorAll('.about-dot').forEach((dot, index) => {
-        dot.classList.toggle('active', index === aboutIndex);
-      });
+      document.querySelectorAll('.about-dot').forEach((dot, index) => { dot.classList.toggle('active', index === aboutIndex); });
     }
-    
+
     function goToAboutSlide(index) {
       aboutIndex = index;
-    
-      if (aboutIndex < 0) {
-        aboutIndex = aboutSlides.length - 1;
-      }
-    
-      if (aboutIndex >= aboutSlides.length) {
-        aboutIndex = 0;
-      }
-    
+      if (aboutIndex < 0) aboutIndex = aboutSlides.length - 1;
+      if (aboutIndex >= aboutSlides.length) aboutIndex = 0;
       updateAboutSlide();
       restartAboutTimer();
     }
-    
-    function changeAboutSlide(direction) {
-      goToAboutSlide(aboutIndex + direction);
-    }
-    
+
+    function changeAboutSlide(direction) { goToAboutSlide(aboutIndex + direction); }
+
     function restartAboutTimer() {
       clearInterval(aboutTimer);
-    
-      aboutTimer = setInterval(() => {
-        goToAboutSlide(aboutIndex + 1);
-      }, 3500);
+      aboutTimer = setInterval(() => { goToAboutSlide(aboutIndex + 1); }, 3500);
     }
-    
+
     renderAboutDots();
     updateAboutSlide();
     restartAboutTimer();
-
   </script>
-
 </body>
 </html>
