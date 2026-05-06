@@ -340,6 +340,106 @@
     .minuman-card:hover img { transform: scale(1.05); }
     .minuman-name { padding: 12px; font-size: 0.9rem; font-weight: 600; color: var(--text); }
 
+    /* MENU VISUAL SHOWCASE */
+    .visual-menu-section {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 48px;
+      box-shadow: var(--shadow);
+    }
+    
+    .visual-menu-head {
+      margin-bottom: 28px;
+    }
+    
+    .visual-menu-head h3 {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    
+    .visual-menu-head p {
+      font-size: 0.95rem;
+      color: var(--text);
+      opacity: 0.7;
+      max-width: 680px;
+    }
+    
+    .visual-menu-group {
+      margin-top: 32px;
+    }
+    
+    .visual-menu-group-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+    
+    .visual-menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+    
+    .visual-menu-card {
+      background: var(--light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    
+    .visual-menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      background: var(--white);
+    }
+    
+    .visual-menu-img {
+      height: 170px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+    
+    .visual-menu-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+    
+    .visual-menu-card:hover .visual-menu-img img {
+      transform: scale(1.06);
+    }
+    
+    .visual-menu-body {
+      padding: 14px 16px 16px;
+    }
+    
+    .visual-menu-kicker {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 5px;
+    }
+    
+    .visual-menu-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    .visual-menu-note {
+      margin-top: 22px;
+      font-size: 0.78rem;
+      color: var(--text);
+      opacity: 0.6;
+      font-style: italic;
+    }
+
     /* GALLERY */
     #gallery { background: var(--white); }
     .gallery-header { text-align: center; margin-bottom: 48px; }
@@ -631,6 +731,13 @@
       .gallery-grid   { grid-template-columns: 1fr; }
       .prasmanan-grid { grid-template-columns: 1fr; }
       .menu-tab { padding: 8px 16px; font-size: 0.78rem; }
+      .visual-menu-section {
+        padding: 24px 18px;
+      }
+      
+      .visual-menu-img {
+        height: 150px;
+      }
       .footer-inner { flex-direction: column; text-align: center; }
 
       /* About slider nav */
@@ -773,6 +880,190 @@
         <h2 class="section-title" data-key="menu_title">Menu Pilihan Kami</h2>
         <p class="section-desc" data-key="menu_desc">Pilih kategori untuk menjelajahi berbagai pilihan menu lezat kami. Harga menyesuaikan pilihan menu.</p>
       </div>
+
+      <div class="visual-menu-section reveal">
+        <div class="visual-menu-head">
+          <span class="section-label">Visual Menu</span>
+          <h3>Contoh Sajian Kami</h3>
+          <p>
+            Beberapa contoh visual sajian dari menu kami. Foto digunakan sebagai referensi tampilan,
+            sementara isi paket dapat menyesuaikan pilihan menu, jumlah pesanan, dan kebutuhan acara.
+          </p>
+        </div>
+      
+        <div class="visual-menu-group">
+          <div class="visual-menu-group-title">Paket Snack</div>
+          <div class="visual-menu-grid">
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/snack/snack1.png" alt="Snack 1" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Snack</div><div class="visual-menu-title">Paket Snack Sajian</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/snack/snack2.png" alt="Snack 2" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Snack</div><div class="visual-menu-title">Snack Kombinasi</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/snack/snack3.png" alt="Snack 3" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Snack</div><div class="visual-menu-title">Snack Acara</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/snack/snack4.png" alt="Snack 4" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Snack</div><div class="visual-menu-title">Snack Piring Sajian</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/snack/snack5.png" alt="Snack 5" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Snack</div><div class="visual-menu-title">Pilihan Snack Manis</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/snack/snack6.png" alt="Snack 6" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Snack</div><div class="visual-menu-title">Snack Prasmanan</div></div>
+            </div>
+      
+          </div>
+        </div>
+      
+        <div class="visual-menu-group">
+          <div class="visual-menu-group-title">Menu Makanan</div>
+          <div class="visual-menu-grid">
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/makanan/menu1.png" alt="Menu 1" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Menu</div><div class="visual-menu-title">Menu Sajian</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/makanan/menu2.png" alt="Menu 2" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Menu</div><div class="visual-menu-title">Menu Acara</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/makanan/menu3.png" alt="Menu 3" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Menu</div><div class="visual-menu-title">Pilihan Sajian</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/makanan/setofmenu1.png" alt="Set Menu 1" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Set Menu</div><div class="visual-menu-title">Set Menu Lengkap</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/makanan/setofmenu2.png" alt="Set Menu 2" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Set Menu</div><div class="visual-menu-title">Paket Sajian</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/makanan/setofmenu3.png" alt="Set Menu 3" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Set Menu</div><div class="visual-menu-title">Menu Komplit</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/makanan/selatsolo.png" alt="Selat Solo" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Gubugan</div><div class="visual-menu-title">Selat Solo</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/makanan/tengkleng.png" alt="Tengkleng" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Gubugan</div><div class="visual-menu-title">Tengkleng</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/makanan/sopgalantin.png" alt="Sop Galantin" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Soup</div><div class="visual-menu-title">Sop Galantin</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/makanan/sopgalantinlove.png" alt="Sop Galantin Love" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Soup</div><div class="visual-menu-title">Sop Galantin Love</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/makanan/sopmanten.png" alt="Sop Manten" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Soup</div><div class="visual-menu-title">Sop Manten</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/makanan/sopmatahari.png" alt="Sop Matahari" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Soup</div><div class="visual-menu-title">Sop Matahari</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/makanan/sopmatahari1.png" alt="Sop Matahari 2" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Soup</div><div class="visual-menu-title">Sop Matahari Special</div></div>
+            </div>
+      
+          </div>
+        </div>
+      
+        <div class="visual-menu-group">
+          <div class="visual-menu-group-title">Minuman</div>
+          <div class="visual-menu-grid">
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/minuman/esbuah.png" alt="Es Buah" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Minuman</div><div class="visual-menu-title">Es Buah</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/minuman/escampur.png" alt="Es Campur" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Minuman</div><div class="visual-menu-title">Es Campur</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/minuman/esdawet.png" alt="Es Dawet" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Minuman</div><div class="visual-menu-title">Es Dawet</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/minuman/esdegan.png" alt="Es Degan" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Minuman</div><div class="visual-menu-title">Es Degan</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/minuman/eskrim.png" alt="Es Krim" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Minuman</div><div class="visual-menu-title">Es Krim</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/minuman/teh.png" alt="Teh" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Minuman</div><div class="visual-menu-title">Teh Manis</div></div>
+            </div>
+      
+          </div>
+        </div>
+      
+        <div class="visual-menu-group">
+          <div class="visual-menu-group-title">Tumpengan</div>
+          <div class="visual-menu-grid">
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/tumpengan/nasikuning.png" alt="Nasi Kuning" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Tumpengan</div><div class="visual-menu-title">Nasi Kuning</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/tumpengan/tumpengan1.png" alt="Tumpengan 1" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Tumpengan</div><div class="visual-menu-title">Tumpeng Komplit</div></div>
+            </div>
+      
+            <div class="visual-menu-card">
+              <div class="visual-menu-img"><img src="assets/images/tumpengan/tumpengan2.png" alt="Tumpengan 2" loading="lazy"></div>
+              <div class="visual-menu-body"><div class="visual-menu-kicker">Tumpengan</div><div class="visual-menu-title">Tumpeng Acara</div></div>
+            </div>
+      
+          </div>
+        </div>
+      
+        <p class="visual-menu-note">
+          *Foto adalah contoh sajian. Tampilan dan isi dapat menyesuaikan pilihan menu, jumlah pesanan, dan konsep acara.
+        </p>
+      </div>
+      
       <div class="prasmanan-section reveal">
         <div class="prasmanan-section-head">
           <span class="section-label">Menu Prasmanan</span>
