@@ -315,7 +315,10 @@
     .menu-tab:hover { border-color: var(--secondary); color: var(--secondary); }
     .menu-tab.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
     .menu-panel { display: none; animation: fadeIn 0.4s ease; }
-    .menu-panel.active { display: block; }
+    .menu-panel.active {
+      display: block;
+      margin-bottom: 48px;
+    }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     .menu-items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
     .menu-item-pill { background: var(--white); border-radius: var(--radius); padding: 14px 18px; display: flex; align-items: center; gap: 10px; transition: var(--transition); }
@@ -345,6 +348,7 @@
       background: var(--white);
       border-radius: var(--radius-lg);
       padding: 32px;
+      margin-top: 32px;
       margin-bottom: 48px;
       box-shadow: var(--shadow);
     }
