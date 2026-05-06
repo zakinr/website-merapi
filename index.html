@@ -344,8 +344,22 @@
     #gallery { background: var(--white); }
     .gallery-header { text-align: center; margin-bottom: 48px; }
     .gallery-header .section-desc { margin: 0 auto; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
-    .gallery-item { border-radius: var(--radius); overflow: hidden; cursor: pointer; position: relative; }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 200px;   /* ← BARU: tinggi baris konsisten */
+      gap: 16px;
+    }
+    
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    
+    /* Posisi item di grid — sama seperti sebelumnya */
     .gallery-item:nth-child(1) { grid-column: 1 / 6;  grid-row: 1 / 3; }
     .gallery-item:nth-child(2) { grid-column: 6 / 9;  grid-row: 1 / 2; }
     .gallery-item:nth-child(3) { grid-column: 9 / 13; grid-row: 1 / 2; }
@@ -354,20 +368,36 @@
     .gallery-item:nth-child(6) { grid-column: 1 / 5;  grid-row: 3 / 4; }
     .gallery-item:nth-child(7) { grid-column: 5 / 9;  grid-row: 3 / 4; }
     .gallery-item:nth-child(8) { grid-column: 9 / 13; grid-row: 3 / 4; }
-    .gallery-placeholder { width: 100%; height: 100%; min-height: 180px; background: var(--bg); display: flex; align-items: center; justify-content: center; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); position: relative; }
-    .gallery-item:nth-child(1) .gallery-placeholder { min-height: 400px; background: linear-gradient(135deg, #54604F22, #AA8E5F22); }
-    .gallery-item:nth-child(2) .gallery-placeholder { background: linear-gradient(135deg, #AA8E5F22, #54604F22); }
-    .gallery-item:nth-child(3) .gallery-placeholder { background: linear-gradient(135deg, #E6E7E7, #54604F11); }
-    .gallery-item:nth-child(4) .gallery-placeholder { background: linear-gradient(135deg, #54604F11, #AA8E5F22); }
-    .gallery-item:nth-child(5) .gallery-placeholder { background: linear-gradient(135deg, #AA8E5F11, #E6E7E7); }
-    .gallery-item:nth-child(6) .gallery-placeholder { background: linear-gradient(135deg, #54604F22, #E6E7E7); }
-    .gallery-item:nth-child(7) .gallery-placeholder { background: linear-gradient(135deg, #E6E7E7, #AA8E5F22); }
-    .gallery-item:nth-child(8) .gallery-placeholder { background: linear-gradient(135deg, #54604F11, #AA8E5F33); }
-    .gallery-ph-inner { text-align: center; }
-    .gallery-ph-inner span { font-size: 2.5rem; display: block; margin-bottom: 6px; }
-    .gallery-ph-inner p    { font-size: 0.72rem; color: var(--text); opacity: 0.4; letter-spacing: 0.08em; }
-    .gallery-item:hover .gallery-placeholder { transform: scale(1.05); }
-    .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(35,31,32,0.6) 0%, transparent 60%); opacity: 0; transition: var(--transition); display: flex; align-items: flex-end; padding: 20px; }
+    .gallery-item:nth-child(9)  { grid-column: 1 / 5;  grid-row: 4 / 5; }
+    .gallery-item:nth-child(10) { grid-column: 5 / 9;  grid-row: 4 / 5; }
+    .gallery-item:nth-child(11) { grid-column: 9 / 13; grid-row: 4 / 5; }
+        
+    /* ← BARU: foto otomatis crop & fill kotak grid */
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      position: absolute;
+      inset: 0;
+      transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    }
+    
+    .gallery-item:hover img { transform: scale(1.05); }
+    
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(35,31,32,0.6) 0%, transparent 60%);
+      opacity: 0;
+      transition: var(--transition);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      z-index: 1;
+    }
+    
     .gallery-item:hover .gallery-overlay { opacity: 1; }
     .gallery-overlay-text { color: var(--white); font-size: 0.8rem; font-weight: 500; }
 
@@ -910,20 +940,64 @@
 
   <section id="gallery">
     <div class="container">
-      <div class="gallery-header reveal">
-        <span class="section-label" data-key="gallery_label">Galeri</span>
-        <h2 class="section-title" data-key="gallery_title">Momen yang Kami Ciptakan</h2>
-        <p class="section-desc" data-key="gallery_desc">Setiap hidangan adalah karya, setiap acara adalah kenangan. Berikut sebagian momen yang telah kami percantik bersama.</p>
-      </div>
       <div class="gallery-grid reveal">
-        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🍽️</span><p>Prasmanan Setup</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal1">Meja Prasmanan Pernikahan</div></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🎂</span><p>Snack Display</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal2">Aneka Snack Manis</div></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🥘</span><p>Main Course</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal3">Menu Pesta Prasmanan</div></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🥟</span><p>Snack Asin</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal4">Snack Asin Pilihan</div></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🌾</span><p>Tumpeng</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal5">Tumpeng Komplit</div></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🎉</span><p>Rice Box</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal6">Nasi Kotak</div></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>🍜</span><p>Live Station</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal7">Stand Menu Gubugan</div></div></div>
-        <div class="gallery-item"><div class="gallery-placeholder"><div class="gallery-ph-inner"><span>💍</span><p>Wedding Hampers</p></div></div><div class="gallery-overlay"><div class="gallery-overlay-text" data-key="gal8">Hantaran Pernikahan</div></div></div>
+      
+        <div class="gallery-item">
+          <img src="assets/images/gallery/foto1.jpg" alt="Prasmanan pernikahan" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text" data-key="gal1">Meja Prasmanan Pernikahan</div>
+          </div>
+        </div>
+      
+        <div class="gallery-item">
+          <img src="assets/images/gallery/foto2.jpg" alt="Snack manis" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text" data-key="gal2">Aneka Snack Manis</div>
+          </div>
+        </div>
+      
+        <div class="gallery-item">
+          <img src="assets/images/gallery/foto3.jpg" alt="Menu pesta prasmanan" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text" data-key="gal3">Menu Pesta Prasmanan</div>
+          </div>
+        </div>
+      
+        <div class="gallery-item">
+          <img src="assets/images/gallery/foto4.jpg" alt="Snack asin pilihan" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text" data-key="gal4">Snack Asin Pilihan</div>
+          </div>
+        </div>
+      
+        <div class="gallery-item">
+          <img src="assets/images/gallery/foto5.jpg" alt="Tumpeng komplit" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text" data-key="gal5">Tumpeng Komplit</div>
+          </div>
+        </div>
+      
+        <div class="gallery-item">
+          <img src="assets/images/gallery/foto6.jpg" alt="Nasi kotak" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text" data-key="gal6">Nasi Kotak</div>
+          </div>
+        </div>
+      
+        <div class="gallery-item">
+          <img src="assets/images/gallery/foto7.jpg" alt="Stand gubugan" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text" data-key="gal7">Stand Menu Gubugan</div>
+          </div>
+        </div>
+      
+        <div class="gallery-item">
+          <img src="assets/images/gallery/foto8.jpg" alt="Hantaran pernikahan" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-text" data-key="gal8">Hantaran Pernikahan</div>
+          </div>
+        </div>
+      
       </div>
     </div>
   </section>
