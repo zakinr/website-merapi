@@ -454,6 +454,66 @@
       font-style: italic;
     }
 
+    /* IMAGE POPUP / LIGHTBOX */
+    .image-popup {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(20, 18, 17, 0.88);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    
+    .image-popup.open {
+      display: flex;
+    }
+    
+    .image-popup-content {
+      position: relative;
+      max-width: min(1000px, 94vw);
+      max-height: 88vh;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .image-popup img {
+      width: 100%;
+      max-height: 78vh;
+      object-fit: contain;
+      background: #111;
+    }
+    
+    .image-popup-caption {
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--white);
+    }
+    
+    .image-popup-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(35,31,32,0.75);
+      color: var(--white);
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 2;
+    }
+    
+    .visual-menu-card {
+      cursor: pointer;
+    }
+
     /* GALLERY */
     #gallery { background: var(--white); }
     .gallery-header { text-align: center; margin-bottom: 48px; }
@@ -1383,6 +1443,16 @@
     </div>
   </footer>
 
+  <div class="image-popup" id="imagePopup" onclick="closeImagePopup(event)">
+    <div class="image-popup-content">
+      <button class="image-popup-close" type="button" onclick="closeImagePopup(event)" aria-label="Tutup gambar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img id="popupImage" src="" alt="">
+      <div class="image-popup-caption" id="popupCaption"></div>
+    </div>
+  </div>
+
   <a class="wa-float" href="https://wa.me/6282136344732?text=Halo%2C%20saya%20ingin%20tanya%20paket%20catering%20untuk%20acara%20%5Bjenis%20acara%5D%20tanggal%20%5Btanggal%5D" target="_blank" title="Chat WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
@@ -1557,6 +1627,50 @@
       clearInterval(aboutTimer);
       aboutTimer = setInterval(() => { goToAboutSlide(aboutIndex + 1); }, 3500);
     }
+
+    function openImagePopup(imgSrc, imgAlt, title) {
+      const popup = document.getElementById('imagePopup');
+      const popupImage = document.getElementById('popupImage');
+      const popupCaption = document.getElementById('popupCaption');
+    
+      popupImage.src = imgSrc;
+      popupImage.alt = imgAlt || title || 'Contoh sajian';
+      popupCaption.textContent = title || imgAlt || 'Contoh sajian';
+    
+      popup.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeImagePopup(event) {
+      const popup = document.getElementById('imagePopup');
+    
+      if (
+        event.target.id === 'imagePopup' ||
+        event.target.closest('.image-popup-close')
+      ) {
+        popup.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+    
+    document.querySelectorAll('.visual-menu-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const img = card.querySelector('img');
+        const title = card.querySelector('.visual-menu-title')?.textContent;
+    
+        if (img) {
+          openImagePopup(img.src, img.alt, title);
+        }
+      });
+    });
+    
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        const popup = document.getElementById('imagePopup');
+        popup.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
 
     renderAboutDots();
     updateAboutSlide();
